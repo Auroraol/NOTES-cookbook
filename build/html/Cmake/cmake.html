@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CMake &mdash; X-NOTES latest 文档</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> X-NOTES
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Linux/Linux.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Qt/Qt.html">Qt</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CMake</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#cmake-minimum-required-cmake"><strong>==cmake_minimum_required== - 指定CMake的最小版本要求</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#project"><strong>==project== - 定义工程名称，并可指定工程支持的语言</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set"><strong>==set==- 显式的定义变量</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#include-directories-g-i"><strong>==include_directories== - 向工程添加多个 ==特定的头文件== 搜索路径 —&gt;相当于指定g++编译器的-I参数</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#link-directories-g-l">==link_directories== - 向工程添加多个 ==特定的库文件== 搜索路径 —&gt;相当于指定g++编译器的-L参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-library"><strong>==add_library== - 生成库文件</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1"><strong>构建实例</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">1. 构建静态和动态库</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">2. 安装头文件 和 共享库</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4"><strong>3. 使用</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#add-compile-options">==add_compile_options== - 添加编译参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-executable">==add_executable==- 生成可执行文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#target-link-libraries-target-g-l">==target_link_libraries== - 为 target 添加需要链接的共享库 —&gt;相同于指定g++编译器-l参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-subdirectory">==add_subdirectory== - 向当前工程添加存放源文件的子目录，指定 中间 和 目标的二进制存放的位置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#aux-source-directory">==aux_source_directory== - 发现一个目录下所有的源代码文件并将列表存储在一个变量中，这个指令临时被用来自动构建源文件列表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">CMake常用变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">CMake编译工程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">内部构建和外部构建</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id8">外部构建</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vscodejson">配置VSCode的json文件并调试项目</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">多文件编译</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">CMake入门到精通实战</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">X-NOTES</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">&lt;no title&gt;</a> &raquo;</li>
+      <li>CMake</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Cmake/Cmake.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cmake">
+<h1>CMake<a class="headerlink" href="#cmake" title="永久链接至标题">¶</a></h1>
+<section id="cmake-minimum-required-cmake">
+<h2><strong>==cmake_minimum_required== - 指定CMake的最小版本要求</strong><a class="headerlink" href="#cmake-minimum-required-cmake" title="永久链接至标题">¶</a></h2>
+<p>语法： cmake_minimum_required(VERSION versionNumber [FATAL_ERROR])</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="c"># CMake最小版本要求为2.8.3</span>
+<span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span> <span class="s">2.8.3</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="project">
+<h2><strong>==project== - 定义工程名称，并可指定工程支持的语言</strong><a class="headerlink" href="#project" title="永久链接至标题">¶</a></h2>
+<p>语法： project(projectname [CXX] [C] [Java])</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span>#可以用来指定工程的名字和支持的语言，默认支持所有语言
+
+PROJECT (HELLO)   指定了工程的名字，并且支持所有语言—建议
+
+PROJECT (HELLO CXX)      指定了工程的名字，并且支持语言是C++
+
+**PROJECT (HELLO C CXX)      指定了工程的名字，并且支持语言是C和C++**
+
+该指定隐式定义了两个CMAKE的变量
+&lt;projectname&gt;_BINARY_DIR，本例中是 HELLO_BINARY_DIR
+&lt;projectname&gt;_SOURCE_DIR，本例中是 HELLO_SOURCE_DIR
+**MESSAGE关键字就可以直接使用者两个变量，当前都指向当前的工作目录**，后面会讲外部编译
+问题：如果改了工程名，这两个变量名也会改变
+解决：又定义两个预定义变量：**PROJECT_BINARY_DIR和PROJECT_SOURCE_DIR**，这两个变量和HELLO_BINARY_DIR，HELLO_SOURCE_DIR是一致的。所以改了工程名也没有关系
+</pre></div>
+</div>
+</section>
+<section id="set">
+<h2><strong>==set==- 显式的定义变量</strong><a class="headerlink" href="#set" title="永久链接至标题">¶</a></h2>
+<p>语法：set(VAR [VALUE] [CACHE TYPE DOCSTRING [FORCE]])   <strong>如果源文件名中含有空格，就必须要加双引号</strong></p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="c"># 定义SRC变量，其值为sayhello.cpp hello.cpp</span>
+
+<span class="nb">set</span><span class="p">(</span><span class="s">SRC</span> <span class="s">sayhello.cpp</span> <span class="s">hello.cpp</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="include-directories-g-i">
+<h2><strong>==include_directories== - 向工程添加多个 ==特定的头文件== 搜索路径 —&gt;相当于指定g++编译器的-I参数</strong><a class="headerlink" href="#include-directories-g-i" title="永久链接至标题">¶</a></h2>
+<p>语法： include_directories([AFTER|BEFORE] [SYSTEM] dir1 dir2 …)</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="c"># 将/usr/include/myincludefolder 和  ./include 添加到头文件搜索路径</span>
+
+<span class="nb">include_directories</span><span class="p">(</span><span class="s">/usr/include/myincludefolder</span> <span class="s">./include</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span>├── CMakeLists.txt    #最外层的CMakeList.txt
+├── main.cpp    #源文件，包含被测试的头文件
+├── sub    #子目录
+ └── test.h    #测试头文件，是个空文件，被外层的main,cpp包含
+
+场景2：使用include_directories包含子目录sub,并在main.cpp里面包含&quot;test.h&quot;。
+
+# CMakeList.txt
+cmake_minimum_required(VERSION 3.18.2)
+project(include_directories_test)
+include_directories(sub) #与上个场景不同的地方在于此处
+add_executable(test main.cpp)
+    
+    
+//main.cpp
+#include &quot;test.h&quot;
+#include &lt;stdio.h&gt;
+int main(int argc, char **argv)
+{
+    printf(&quot;hello, world!\n&quot;);
+    return 0;
+</pre></div>
+</div>
+</section>
+<section id="link-directories-g-l">
+<h2>==link_directories== - 向工程添加多个 ==特定的库文件== 搜索路径 —&gt;相当于指定g++编译器的-L参数<a class="headerlink" href="#link-directories-g-l" title="永久链接至标题">¶</a></h2>
+<p>语法： link_directories(dir1 dir2 …)</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="c"># 将/usr/lib/mylibfolder 和 ./lib 添加到库文件搜索路径</span>
+
+<span class="nb">link_directories</span><span class="p">(</span><span class="s">/usr/lib/mylibfolder</span> <span class="s">./lib</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="add-library">
+<h2><strong>==add_library== - 生成库文件</strong><a class="headerlink" href="#add-library" title="永久链接至标题">¶</a></h2>
+<p>语法： add_library(libname [SHARED|STATIC|MODULE] [EXCLUDE_FROM_ALL]source1 source2 … sourceN)</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="c"># 通过变量 SRC 生成 libhello.so 共享库</span>
+
+<span class="nb">add_library</span><span class="p">(</span><span class="s">hello</span> <span class="s">SHARED</span> <span class="o">${</span><span class="nv">SRC</span><span class="o">}</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>ADD_LIBRARY(hello SHARED ${ LIBHELLO_SRC})</p>
+<ul class="simple">
+<li><p>hello：就是正常的库名，生成的名字前面会加上lib，最终产生的文件是libhello.so</p></li>
+<li><p><strong>SHARED，动态库    STATIC，静态库</strong></p></li>
+<li><p>${LIBHELLO_SRC} ：<strong>源文件</strong></p></li>
+</ul>
+<section id="id1">
+<h3><strong>构建实例</strong><a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h3>
+<p>任务：</p>
+<p>１，建立一个静态库和动态库，提供 HelloFunc 函数供其他程序编程使用，HelloFunc 向终端输出 Hello World 字符串。</p>
+<p>２，安装头文件与共享库。</p>
+<p><strong>看code   构建静态和动态库</strong></p>
+</section>
+<section id="id2">
+<h3>1. 构建静态和动态库<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span>[root@localhost cmake2]# tree
+.
+├── build
+├── CMakeLists.txt
+└── lib
+    ├── CMakeLists.txt
+    ├── hello.cpp
+    └── hello.h
+</pre></div>
+</div>
+<p>hello.h中的内容</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef HELLO_H</span>
+<span class="cp">#define Hello_H</span>
+
+<span class="kt">void</span> <span class="nf">HelloFunc</span><span class="p">();</span>
+
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+<p>hello.cpp中的内容</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;hello.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="kt">void</span> <span class="nf">HelloFunc</span><span class="p">(){</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello World&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>项目中的cmake内容</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">PROJECT</span><span class="p">(</span><span class="n">HELLO</span><span class="p">)</span>
+<span class="n">ADD_SUBDIRECTORY</span><span class="p">(</span><span class="n">lib</span> <span class="n">bin</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>lib中CMakeLists.txt中的内容</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span>SET(LIBHELLO_SRC hello.cpp)
+ADD_LIBRARY(hello SHARED ${LIBHELLO_SRC})
+</pre></div>
+</div>
+<p><strong>自动生成在 build/bin(自动创建的) 中</strong></p>
+<ul>
+<li><p><strong>hello：就是正常的库名，生成的名字前面会加上lib，最终产生的文件是libhello.so</strong></p></li>
+<li><p>SHARED，动态库    STATIC，静态库</p></li>
+<li><p>${LIBHELLO_SRC} ：源文件</p>
+<p><img alt="image-20220812154252052" src="../_images/image-20220812154252052.png" /></p>
+</li>
+</ul>
+<hr class="docutils" />
+<p><strong>同时构建静态和动态库</strong></p>
+<p>用到  SET_TARGET_PROPERTIES</p>
+<p>这条指令可以用来设置输出的名称，对于动态库，还可以用来指定动态库版本和 API 版本</p>
+<p>同时构建静态和动态库</p>
+<p>lib中CMakeLists.txt中的内容:</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span>SET(LIBHELLO_SRC hello.cpp)
+
+// 静态
+ADD_LIBRARY(hello_static STATIC ${LIBHELLO_SRC})
+//对hello_static的重名为hello
+SET_TARGET_PROPERTIES(hello_static PROPERTIES  OUTPUT_NAME &quot;hello&quot;)
+//cmake 在构建一个新的target 时，会尝试清理掉其他使用这个名字的库，因为，在构建 libhello.so 时， 就会清理掉 libhello.a
+SET_TARGET_PROPERTIES(hello_static PROPERTIES CLEAN_DIRECT_OUTPUT 1)
+
+
+// 动态
+ADD_LIBRARY(hello SHARED ${LIBHELLO_SRC})
+SET_TARGET_PROPERTIES(hello PROPERTIES  OUTPUT_NAME &quot;hello&quot;)
+SET_TARGET_PROPERTIES(hello PROPERTIES CLEAN_DIRECT_OUTPUT 1)
+</pre></div>
+</div>
+<p><img alt="image-20220728220427809" src="../_images/image-20220728220427809.png" /></p>
+<p><strong>动态库的版本号</strong></p>
+<p>一般动态库都有一个版本号的关联</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">libhello</span><span class="p">.</span><span class="n">so</span><span class="mf">.1.2</span>
+<span class="n">libhello</span><span class="p">.</span><span class="n">so</span> <span class="o">-&gt;</span><span class="n">libhello</span><span class="p">.</span><span class="n">so</span><span class="mf">.1</span>
+<span class="n">libhello</span><span class="p">.</span><span class="n">so</span><span class="mf">.1</span><span class="o">-&gt;</span><span class="n">libhello</span><span class="p">.</span><span class="n">so</span><span class="mf">.1.2</span>
+</pre></div>
+</div>
+<p>CMakeLists.txt 插入如下</p>
+<p><code class="docutils literal notranslate"><span class="pre">SET_TARGET_PROPERTIES(hello</span> <span class="pre">PROPERTIES</span> <span class="pre">VERSION</span> <span class="pre">1.2</span> <span class="pre">SOVERSION</span> <span class="pre">1)</span></code></p>
+<p>VERSION 指代动态库版本，SOVERSION 指代 API 版本</p>
+</section>
+<section id="id3">
+<h3>2. 安装头文件 和 共享库<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>动态库和静态库需要安装头文件</p>
+<p>将在lib里的 hello.h   安装到 usr/include/hello 目录</p>
+<p><img alt="image-20220812154523061" src="../_images/image-20220812154523061.png" /></p>
+<p>给动态库和静态库需要安装头文件.  将 hello 的共享库安装到 usr/lib目录，</p>
+<p>lib中的继续添加cmake内容</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">//文件放到该目录下</span>
+<span class="n">INSTALL</span><span class="p">(</span><span class="n">FILES</span> <span class="n">hello</span><span class="p">.</span><span class="n">h</span> <span class="n">DESTINATION</span> <span class="n">include</span><span class="o">/</span><span class="n">hello</span><span class="p">)</span>
+    <span class="c1">//这里的include应该是自动创建在当前Cmakelist所在目录</span>
+
+<span class="c1">//二进制，静态库，动态库安装都用TARGETS</span>
+<span class="c1">//ARCHIVE 特指静态库，LIBRARY 特指动态库，RUNTIME 特指可执行目标二进制。</span>
+<span class="n">INSTALL</span><span class="p">(</span><span class="n">TARGETS</span> <span class="n">hello</span> <span class="n">hello_static</span> <span class="n">LIBRARY</span> <span class="n">DESTINATION</span> <span class="n">lib</span> <span class="n">ARCHIVE</span> <span class="n">DESTINATION</span> <span class="n">lib</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>注意：</p>
+<p>安装的时候，指定一下路径，放到系统下</p>
+<p>在build下:</p>
+<p><code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">-D</span> <span class="pre">CMAKE_INSTALL_PREFIX=/usr</span> <span class="pre">..</span></code></p>
+<p><strong>具体过程</strong></p>
+<p><img alt="image-20220812160113059" src="../_images/image-20220812160113059.png" /></p>
+</section>
+<section id="id4">
+<h3><strong>3. 使用</strong><a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>新建一个目录来使用外部共享库和头文件</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span>[root@MiWiFi-R4CM-srv cmake3]# tree
+.
+├── build
+├── CMakeLists.txt
+└── src
+    ├── CMakeLists.txt
+    └── main.cpp
+</pre></div>
+</div>
+<p>main.cpp</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;hello.h&gt;          // 使用动态库</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+	<span class="n">HelloFunc</span><span class="p">();</span>            <span class="c1">// 使用动态库</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>src里的camke</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span>INCLUDE_DIRECTORIES(/usr/include/hello)   // 动态库的头文件
+
+ADD_EXECUTABLE(hello main.cpp)
+
+TARGET_LINK_LIBRARIES(hello libhello.so)  //动态库的lib文件
+</pre></div>
+</div>
+<p>项目下的:</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">PROJECT</span><span class="p">(</span><span class="s">HELLO</span><span class="p">)</span>
+
+<span class="nb">CMAKE_MINIMUM_REQUIRED</span><span class="p">(</span><span class="s">VERSION</span> <span class="s">2.8.3</span><span class="p">)</span>
+
+<span class="nb">ADD_SUBDIRECTORY</span><span class="p">(</span><span class="s">src</span> <span class="s">bin</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="image-20220812171327338" src="../_images/image-20220812171327338.png" /></p>
+<p>解决:</p>
+<div class="highlight-linux notranslate"><div class="highlight"><pre><span></span>mv /usr/lib/libhello.so /usr/lib64/
+</pre></div>
+</div>
+<p><img alt="image-20220812171424005" src="../_images/image-20220812171424005.png" /></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="add-compile-options">
+<h2>==add_compile_options== - 添加编译参数<a class="headerlink" href="#add-compile-options" title="永久链接至标题">¶</a></h2>
+<p>语法：add_compile_options(</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="c"># 添加编译参数 -Wall -std=c++11 -O2</span>
+
+<span class="nb">add_compile_options</span><span class="p">(</span><span class="s">-Wall</span> <span class="s">-std=c++11</span> <span class="s">-O2</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="add-executable">
+<h2>==add_executable==- 生成可执行文件<a class="headerlink" href="#add-executable" title="永久链接至标题">¶</a></h2>
+<p>语法：add_executable(exename source1 source2 … sourceN)</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="c"># 编译main.cpp  生成 可执行文件main</span>
+
+<span class="nb">add_executable</span><span class="p">(</span><span class="s">main</span> <span class="s">main.cpp</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>生成的可执行文件名是hello，源文件读取变量SRC_LIST中的内容</strong> 注意：<strong>工程名的 HELLO 和生成的可执行文件 hello 是没有任何关系的</strong></p>
+<p>也可以直接写 ADD_EXECUTABLE(hello main.cpp)</p>
+<p><img alt="image-20220728090945010" src="../_images/image-20220728090945010.png" /></p>
+</section>
+<section id="target-link-libraries-target-g-l">
+<h2>==target_link_libraries== - 为 target 添加需要链接的共享库 —&gt;相同于指定g++编译器-l参数<a class="headerlink" href="#target-link-libraries-target-g-l" title="永久链接至标题">¶</a></h2>
+<p>语法： target_link_libraries(target library1&lt;debug | optimized&gt; library2…)</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span># 将hello动态库文件链接到可执行文件main
+
+target_link_libraries(main hello)    //hello是生成的库文件
+</pre></div>
+</div>
+</section>
+<section id="add-subdirectory">
+<h2>==add_subdirectory== - 向当前工程添加存放源文件的子目录，指定 中间 和 目标的二进制存放的位置<a class="headerlink" href="#add-subdirectory" title="永久链接至标题">¶</a></h2>
+<p>语法： add_subdirectory(source_dir [binary_dir] [EXCLUDE_FROM_ALL])</p>
+<p>#添加包含CMakeLists.txt和源文件的子目录 —&gt; 相当于把整个文件变成一个.cpp文件</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="c"># 添加src子目录，src中需有一个CMakeLists.txt</span>
+
+<span class="nb">add_subdirectory</span><span class="p">(</span><span class="s">src</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>ADD_SUBDIRECTORY(src bin)</strong></p>
+<p><strong>将 src 子目录加入工程并指定编译输出(包含编译中间结果)路径为bin 目录</strong></p>
+<p>如果不进行 bin 目录的指定，那么编译结果(包括中间结果)都将存放在build/src 目录</p>
+</section>
+<section id="aux-source-directory">
+<h2>==aux_source_directory== - 发现一个目录下所有的源代码文件并将列表存储在一个变量中，这个指令临时被用来自动构建源文件列表<a class="headerlink" href="#aux-source-directory" title="永久链接至标题">¶</a></h2>
+<p>语法： aux_source_directory(dir VARIABLE)</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="c"># 定义SRC变量，其值为当前目录下所有的源代码文件</span>
+<span class="nb">aux_source_directory</span><span class="p">(</span><span class="s">.</span> <span class="s">SRC</span><span class="p">)</span>
+
+<span class="c"># 编译SRC变量所代表的源代码文件，生成main可执行文件</span>
+
+<span class="nb">add_executable</span><span class="p">(</span><span class="s">main</span> <span class="o">${</span><span class="nv">SRC</span><span class="o">}</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><img alt="image-20220728184226529" src="../_images/image-20220728184226529.png" /></p>
+<p><code class="docutils literal notranslate"><span class="pre">aux_source_directory（目录</span> <span class="pre">存放文件列表的变量）</span></code></p>
+<p>例如我们想搜索当前目录下的所有cpp则为</p>
+<p>aux_source_directory(. CPP_LIST)</p>
+<p>但是这个命令只会仅仅搜索当前目录下的文件（即tool2.cpp），tool1目录中无法搜索到，有两种解决办法：</p>
+<p>1:再增加一个aux_source_directory(./tool1 CPP_LIST2)，即可成功编译</p>
+<p><img alt="image-20220728184407615" src="../_images/image-20220728184407615.png" /></p>
+<p>2.使用cmake单独将tool1文件夹编译为一个so</p>
+<p>具体步骤：</p>
+<p>1.在tool1文件夹中新建一个CMakeLists.txt ,其中内容为：</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">aux_source_directory</span><span class="p">(</span><span class="s">.</span> <span class="s">tool1_file</span><span class="p">)</span> <span class="c">#查找当前目录下的tool1相关文件</span>
+
+<span class="nb">add_library</span><span class="p">(</span><span class="s">tool1lib</span> <span class="o">${</span><span class="nv">tool1_file</span><span class="o">}</span><span class="p">)</span>   <span class="c">#将他们编译为一个叫tool1lib的文件</span>
+</pre></div>
+</div>
+<p>2.主目录的cmakelists修改为：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cmake_minimum_required<span class="o">(</span>VERSION <span class="m">2</span>.6<span class="o">)</span>  <span class="c1">#指定cmake最低版本为2.6</span>
+ 
+project<span class="o">(</span>FirstCmakeDemo<span class="o">)</span>  <span class="c1">#指定工程名称</span>
+aux_source_directory<span class="o">(</span>. CPP_LIST<span class="o">)</span>  <span class="c1">#搜索当前目录下的所有cpp文件</span>
+add_subdirectory<span class="o">(</span>tool1<span class="o">)</span>           <span class="c1">#将tool1文件夹加入子目录,这样他就可以去tool1文件夹中查找编译</span>
+ 
+add_executable<span class="o">(</span>out_file <span class="si">${</span><span class="nv">CPP_LIST</span><span class="si">}</span><span class="o">)</span> <span class="c1">#生成目标文件</span>
+ 
+target_link_libraries<span class="o">(</span>out_file tool1lib<span class="o">)</span>
+<span class="c1">#添加链接库,其库的名字由tool1文件夹中的CMakeLists.txt来指定生成</span>
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h2>CMake常用变量<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><strong>CMAKE_C_FLAGS gcc编译选项</strong>                 // c语言</p></li>
+<li><p><strong>CMAKE_CXX_FLAGS g++编译选项</strong>             // c++</p></li>
+</ul>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="c"># 在CMAKE_CXX_FLAGS编译选项后追加-std=c++11</span>
+
+<span class="nb">set</span><span class="p">(</span> <span class="s">CMAKE_CXX_FLAGS</span> <span class="s2">&quot;${CMAKE_CXX_FLAGS} -std=c++11&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>CMAKE_BUILD_TYPE 编译类型(Debug, Release)</strong></p></li>
+</ul>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="c"># 设定编译类型为debug，调试时需要选择debug</span>
+
+<span class="nb">set</span><span class="p">(</span><span class="s">CMAKE_BUILD_TYPE</span> <span class="s">Debug</span><span class="p">)</span>
+
+<span class="c"># 设定编译类型为release，发布时需要选择release</span>
+
+<span class="nb">set</span><span class="p">(</span><span class="s">CMAKE_BUILD_TYPE</span> <span class="s">Release</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>​        CMAKE_BINARY_DIR</p>
+<ul class="simple">
+<li><p><strong>PROJECT_BINARY_DIR</strong>
+_BINARY_DIR</p></li>
+</ul>
+<ol class="simple">
+<li><p>这三个变量指代的内容是一致的。</p></li>
+<li><p>如果是 in source build，指的就是工程顶层目录。</p></li>
+<li><p>如果是 out-of-source 编译,指的是工程编译发生的目录。</p></li>
+<li><p>PROJECT_BINARY_DIR 跟其他指令稍有区别，不过现在，你可以理解为他们是一致
+的。</p></li>
+</ol>
+<p>​        CMAKE_SOURCE_DIR</p>
+<ul class="simple">
+<li><p><strong>PROJECT_SOURCE_DIR</strong>
+_SOURCE_DIR</p></li>
+</ul>
+<ol class="simple">
+<li><p>这三个变量指代的内容是一致的,<strong>不论采用何种编译方式,都是工程顶层目录。</strong></p></li>
+<li><p>也就是在 in source build时,他跟 CMAKE_BINARY_DIR 等变量一致。</p></li>
+<li><p>PROJECT_SOURCE_DIR 跟其他指令稍有区别,现在,你可以理解为他们是一致的。</p></li>
+</ol>
+<p>CMAKE_C_COMPILER：指定C编译器
+CMAKE_CXX_COMPILER：指定C++编译器
+EXECUTABLE_OUTPUT_PATH：可执行文件输出的存放路径
+LIBRARY_OUTPUT_PATH：库文件输出的存放路径</p>
+</section>
+<section id="id6">
+<h2>CMake编译工程<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p>CMake目录结构：项目主目录存在一个CMakeLists.txt文件
+两种方式设置编译规则：</p>
+<ol class="simple">
+<li><p>包含源文件的子文件夹包含CMakeLists.txt文件，主目录的CMakeLists.txt通过add_subdirectory
+添加子目录即可；</p></li>
+<li><p>包含源文件的子文件夹未包含CMakeLists.txt文件，子目录编译规则体现在主目录的
+CMakeLists.txt中；
+6.4.1 编译流程
+在 linux 平台下使用 CMake 构建C/C++工程的流程如下:
+手动编写 CMakeLists.txt。
+执行命令 cmake PATH 生成 Makefile ( PATH 是顶层CMakeLists.txt 所在的目录 )。
+执行命令make 进行编译。
+6.4.2 两</p></li>
+</ol>
+</section>
+<section id="id7">
+<h2>内部构建和外部构建<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<p><strong>内部构建:</strong></p>
+<p><img alt="image-20220728161428721" src="../_images/image-20220728161428721.png" /></p>
+<p>cmake .</p>
+<p><img alt="image-20220728161724144" src="../_images/image-20220728161724144.png" /></p>
+<p>make</p>
+<p><img alt="image-20220728162017284" src="../_images/image-20220728162017284.png" /></p>
+<p><img alt="image-20220728162205964" src="../_images/image-20220728162205964.png" /></p>
+<hr class="docutils" />
+<p><strong>外部构建</strong> :</p>
+<p>进入build文件    camke ..</p>
+<p>cmake 点点”表示在上一级目录(CMakeLists.txt所在目录)编译</p>
+<section id="id8">
+<h3>外部构建<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<p>将编译输出文件与源文件放到不同目录中</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span>## 外部构建
+# 1. 在当前目录下，创建build文件夹
+mkdir build
+# 2. 进入到build文件夹
+cd build
+# 3. 编译上级目录的CMakeLists.txt，生成Makefile和其他文件
+cmake ..
+# 4. 执行make命令，生成target
+make
+</pre></div>
+</div>
+<p><img alt="image-20220728162625601" src="../_images/image-20220728162625601.png" /></p>
+<p>make</p>
+<p><img alt="image-20220728163021988" src="../_images/image-20220728163021988.png" /></p>
+<p>把所有生成文件都放在build目录中</p>
+<p><img alt="image-20220728162835070" src="../_images/image-20220728162835070.png" /></p>
+<p><strong>多文件</strong></p>
+<p><img alt="image-20220728163615159" src="../_images/image-20220728163615159.png" /></p>
+<p><img alt="image-20220728163943522" src="../_images/image-20220728163943522.png" /></p>
+<p>例子2:</p>
+<p><img alt="image-20220728165313977" src="../_images/image-20220728165313977.png" /></p>
+</section>
+<hr class="docutils" />
+<section id="vscodejson">
+<h3>配置VSCode的json文件并调试项目<a class="headerlink" href="#vscodejson" title="永久链接至标题">¶</a></h3>
+<p>xiaobing</p>
+<p><img alt="image-20220728170419101" src="../_images/image-20220728170419101.png" /></p>
+</section>
+<section id="id9">
+<h3>多文件编译<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<p><img alt="image-20220728214607008" src="../_images/image-20220728214607008.png" /></p>
+<p>看文件  mutil</p>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span> <span class="s">3.0</span><span class="p">)</span>
+
+<span class="nb">project</span><span class="p">(</span><span class="s">MUTIL</span><span class="p">)</span>
+
+<span class="c">#设置hello world 给环境变量TARGET</span>
+<span class="nb">set</span><span class="p">(</span><span class="s">TARGET</span> <span class="s">helloworld</span><span class="p">)</span>
+
+<span class="c">#添加头文件              -- 有.h的地方</span>
+<span class="nb">include_directories</span><span class="p">(</span>
+    <span class="s">hello</span>
+    <span class="s">world</span>
+<span class="p">)</span>
+
+<span class="c">#添加包含CMakeLists.txt和源文件的子目录</span>
+<span class="nb">add_subdirectory</span><span class="p">(</span><span class="s">hello</span><span class="p">)</span>
+<span class="nb">add_subdirectory</span><span class="p">(</span><span class="s">world</span><span class="p">)</span>
+
+<span class="nb">aux_source_directory</span><span class="p">(</span><span class="s">.</span> <span class="s">DIRSRCS</span><span class="p">)</span>
+
+<span class="c">#生成可执行文件</span>
+<span class="nb">add_executable</span><span class="p">(</span><span class="o">${</span><span class="nv">TARGET</span><span class="o">}</span> <span class="o">${</span><span class="nv">DIRSRCS</span><span class="o">}</span><span class="p">)</span>
+
+<span class="c">#helloworld 链接静态库hello和world</span>
+<span class="nb">target_link_libraries</span><span class="p">(</span><span class="o">${</span><span class="nv">TARGET</span><span class="o">}</span>  <span class="s">hello</span> <span class="s">world</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="c">#把指定目录下所有源代码和头文件文件入变量DIR_HELLO    “.”是指cmakelists文件当前目录</span>
+<span class="nb">aux_source_directory</span><span class="p">(</span><span class="s">.</span> <span class="s">DIR_HELLO</span><span class="p">)</span>
+
+<span class="c">#从${DIR_HELLO}文件中生成hello库, STATIC是生成静态库</span>
+<span class="nb">add_library</span><span class="p">(</span><span class="s">hello</span> <span class="s">STATIC</span> <span class="o">${</span><span class="nv">DIR_HELLO</span><span class="o">}</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">aux_source_directory</span><span class="p">(</span><span class="s">.</span> <span class="s">DIR_WORLD</span><span class="p">)</span>
+
+<span class="nb">add_library</span><span class="p">(</span><span class="s">world</span> <span class="s">STATIC</span> <span class="o">${</span><span class="nv">DIR_WORLD</span><span class="o">}</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>案例2</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SheepMarket
+├─ .vscode
+│  ├─ c_cpp_properties.json
+│  ├─ launch.json
+│  ├─ settings.json
+│  └─ tasks.json
+├─ build
+│  ├─ fontcolor.exe
+│  ├─ init.exe
+│  ├─ main.exe
+│  └─ menu.exe
+├─ CMakeLists.txt
+├─ include
+│  ├─ Administrator.h
+│  ├─ consumer .h
+│  ├─ fontcolor.h
+│  ├─ init.h
+│  ├─ menu.h
+│  └─ system.h
+├─ src
+├  ├─ CMakeLists.txt
+│  ├─ Administrator.cpp
+│  ├─ consumer .cpp
+│  ├─ fontcolor.cpp
+│  ├─ init.cpp
+│  ├─ main.cpp
+│  ├─ menu.cpp
+│  └─ system.cpp
+└─ 功能总览.md
+</pre></div>
+</div>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span> <span class="s">3.0</span><span class="p">)</span>
+<span class="nb">project</span><span class="p">(</span><span class="s">SHEEPMARKET</span><span class="p">)</span>
+
+<span class="nb">set</span><span class="p">(</span><span class="s">TARGET</span> <span class="s">main</span><span class="p">)</span>
+
+<span class="nb">include_directories</span><span class="p">(</span><span class="o">${</span><span class="nv">PROJECT_SOURCE_DIR</span><span class="o">}</span><span class="s">/include</span><span class="p">)</span>
+<span class="nb">aux_source_directory</span><span class="p">(</span><span class="s">.</span> <span class="s">DIRSRC</span><span class="p">)</span>
+
+<span class="nb">add_subdirectory</span><span class="p">(</span><span class="o">${</span><span class="nv">PROJECT_SOURCE_DIR</span><span class="o">}</span><span class="s">/src</span><span class="p">)</span>
+
+<span class="nb">add_executable</span><span class="p">(</span><span class="o">${</span><span class="nv">TARGET</span><span class="o">}</span> <span class="o">${</span><span class="nv">DIRSRC</span><span class="o">}</span><span class="p">)</span>
+
+
+<span class="nb">target_link_libraries</span><span class="p">(</span><span class="o">${</span><span class="nv">TARGET</span><span class="o">}</span> <span class="s">src</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span>aux_source_directory(. DIRSRCS)
+/include_directories(${PROJECT_SOURCE_DIR}/include)
+add_library(src STATIC ${DIRSRCS})
+</pre></div>
+</div>
+</section>
+<section id="id10">
+<h3>CMake入门到精通实战<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2022, JinDao.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,16 @@
++ 格式：
+    double price[5] = {4.99, 10.99, 6.89, 8.19, 8.49}
+ **法一：**
+    for (double x : price)
+        doby;
+
+ **法二：** 修改数组数据
+   for (double &x : price)
+        x = value;
+
+**法三：**
+   for （int x : {4.99, 10.99, 6.89, 8.19, 8.49};
+        body;
+
+        
+     

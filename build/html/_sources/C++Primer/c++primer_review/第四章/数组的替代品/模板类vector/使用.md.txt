@@ -1,0 +1,9 @@
++ 模板类vector:创建动态数组
++ 格式：
+==#include<vector>
+   int size;
+   cin >> size;
+   vector<typename>name(size)==
+
+
+

@@ -1,0 +1,3230 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Linux &mdash; X-NOTES latest 文档</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="../Cmake/index.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> X-NOTES
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Linux</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#linux-unixlinux">一、Linux概述  unix和LInux的关系</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">二、Linux目录结构（重点）</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">2.1基本介绍</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">2.2具体的目录结构</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#vivim">三、vi和vim编辑器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">3.1 vi和vim的基本介绍</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">3.2 vi和vim常用的三种模式</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">四、LInux开机，重启和用户登录注销</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">4.1关机和重启的命令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">4.2用户登录和注销</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">五、用户管理</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id10">5.1基本介绍</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">5.2添加用户</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">5.3指定/修改密码</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">5.4 删除用户</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">5.5查询用户信息  指令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">5.6切换用户</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">5.7 查看当前用户/登录用户的信息</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id17">5.8 用户组</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id18">5.9 用户和组相关文件</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id19">六、实用指令</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id20">6.1指定运行级别</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id21">6.2帮助指令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id22">6.3文件目录类(重要)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id23">6.4时间日期类</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id24">6.5搜索查找类</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id25">6.6 压缩和解压</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id26">6.7清屏命令</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id27">七、linux的主管理和权限管理</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#liunx">7.1Liunx组的基本介绍</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id28">7.2文件/目录的 所有者</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id29">7.3文件/目录的  所在组</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id30">7.4其他组</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id31">7.5==改变用户所在组==</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id32">7.6 权限的基本介绍</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id33">7.7文件及目录权限说明  实际案例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chmod">7.8==修改文件和目录权限-chmod==</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chown">7.9==修改文件和目录  所有者-chown==</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chgrp">7.10==修改文件和目录   所在组-chgrp==</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rwx">7.11对文件夹(目录）的rwx的细节讨论</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id34">案例</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#crond">八、crond任务调度(定时任务)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#crontab">8.1crontab 进行 定时任务的设置</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#at">8.2 at定时任务</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id35">九、Linux磁盘分区、挂载</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id36">9.1Linux分区</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id37">9.2挂载的经典案例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id38">9.3磁盘情况查询</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id39">10.1Linux网络配置原理图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ip">10.2配置一个指定的ip(不然每次都会变)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hosts">10.3设置主机名和hosts映射  (配置别名)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ps">十一、进程管理(ps)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id40">11.1基本</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id41">11.2显示系统执行的进程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pstree">11.3查看进程树 pstree</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#service">十二、服务（service）管理</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id42">12.1service命令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id43">12.2服务的运行级别</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chkconfig">12.3chkconfig指令(在各个运行级别中)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#systemctl">12.4systemctl命令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id44">12.5打开或者关闭指定端口</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#top">十三、动态监控(top)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id45">13.1动态监控进程的基本语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id46">13.2动态监控进程的交互操作</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id47">13.3监控网络状态</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#rpmyum">十四、RPM与YUM</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rpm">14.1rpm包的管理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#yum">14.2yum</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#linux-g">十五、 linux  g++</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shell">十六、 shell脚本</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id48">16.1 shell脚本的执行方式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id49">16.2 shell变量</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id50">16.3 <strong>将命令的结果  赋给变量</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id51">16.4 设置环境变量</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id52">16.5 注释</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id53">16.6 位置参数变量</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id54">16.7 预定义变量</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id55">16.8 运算符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id56">16.9  条件判断</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id57">16.10 流程控制</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#for">16.11 for循环</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#while">16.12 while循环</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#read">16.13 read获取输入</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id58">16.14 函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id59">16.15 自定义函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id60">16.16 综合案例</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id61">十七、 日志管理</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id62">17.1 基本介绍</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id63">17.2 日志管理服务</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id64">17.3 自定义日志服务</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Cmake/cmake.html">CMake</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">X-NOTES</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">&lt;no title&gt;</a> &raquo;</li>
+      <li>Linux</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Linux/Linux.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="linux">
+<h1>Linux<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h1>
+<section id="linux-unixlinux">
+<h2>一、Linux概述  unix和LInux的关系<a class="headerlink" href="#linux-unixlinux" title="永久链接至标题">¶</a></h2>
+<p><strong>LInux的应用领域</strong> 服务器领域 - Linux在服务器领域的应用是最强的 - LInux免费、稳定、高效等特点在这里得到了很好的体现，尤其是在一些高端领域尤为广泛 嵌入式领域 - linux运行稳定、对网络的良好支持性、低成本，且可以根据需要进行网络裁剪，内核最小可达到几百kb的特点，使近些年来在嵌入式领域的应用得到非常大的提高 - 主要应用:机顶盒、数字电视、网络电话、程控交换机、手机、PDA、智能家居、智能硬件等都是其应用领域。以后在物联网中应用会更加广泛。</p>
+<p>unix和LInux的关系</p>
+<p><img alt="img" src="../_images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjMyNDE0,size_16,color_FFFFFF,t_70.png" /></p>
+<p><strong>LInux的应用领域</strong></p>
+<p>服务器领域</p>
+<ul class="simple">
+<li><p>Linux在服务器领域的应用是最强的</p></li>
+<li><p>LInux免费、稳定、高效等特点在这里得到了很好的体现，尤其是在一些高端领域尤为广泛</p></li>
+</ul>
+<p>嵌入式领域</p>
+<ul class="simple">
+<li><p>linux运行稳定、对网络的良好支持性、低成本，且可以根据需要进行网络裁剪，内核最小可达到几百kb的特点，使近些年来在嵌入式领域的应用得到非常大的提高</p></li>
+<li><p>主要应用:机顶盒、数字电视、网络电话、程控交换机、手机、PDA、智能家居、智能硬件等都是其应用领域。以后在物联网中应用会更加广泛。</p></li>
+</ul>
+<p><strong>LInux的吉祥物tux</strong></p>
+<img src="linux.assets/20210620104019587.png" alt="img" style="zoom:50%;" /><hr class="docutils" />
+<p><strong>Linux主要的发行版本</strong></p>
+<p>Ubuntu（乌班图）、RedHat（红帽）、CentOS</p>
+<hr class="docutils" />
+<p><strong>vm与Linux的关系</strong>
+<img alt="在这里插入图片描述" src="../_images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjMyNDE0,size_16,color_FFFFFF,t_70-16596238585001.png" /></p>
+<p><strong>VMware网络连接的三种模式</strong></p>
+<p>桥接模式</p>
+<ul class="simple">
+<li><p>VMWare会虚拟一块网卡和真正的物理网卡就行桥接，这样，发到物理网卡的所有数据包就到了VMWare虚拟机，而由VMWare发出的数据包也会通过桥从物理网卡的那端发出。桥接网络是指本地物理网卡和虚拟网卡通过VMnet0虚拟交换机进行桥接。相当于在一个局域网内创立了一个单独的主机，他可以访问这个局域网内的所有的主机</p></li>
+<li><p>该模式下主机网卡和虚拟机网卡的IP地址处于同一个网段，子网掩码、网关、DNS等参数都相同</p></li>
+<li><p>桥接模式下虚拟机和主机在网络上地位相等，可以理解为一台新的电脑</p></li>
+</ul>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjMyNDE0,size_16,color_FFFFFF,t_70-16596238585012.png" /></p>
+<p>NAT模式</p>
+<ul class="simple">
+<li><p>虚拟系统会通过真实主机的网络来访问外网，而真实主机相当于有两个网卡：真实网卡和虚拟网卡，真实网卡相当于链接了现实世界的真实路由器，而虚拟网卡相当于链接一个虚拟交换机/路由器（这个虚拟交换机同时链接虚拟机和真实主机）,此时虚拟机想访问外网就必须通过真实主机IP地址，而外面看来也确实是真实主机的IP地址，实则是虚拟机访问的，完全看不到虚拟网络局域的内部形式。</p></li>
+<li><p>网络地址转换模式。虚拟机系统可以和外部系统通讯，不早造成IP冲突</p></li>
+</ul>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjMyNDE0,size_16,color_FFFFFF,t_70-16596238585013.png" /></p>
+<p>主机模式</p>
+<ul class="simple">
+<li><p>他就是一个独立的系统，不和外界发生联系</p></li>
+</ul>
+</section>
+<section id="id1">
+<h2>二、Linux目录结构（重点）<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<section id="id2">
+<h3>2.1基本介绍<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>linux的文件系统是采用级层式的树状目录结构，在此结构上的<strong>最上层是根目录“/”</strong>，然后在此目录下在创建其他的目录。</p></li>
+<li><p>深刻理解linux树状文件目录是非常重要的</p></li>
+<li><p>记住一句很经典的话：在LInux世界里，<strong>一切皆文件</strong></p></li>
+</ul>
+</section>
+<section id="id3">
+<h3>2.2具体的目录结构<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><p>/bin 【常用】（/usr/bin、/uer/local/bin)</p>
+<p>是Binary的缩写，这个<strong>目录存放着最常使用的命令</strong></p>
+</li>
+<li><p>/sbin （/usr/sbin、/usr/local/sbin）</p>
+<p>s就是Super user的意思，<strong>这里存放的是系统管理员使用的系统管理程序</strong></p>
+</li>
+<li><p>/home 【常用】</p>
+<p>**存放普通用户的主目录，**在Linux中每个用户都有一个自己的目录，<strong>一般该目录是以用户的账号命名</strong> , 产生的新用户就是放在这里</p>
+<p><img alt="image-20220805162227238" src="../_images/image-20220805162227238.png" /></p>
+</li>
+<li><p>/root 【常用】</p>
+<p>**该目录为系统管理员，**也称作超级权限者的用户主目录</p>
+</li>
+<li><p><strong>/lib 系统开机所需要的最基本的动态链接共享库</strong>，起作用类似于Windows里的DLL文件。几乎所有的应用程序都需要用到这些共享库</p></li>
+<li><p>/lost+found 这个目录一般情况下是空的，当系统非法关机后，这里就存放了一些文件</p></li>
+<li><p>etc 【常用】</p>
+<p>**所有的系统管理所需要的配置文件和子目录，**比如安装mysql数据库，my.conf</p>
+<p><strong>里面有一个文件 usr/passwd文件 是和组有关的</strong></p>
+</li>
+<li><p>/usr 【常用】</p>
+<p>这是一个非常重要的目录，用户很多**应用程序都放在这个目录下，类似于windows下的program files目录。 **</p>
+</li>
+<li><p>/boot 【常用】</p>
+<p><strong>存放的是启动Linux时使用的一些核心文件</strong>，包括一些链接文件以及镜像文件</p>
+</li>
+<li><p>/proc   [不能动 ]这个目录是一个虚拟的目录，他是系统内存的映射，访问这个目录来获取系统信息</p></li>
+<li><p>/srv service  [不能动 ] 缩写，该目录存放一些服务器启动后需要提取的数据</p></li>
+<li><p>/sys    [不能动] 这是linux2.6内核的一个很大的变化，该目录下安装了2.6内核中新出现的一个文件系统sysfs</p></li>
+<li><p>/tmp    这个目录是用来<strong>存放一些临时文件的</strong></p></li>
+<li><p>/dev</p>
+<p><strong>类似于windows的设备管理器，把所有的硬件用文件的形式存储</strong></p>
+</li>
+<li><p><strong>/media【常用】linux系统会自动识别一些设备，例如U盘</strong>，光驱等等，当识别后，linux会把识别的设备挂载到这个目录下</p></li>
+<li><p>/mnt 【常用】</p>
+<p><strong>系统提供该目录是为了让用户临时挂载别的系统文件</strong>，我们可以将外部的存储挂载在/mnt/上，然后进入该目录就可以查看里面的内容了。D:/mushare</p>
+</li>
+<li><p>**/opt 这是给主机额外的安装软件所存放的目录。**如安装ORACLE数据库就可以放到该目录下。默认为空</p></li>
+<li><p>/usr/local【常用】</p>
+<p>软件安装好的地方. 这是另一个给主机额外安装软件所安装的目录。<strong>一般是通过编译源码的方式安装的程序</strong></p>
+</li>
+<li><p>/var 【常用】</p>
+<p>这个目录中存放着在不断扩充的东西 ，习惯的<strong>将经常修改的目录放在这个目录下。包括各种==日志文件==</strong></p>
+</li>
+<li><p>/selinux 【security-enhanced linux】</p>
+<p>**SELinux是一种安全子系统，**他能控制程序自能访问特定的文件，有三种工作模式，可以自行设置</p>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="vivim">
+<h2>三、vi和vim编辑器<a class="headerlink" href="#vivim" title="永久链接至标题">¶</a></h2>
+<section id="id4">
+<h3>3.1 vi和vim的基本介绍<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>Linux系统会内置vi文本编辑器</p>
+<p>Vim具有程序编辑的能力，可以看做是Vi的增强版本，可以主动的以字体颜色辨别语法的正确性，方便程序设计。代码补完、编译错误跳转等方便编程的功能相当丰富，在程序员中被广泛使用。（vim就是vi的增强版）</p>
+</section>
+<section id="id5">
+<h3>3.2 vi和vim常用的三种模式<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>正常模式</p></li>
+</ul>
+<p>以vim打开一个档案就直接进入一般模式了（这是默认的模式）。在这个模式中，<strong>可以使用【上下左右】键来移动光标</strong>，你<strong>可以使用【删除字符】或【删除整行】来处理档案内容，也可以使用【复制、粘贴】来处理你的文件数据。</strong></p>
+<ul class="simple">
+<li><p>插入模式</p></li>
+</ul>
+<p><strong>按下i，I，o，O，a，A，r，R等任何一个字母之后才会进入编辑模式</strong>，一般来说按i就可</p>
+<ul class="simple">
+<li><p>命令行模式</p></li>
+</ul>
+<p>在这个模式中，可以提供你相关指令，完成读取、存盘、替换、离开vim、显示行号等动作则是在此模式中达成的！</p>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjMyNDE0,size_16,color_FFFFFF,t_70-16596238585024.png" /></p>
+<p><img alt="image-20220805171508116" src="../_images/image-20220805171508116.png" /></p>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjMyNDE0,size_16,color_FFFFFF,t_70-16596238585025.png" /></p>
+</section>
+</section>
+<section id="id6">
+<h2>四、LInux开机，重启和用户登录注销<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<section id="id7">
+<h3>4.1关机和重启的命令<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>基本介绍</p></li>
+</ul>
+<div class="highlight-linux notranslate"><div class="highlight"><pre><span></span>shutdown -h now			立刻进行关机
+
+shutdown -h 1			”hello，1分钟后会关机了“
+shutdown -r now			现在重新启动计算机
+
+
+halt					关机
+reboot					重新启动
+
+syn					把内存的数据同步到磁盘
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>注意细节</p></li>
+</ul>
+<p>1.不管是重启系统还是关闭系统，首先要运行sync命令，把内存中的数据写到磁盘中</p>
+<p>2.目前的shutdown/reboot/halt等<strong>命令均已	在关机前进行了sync</strong></p>
+</section>
+<section id="id8">
+<h3>4.2用户登录和注销<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>基本介绍</p></li>
+</ul>
+<p>1、<strong>登陆时尽量少用root账号登录</strong>，因为他是系统管理员，最大的权限，避免操作失误。可以利用普通用户登录，</p>
+<p><strong>登陆后再用  ”su - 用户名“  命令来切换成系统管理员身份</strong></p>
+<p>2、在提示符下输入<strong>logout即可注销用户</strong></p>
+<ul class="simple">
+<li><p>使用细节</p></li>
+</ul>
+<p><strong>logout  注销指令在图形运行级别无效</strong>，在shell界面有效</p>
+</section>
+</section>
+<section id="id9">
+<h2>五、用户管理<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
+<section id="id10">
+<h3>5.1基本介绍<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<p>Linux系统是一个多用户多任务的操作系统，任何一个要使用系统资源的用户，都必须先向系统管理员申请一个账号，然后以这个账号的身份进入系统</p>
+</section>
+<hr class="docutils" />
+<section id="id11">
+<h3>5.2添加用户<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>基本语法</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">useradd</span> <span class="o">-</span><span class="n">m</span> <span class="n">用户名</span>
+
+<span class="n">useradd</span> <span class="o">-</span><span class="n">m</span> <span class="o">-</span><span class="n">g</span> <span class="n">组名</span> <span class="n">用户名</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>实列(root权限下)</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>useradd hucheng
+添加一个用户chucheng，默认该用户的家目录在/home/hucheng
+</pre></div>
+</div>
+<ul>
+<li><p>细节说明</p>
+<p><strong>会自动的创建和创建的用户同名的家目录</strong></p>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1、当用户创建成功后，会自动的创建和用户同名的家目录
+2、也可以通过useradd -d 指定目录  新的用户名     来给新创建的用户指定家目录
+</pre></div>
+</div>
+<p><img alt="在这里插入图片描述" src="../_images/20210620104231917.png" /></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">新建用户zhanzhiwen的home目录下的文件夹名称是muluming</span>
+</pre></div>
+</div>
+</section>
+<section id="id12">
+<h3>5.3指定/修改密码<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>基本语法</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">passwd</span> <span class="n">用户名</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>实例</p></li>
+</ul>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjMyNDE0,size_16,color_FFFFFF,t_70-16596238585026.png" /></p>
+<ul class="simple">
+<li><p>补充，<strong>显示当前用户所在的目录pwd</strong></p></li>
+</ul>
+</section>
+<section id="id13">
+<h3>5.4 删除用户<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>基本语法</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">userdel</span> <span class="o">-</span><span class="n">r</span> <span class="n">用户名</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>实例</p></li>
+</ul>
+<p>1.删除用户zhanzhiwen，但是要保留目录</p>
+<p>2.删除用户以及用户主目录 ，userdel -r 用户名
+<img alt="在这里插入图片描述" src="../_images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjMyNDE0,size_16,color_FFFFFF,t_70-16596238585027.png" /></p>
+<hr class="docutils" />
+<p><strong><img alt="image-20220805175827349" src="../_images/image-20220805175827349.png" /></strong></p>
+<p>​</p>
+</section>
+<section id="id14">
+<h3>5.5查询用户信息  指令<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>基本语法</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span> <span class="n">用户名</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>实列</p></li>
+</ul>
+<p><img alt="在这里插入图片描述" src="../_images/2021062010432349.png" /></p>
+<ul class="simple">
+<li><p>细节说明</p></li>
+</ul>
+<p>当用户不存在是，返回无此用户</p>
+</section>
+<section id="id15">
+<h3>5.6切换用户<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>介绍</p></li>
+</ul>
+<p>在操作Linux时，如果当前用户的权限不够，可以通过su - 指令，切换到更高权限的用户，如root</p>
+<ul class="simple">
+<li><p>基本语法</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">su</span> <span class="o">-</span> <span class="n">用户名</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>实列说明</p></li>
+</ul>
+<p><img alt="在这里插入图片描述" src="../_images/2021062010433384.png" /></p>
+<ul class="simple">
+<li><p>细节说明</p></li>
+</ul>
+<p>1.从权限高的用户切换到权限低的用户时，不需要输入密码，反之需要</p>
+<p>2**.当需要返回到原来用户时，使用exit/logout指令   建议使用 logout **</p>
+</section>
+<hr class="docutils" />
+<section id="id16">
+<h3>5.7 查看当前用户/登录用户的信息<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>基本语法</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">whoami</span><span class="o">/</span><span class="n">who</span> <span class="n">am</span> <span class="n">i</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>实例
+<img alt="在这里插入图片描述" src="../_images/20210620104347264.png" /></p></li>
+<li><p>细节说明</p></li>
+</ul>
+<p>查看的是登录的用户！</p>
+</section>
+<hr class="docutils" />
+<section id="id17">
+<h3>5.8 用户组<a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>介绍</p></li>
+</ul>
+<p>类似于角色，系统可以对有共性/权限的多个用户进行统一的管理</p>
+<ul class="simple">
+<li><p>新增组</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>指令：groupadd    组名
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>删除组</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>指令：groupdel     组名
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>注意：如果当添加用户时没有指定组，会默认创建和这个用户同名的组，同时把用户放到该组里</p></li>
+</ul>
+<p><img alt="在这里插入图片描述" src="../_images/20210620104358731.png" /></p>
+<ul class="simple">
+<li><p>增加用户时直接加上组</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>指令：useradd -g 用户组 用户名
+</pre></div>
+</div>
+<p><img alt="在这里插入图片描述" src="../_images/20210620104407986.png" /></p>
+<ul class="simple">
+<li><p>移动组</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usermod</span> <span class="o">-</span><span class="n">g</span> <span class="n">组名</span> <span class="n">用户名</span>
+</pre></div>
+</div>
+<p><img alt="在这里插入图片描述" src="../_images/20210620104421631.png" /></p>
+</section>
+<hr class="docutils" />
+<section id="id18">
+<h3>5.9 用户和组相关文件<a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>/<strong>etc/passwd 文件</strong></p></li>
+</ul>
+<p><strong>用户（user）的配置文件，记录用户的各种信息</strong></p>
+<p>每行的含义：用户名：口令：用户标识号：组标识号：注释性描述：主目录：  登录Shell</p>
+<ul class="simple">
+<li><p><strong>/etc/shadow文件</strong></p></li>
+</ul>
+<p>口令配置文件</p>
+<p>每行的含义：登录名：加密口令：最后一次修改时间：最小时间间隔：最大时间间隔：警告时间：不活动时间：失效时间：标志</p>
+<ul class="simple">
+<li><p><strong>/etc/group文件</strong></p></li>
+</ul>
+<p>组（group）的配置文件，记录Linux包含的组的信息</p>
+<p>每行含义：组名：口令：组标识号：组内用户列表</p>
+</section>
+</section>
+<section id="id19">
+<h2>六、实用指令<a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h2>
+<section id="id20">
+<h3>6.1指定运行级别<a class="headerlink" href="#id20" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>基本介绍</p></li>
+</ul>
+<p><strong>运行级别说明：</strong></p>
+<p>0：关机</p>
+<p>1：单用户【找回丢失密码】</p>
+<p>2：多用户状态没有网络服务</p>
+<p>3：<strong>多用户状态有网络服务</strong></p>
+<p>4：系统未使用保留给用户</p>
+<p>5：图形界面</p>
+<p>6：系统重启</p>
+<p>常用运行级别是3和5，也可以指定默认运行级别</p>
+<ul class="simple">
+<li><p>应用实例</p></li>
+</ul>
+<p>命令：init[0123456]应用案例：通过init来切换不同的运行级别，比如动5-3，然后关机</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">查看当前的运行级别</span>
+<span class="n">systemctl</span> <span class="n">get</span><span class="o">-</span><span class="n">ddefault</span>
+</pre></div>
+</div>
+<p><img alt="在这里插入图片描述" src="../_images/20210622081522515.png" /></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">改变为</span>   <span class="n">systemctl</span> <span class="nb">set</span><span class="o">-</span><span class="n">default</span> <span class="n">multi</span><span class="o">-</span><span class="n">user</span><span class="o">.</span><span class="n">target007</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="id21">
+<h3>6.2帮助指令<a class="headerlink" href="#id21" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>man获得帮助信息</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>基本语法：man [命令或配置文件]（功能描述：获得帮助信息）
+如:
+man ls
+</pre></div>
+</div>
+<p>设置中文</p>
+<p><a class="reference external" href="https://blog.csdn.net/caikeng/article/details/120580374">(28条消息) centos7设置man下显示中文_思维触发行为的博客-CSDN博客_centos man 中文</a></p>
+<div class="highlight-linux notranslate"><div class="highlight"><pre><span></span>中文查看命令
+cman ls
+</pre></div>
+</div>
+<p>在linux下隐藏文件是以 “.” 开头的</p>
+<ul class="simple">
+<li><p><strong>help指令</strong></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>基本语法：help 命令 （功能描述：获得shell内置命令的帮助信息）
+</pre></div>
+</div>
+</section>
+<section id="id22">
+<h3>6.3文件目录类(重要)<a class="headerlink" href="#id22" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>pwd指令</p></li>
+</ul>
+<p>功能描述：<strong>显示当前工作目录的绝对路径</strong></p>
+<p>理解：绝对路径和相对路径（相对路径是针对当前位置的路径）</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>基本语法：pwd   
+</pre></div>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>ls指令</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>基本语法：ls [选项] [目录或是文件]
+</pre></div>
+</div>
+<p>常用选项</p>
+<p><strong>-a ： 显示当前目录所有的文件和目录，包括隐藏的</strong></p>
+<p><strong>-l ： 以列表的方式显示信息</strong></p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>cd指令</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>基本语法：cd [参数] （功能描述：切换到指定的目录）
+</pre></div>
+</div>
+<p>cd 或者cd ~ 回到自己的<strong>家目录</strong>   <strong>~开始的</strong></p>
+<p>cd … 回到当前目录的上一级目录</p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>mkdir指令</p></li>
+</ul>
+<p>理解：<strong>mkdir指令用于创建目录</strong>（默认只能创建一级目录）</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>基本语法：mkdir [选项] 要创建的目录  
+</pre></div>
+</div>
+<p>常用选项</p>
+<p><strong>-p :创建多级目录</strong></p>
+<p>拓展: 可以用 &gt; 创建单目录</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/var/log/hsp.log  单用 &gt; 表示将空写入文件
+将空内容覆盖写入到 此文件，如果该文件不存在，就创建该文件
+</pre></div>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>rm指令（用于删除空目录）</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>基本语法：rm -rf 要删除的空目录
+</pre></div>
+</div>
+<p>使用细</p>
+<p><strong>-rf 递归删除整个文件夹</strong></p>
+<p><strong>如果需要删除非空目录</strong>，需要<strong>使用  rm -rf</strong> 要删除的目录</p>
+<hr class="docutils" />
+<p>rm指令（remove，移除文件或目录）=一定要小心！！！</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>基本语法：rm [选项] 要删除的文件或目录
+</pre></div>
+</div>
+<div class="highlight-linux notranslate"><div class="highlight"><pre><span></span>rm -rf *  删除当前文件夹里的所有内容
+</pre></div>
+</div>
+<p>常用选项</p>
+<p>-r : 递归删除整个文件夹</p>
+<p>-f ：强制删除不提示</p>
+<p>使用细节：强制删除不提示的方式，带上-f参数即可</p>
+<ul class="simple">
+<li><p>mv指令（move，移动文件与目录或重命名)（以可剪切文件夹）</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>mv oldNameFile newNamefile (功能描述：重命名)
+mv /temp/movefile /targetFolder (功能描述：移动文件，剪切)
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>touch指令（用于创建空文件）</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">touch</span> <span class="n">文件名称</span>   <span class="o">//</span> <span class="n">tou</span> <span class="n">回车就行</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>cp指令（copy拷贝文件导指定目录）</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">-</span><span class="n">r</span> <span class="n">source</span> <span class="n">dest</span>
+</pre></div>
+</div>
+<p>常用选项：</p>
+<p><strong>-r 递归复制整个文件夹</strong></p>
+<p>应用实例:</p>
+<p>将 /home/hello.txt 拷贝到 /home/bbb 目录下</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">hello</span><span class="o">.</span><span class="n">txt</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">bbb</span>
+</pre></div>
+</div>
+<p>递归复制整个文件夹，将/home/aaa 目录下的文件全部拷贝到/home/bbb下</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">-</span><span class="n">r</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">aaa</span> <span class="o">/</span><span class="n">hom</span><span class="o">/</span><span class="n">bbb</span>
+<span class="p">(</span><span class="n">是将整个目录和目录本身拷贝进来</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>使用强制覆盖不提示的方法：\cp</p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>mv指令</p></li>
+</ul>
+<p>mv 移动文件与整个目录 或 重命名</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>基本语法
+mv oldNameFile newNameFile       (功能描述：重命名)
+mv /temp/movefile /targetFolder  (功能描述：移动文件)
+</pre></div>
+</div>
+<p>应用实例
+案例1：将/home/cat.txt文件 重新命名为pig.txt Cut</p>
+<p>案例2：将/home/pig.txt 文件 移动到/root目录下</p>
+<p>案例3: 移动整个目录:</p>
+<p>如/opt/bbb 移动到/home下    mv  /opt/bbb  /home/</p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>cat指令（查看文件内容）</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="p">[</span><span class="n">选项</span><span class="p">]</span> <span class="n">要查看的文件</span>
+</pre></div>
+</div>
+<p>常用选项： -n 显示行号</p>
+<p>使用细节：**cat只能浏览文件，而不能修改文件，**为了浏览方便，<strong>一般会带上管道命令 |more</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">-</span><span class="n">n</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">profile</span> <span class="o">|</span> <span class="n">more</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>more指令</p></li>
+</ul>
+<p>more指令是一个基于VI编辑器的文本过滤器，它以全屏幕的方式按页显示文本文件的内容。more指令中内置了若干快捷键（交互的指令）</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>基本语法：
+more 要查看的文件
+</pre></div>
+</div>
+<p>操作说明:
+空白键(space) 代表向下翻一页；
+Enter 代表向下翻「一行」；
+q 退出
+Ctrl+F   向下滚动一屏
+Ctrl+B  返回上一屏
+二   输出当前行的行号
+:f   输出文件名和当前行的行号</p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>less指令</p></li>
+</ul>
+<p><strong>大文件查看</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>基本语法：
+less 要查看的文件
+</pre></div>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>head指令</p></li>
+</ul>
+<p>head用于显示文件的开头部分内容，<strong>默认情况下head指令显示文件的前10行内容</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>基本语法:
+head 文件       (功能描述：查看文件头10行内容)
+head -n 5文件  （功能描述：查看文件头5行内容，5可以是任意行数）
+</pre></div>
+</div>
+<p>应用实例
+/etc/profile的前面5行代码</p>
+<ul class="simple">
+<li><p>tail指令</p></li>
+</ul>
+<p>tail用于输出文件中尾部的内容，默认情况下tail指令显示文件的前10行内容。或者 <strong>实时追踪该文档的所有更新</strong>
+基本语法</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>tail文件 （功能描述：查看文件尾10行内容）
+
+tail -n 5文件 （功能描述：查看文件尾5行内容，5可以是任意行数)
+
+tail -f 文件(功能描述：实时追踪该文档的所有更新)
+</pre></div>
+</div>
+<p>应用实例
+案例1：查看/etc/profile最后5行的代码tail-n 5/etc/profile
+案例2：实时监控 mydate.txt，看看到文件有变化时，是否看到，实时的追加 hello，world</p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>echo指令</p></li>
+</ul>
+<p>输出内容到控制台</p>
+<div class="highlight-linux notranslate"><div class="highlight"><pre><span></span>基本语法
+echo [选项] [输出内容]   // ec 回车就行
+</pre></div>
+</div>
+<p>应用实例
+案例：使用echo指令输出环境变量，比如输出 $PATH $HOSTNAME, echo $HOSTNAME</p>
+<p>案例：使用echo指令输出hello,world!</p>
+<p><img alt="image-20220806151546487" src="../_images/image-20220806151546487.png" /></p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>指令 &gt;  和&gt;&gt; 指令</p></li>
+</ul>
+<p>输出重定向  和 追加</p>
+<p>文件不存在会自动创建</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>基本语法
+ls -l &gt; 文件 （功能描述：列表的内容写入文件a.txt中(覆盖写）
+ls -al &gt;&gt;文件 （功能描述：列表的内容追加到文件aa.txt的末尾）
+cat 文件1 &gt; 文件2 （功能描述：将文件1的内容覆盖到文件2）
+echo&quot;内容” 文件
+</pre></div>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>管道 | 指令</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>基本语法
+指令1 <span class="p">|</span> 指令2
+</pre></div>
+</div>
+<p>作用:  把第一个命令的输出，作为第二个命令的输入。 需要第二个命令支持这种从管道获取输入的功能</p>
+<p><strong>xargs</strong></p>
+<div class="highlight-undefined notranslate"><div class="highlight"><pre><span></span>基本语法
+指令1 | xargs 指令2
+</pre></div>
+</div>
+<p>xargs和管道类似, 与管道不同的是，管道给第二个命令传递是直接传到命令输入上，这种方式要求命令本身的支持，支持的命令较少。</p>
+<p>xargs，则是把第一个命令的输出作为参数传递到第二个命令上，这种方式只要第二个命令可以接受参数即可，支持的命令较多。</p>
+<p>一个例子：</p>
+<div class="highlight-linux notranslate"><div class="highlight"><pre><span></span>echo test.txt | cat
+test.txt
+
+echo test.txt | xargs cat
+显示test.txt中的内容
+</pre></div>
+</div>
+<p>echo test.txt | cat 是把 “test.txt” 这个字符串直接让cat输出</p>
+<p>echo test.txt | xargs cat 是把 “test.txt” 作为参数传递给cat，表示把 test.txt 这个文件的内容输出</p>
+<p><strong>exec</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">基本语法</span>
+<span class="n">指令1</span> <span class="o">-</span><span class="n">exec</span> <span class="n">指令2</span> <span class="p">{}</span> \<span class="p">;</span>
+</pre></div>
+</div>
+<p>-exec 和 xargs 的作用相似，都是把前一个命令的输出作为参数传给第二个命令</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>find . -name <span class="s2">&quot;test.txt&quot;</span> -exec cat <span class="o">{}</span> <span class="se">\;</span>
+显示test.txt中的内容
+</pre></div>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>ln指令  (小写的L)</p></li>
+</ul>
+<p>软连接也称为符号链接，<strong>类似于windows里的快捷键方式</strong>，主要存放了连接其他文件的路径</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>基本语法：
+ln -s [原文件或目录] [软链接名]
+（功能描述：给原文件创建一个软链接）
+</pre></div>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>history指令</p></li>
+</ul>
+<p>查看已经执行过历史命令，也可以执行历史指令</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>history		  显示所有的历史命令
+history 10    显示最近使用过的10个指令	
+!5 			  执行历史编号为5的指令	 
+</pre></div>
+</div>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjMyNDE0,size_16,color_FFFFFF,t_70-16596238585058.png" /></p>
+<hr class="docutils" />
+<ul>
+<li><p><strong>查询指定文件和 目录个数</strong></p>
+<ul>
+<li><p>1.统计/opt文件夹下<strong>文件的个数</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">l</span> <span class="o">/</span><span class="n">opt</span> <span class="o">|</span> <span class="n">grep</span> <span class="s2">&quot;^-&quot;</span> <span class="o">|</span> <span class="n">wc</span> <span class="o">-</span><span class="n">l</span>
+</pre></div>
+</div>
+</li>
+<li><p>2.统计/opt文件夹下<strong>目录的个数</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">l</span> <span class="o">/</span><span class="n">opt</span> <span class="o">|</span> <span class="n">grep</span> <span class="s2">&quot;^d&quot;</span> <span class="o">|</span> <span class="n">wc</span> <span class="o">-</span><span class="n">l</span>
+</pre></div>
+</div>
+</li>
+<li><p>3.统计/opt文件夹下文件的个数，包括子文件夹里的</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">lR</span> <span class="o">/</span><span class="n">opt</span> <span class="o">|</span> <span class="n">grep</span> <span class="s2">&quot;^-&quot;</span> <span class="o">|</span> <span class="n">wc</span> <span class="o">-</span><span class="n">l</span>
+</pre></div>
+</div>
+</li>
+<li><p>4.统计/opt文件夹下目录的个数，包括子文件夹里的</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">lR</span> <span class="o">/</span><span class="n">opt</span> <span class="o">|</span> <span class="n">grep</span> <span class="s2">&quot;^d&quot;</span> <span class="o">|</span> <span class="n">wc</span> <span class="o">-</span><span class="n">l</span>
+</pre></div>
+</div>
+</li>
+<li><p>5.以树状显示目录结构</p>
+<p>yum install tree</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tree</span> <span class="o">/</span><span class="n">home</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id23">
+<h3>6.4时间日期类<a class="headerlink" href="#id23" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>date指令-显示当前日期</p></li>
+</ul>
+<div class="highlight-linux notranslate"><div class="highlight"><pre><span></span>基本语法：
+date				显示当前时间
+date +%Y			显示当前年份
+date +%m			显示当前月份
+date +%d			显示当前是哪一天
+date &quot;+%Y-%m-%d %H:%M:%S&quot; 显示年月日时分秒    就是自己设计格式
+</pre></div>
+</div>
+<p>date指令还可以设置日期</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">date</span> <span class="o">-</span><span class="n">s</span> <span class="n">字符串时间</span>
+<span class="n">date</span> <span class="o">-</span><span class="n">s</span> <span class="s2">&quot;2021-6-20 16:44:30&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>cal指令</p></li>
+</ul>
+<p>查看日历指令</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cal [选项]      （功能描述：不加选项，显示本月日历）
+cal 2021      显示2021整年的日历
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="id24">
+<h3>6.5搜索查找类<a class="headerlink" href="#id24" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><p><strong>find指令    查找指定的文件</strong></p>
+<p>find指令指令 <strong>将从指定目录向下递归遍历各个子目录，只要满足条件的文件或者目录就显示在终端上</strong></p>
+</li>
+</ul>
+<div class="highlight-linux notranslate"><div class="highlight"><pre><span></span>find [搜索范围] [选项]
+
+常用:
+1.搜索桌面目录下，文件名包含(1的文件
+find 桌面路径 -name &quot;*1*&quot;
+
+2.搜索桌面目录下，所有以.txt]为扩展名的文件
+find 桌面路径 -name &quot;*.txt&quot;
+
+3.搜索桌面目录下，以数字1开头的文件
+find 桌面路径 -name &quot;&quot;1*&quot;
+</pre></div>
+</div>
+<p>选项说明（可填选项）</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>选项</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-name   &lt;查询方式&gt;</td>
+<td>按照指定的文件名查找模式查找文件</td>
+</tr>
+<tr>
+<td>-user    &lt;用户名&gt;</td>
+<td>查找属于指定用户名所有文件</td>
+</tr>
+<tr>
+<td>-size     &lt;文件大小&gt;</td>
+<td>按照指定的文件大小查找文件</td>
+</tr>
+<tr>
+<td>atime +10</td>
+<td>读取时间  +10是大于十天  -10是小于十天</td>
+</tr>
+<tr>
+<td>-mtime</td>
+<td>修改时间</td>
+</tr>
+<tr>
+<td>-ctime</td>
+<td>创建时间</td>
+</tr>
+</tbody>
+</table><p>-atime&lt;24小时数&gt; 查找在指定时间曾被存取过的文件或目录，单位以24小时计算。</p>
+<p>说明：当查询路径下无该文件，就不会有任何显示</p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>locate指令</p></li>
+</ul>
+<p><strong>locate指令可以快速定位文件路径</strong>。locate命令利用事先建立的系统中所有文件名称及路径的locate数据库实现快速定位的文件名。Locate指令无需遍历整个文件系统，查询速度较快。为了保障查询结果的准确度，管理员必须定期更新locate时刻</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>基本语法：locate 搜索文件
+</pre></div>
+</div>
+<p>特别说明：由于locate指令基于数据进行查询，所以<strong>第一次运行前，必须是使用updatedb指令创建locate数据库</strong></p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>which指令 ，可以查看某个指令在哪个目录下</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><strong>grep指令  和  管道符号 |      查找指定的文件中的内容</strong></p></li>
+</ul>
+<p><strong>grep过滤查找</strong>，管道符，“|“，表示将前一个命令输出传递给后面的命令处理</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>基本语法：grep [选项] 查找内容 源文件
+</pre></div>
+</div>
+<p>选项：</p>
+<p><strong>-n 显示匹配行及行号</strong></p>
+<p><strong>-i 忽略字母大小写</strong></p>
+<p><strong>-v 不查找后面的</strong></p>
+<p>两种写法   hello.txt文件夹中输出同样的</p>
+<div class="highlight-linux notranslate"><div class="highlight"><pre><span></span>cat /home/hello.txt | grep -n &quot;yes&quot;   
+
+grep -n &quot;yes&quot; /home/hello.txt
+</pre></div>
+</div>
+</section>
+<section id="id25">
+<h3>6.6 压缩和解压<a class="headerlink" href="#id25" title="永久链接至标题">¶</a></h3>
+<p>格式:</p>
+<p>​	<strong>指令 目标文件.后缀  源文件1  源文件2</strong></p>
+<ul class="simple">
+<li><p>gzip/gunzip指令</p></li>
+</ul>
+<p>gzip用于压缩文件，gunzip用于解压文件的</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>gzip 文件	     （功能描述：压缩文件，只能将文件压缩为*.gz文件
+gunzip 文件    （功能描述：解压文件命令）
+</pre></div>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>zip/unzip指令</p></li>
+</ul>
+<p>zip用于压缩文件，unzip用于解压的，在整个项目打包发布中很有用的</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>zip [选项]  xxx.zip   (将要压缩的内容（一般是文件和文件夹))
+
+uzip [选项] xxx.zip  （功能描述：解压文件）
+</pre></div>
+</div>
+<p>zip的常用项： <strong>-r 递归压缩，即压缩目录</strong></p>
+<p>zip -r myhome.zip /home/</p>
+<p>unzip的常用项 ： <strong>-d &lt;目录&gt; : 指定解压后文件的存放目录</strong></p>
+<p>unzip -d /home/dd/</p>
+<ul class="simple">
+<li><p>tar指令</p></li>
+</ul>
+<p>tar指令是打包指令，<strong>最后打包后的文件是.tar.gz的文件</strong>。</p>
+<div class="highlight-linux notranslate"><div class="highlight"><pre><span></span>tar [选项] xxx.tar.gz   打包的内容 （功能描述：打包目录，压缩后的格式.tar.gz)
+
+记住 -czvf 和 -xzvf
+</pre></div>
+</div>
+<p>选项说明</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>选项</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-c</td>
+<td>产生.tar打包文件</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>显示详细信息</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>指定压缩后的文件名</td>
+</tr>
+<tr>
+<td>-z</td>
+<td>打包同时压缩</td>
+</tr>
+<tr>
+<td>-x</td>
+<td>解包.tar文件</td>
+</tr>
+</tbody>
+</table><p><strong>案例;</strong></p>
+<div class="highlight-linux notranslate"><div class="highlight"><pre><span></span>案例1：压缩多个文件，将/home/pig.txt和/home/cat.txt 压缩成  pc.tar.gz
+tar -czvf pc.tar.gz /home/pig.txt /home/cat.txt
+
+案例2：将/home的文件夹压缩成myhome.tar.gz
+tar -czvf myhome.tar.gz /home/
+
+案例3：pc.tar.gz 解压到当前目录
+tar -xzvf pc.tar.gz
+
+案例4：将myhome.tar.gz  解压到/opt/tmp2目录下 mkdr/opt/tmp2/
+tar -xzvf myhome.tar.gz -C opt/tmp2
+
+// 将前面的数据压缩
+&quot;$DATA&quot; | gzip &gt; &quot;$BACKUP/$BATETIME/$BATETIME.gz&quot;
+</pre></div>
+</div>
+<p>因为解压的目标地址不是当前文件夹，<strong>要去别的文件加，所以要加-C</strong></p>
+</section>
+<section id="id26">
+<h3>6.7清屏命令<a class="headerlink" href="#id26" title="永久链接至标题">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">clear</span> <span class="n">清屏</span>        <span class="n">按住</span> <span class="n">cle</span> <span class="n">回车就行</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id27">
+<h2>七、linux的主管理和权限管理<a class="headerlink" href="#id27" title="永久链接至标题">¶</a></h2>
+<section id="liunx">
+<h3>7.1Liunx组的基本介绍<a class="headerlink" href="#liunx" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>在Linux中的每个用户必须属于一个组，不能独立于组外。</p></li>
+<li><p>在Linux中每个文件都有所有者、所在组、其他组的概念</p>
+<ul>
+<li><p>所有者</p></li>
+<li><p>所在组</p></li>
+<li><p>其它组</p></li>
+<li><p>改变用户所在的组</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id28">
+<h3>7.2文件/目录的 所有者<a class="headerlink" href="#id28" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>一般文件的创建者，谁创建了该文件，就自然成为该文件的所有者</p></li>
+<li><p>查看文件的所有者：</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>指令： ls -ahl
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>修改文件所有者   求</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>指令：
+chown 用户名 文件名
+</pre></div>
+</div>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjMyNDE0,size_16,color_FFFFFF,t_70-16596238585069.png" /></p>
+</section>
+<section id="id29">
+<h3>7.3文件/目录的  所在组<a class="headerlink" href="#id29" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>当某个用户创建了一个文件后，这个文件的所在组就是该用户所在的组</p></li>
+<li><p>查看文件/目录所在组</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">ahl</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>修改文件所在的组</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chgrp</span> <span class="n">组名</span> <span class="n">文件名</span>
+</pre></div>
+</div>
+</section>
+<section id="id30">
+<h3>7.4其他组<a class="headerlink" href="#id30" title="永久链接至标题">¶</a></h3>
+<p>除文件的所有者和所在组的用户外，系统的其他用户都是文件的其它组</p>
+</section>
+<section id="id31">
+<h3>7.5==改变用户所在组==<a class="headerlink" href="#id31" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>在添加用户时，可以指定将该用户添加到哪个组中，同样的用root的管理权限可以改变某个用户所在的组</p></li>
+<li><p>改变用户所在组</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usermod</span> <span class="o">-</span><span class="n">g</span> <span class="n">组名</span> <span class="n">用户名</span>
+
+<span class="n">usermod</span> <span class="o">-</span><span class="n">d</span> <span class="n">目录名</span> <span class="n">用户名改变该用户登录的初始目录</span>
+</pre></div>
+</div>
+</section>
+<section id="id32">
+<h3>7.6 权限的基本介绍<a class="headerlink" href="#id32" title="永久链接至标题">¶</a></h3>
+<p>ls -l 显示的如下内容：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--.</span> <span class="mi">1</span> <span class="n">mikasa</span> <span class="n">mikasa</span>      <span class="mi">141</span> <span class="mi">6</span><span class="n">月</span>  <span class="mi">22</span> <span class="mi">11</span><span class="p">:</span><span class="mi">19</span> <span class="n">hello</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>0-9位说明</p>
+<ul class="simple">
+<li><p>1.第0位确定文件类型（d，-，l，c，b）</p>
+<ul>
+<li><p>d是目录，相当于windows的文件夹</p></li>
+<li><p>l是链接文件，相当于windows的快捷方式</p></li>
+<li><p>-是普通文件</p></li>
+<li><p>c是字符设备文件，鼠标，键盘</p></li>
+<li><p>b是块设备，比如硬盘</p></li>
+</ul>
+</li>
+<li><p>2.第1-3位确定<strong>所有者（该文件的所有者）拥有该文件的权限</strong> –user</p></li>
+<li><p>3.第4-6位确定<strong>所属组（同用户组的）拥有该文件的权限</strong> –Group</p></li>
+<li><p>4.第7-9位确定<strong>其他用户拥有该文件的权限</strong> –Other</p></li>
+</ul>
+<hr class="docutils" />
+<p>rwx权限详解，难点</p>
+<ul class="simple">
+<li><p><strong>rwx作用到文件</strong></p>
+<ul>
+<li><p>【r】代表可读（read）：可以读取、查看</p></li>
+<li><p>【w】代表可写（write）：可以修改，但是不代表可以删除该文件，删除一个文件的前提条件是对该文件所在的目录有些权限，才能删除该文件</p></li>
+<li><p>【x】代表可执行（execute）：可以被执行</p></li>
+</ul>
+</li>
+<li><p><strong>rwx作用到目录</strong></p>
+<ul>
+<li><p>【r】代表可读（read）：可以读取，ls查看目录内容</p></li>
+<li><p>【w】代表可写（write）：可以修改，对目录内创建+删除+重命名目录名</p></li>
+<li><p>【x】代表可执行（execute）：可以进入该目录</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id33">
+<h3>7.7文件及目录权限说明  实际案例<a class="headerlink" href="#id33" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>ls -l 显示内容</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">rwxrw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span> <span class="mi">1</span> <span class="n">root</span> <span class="n">root</span> <span class="mi">1213</span> <span class="n">Feb</span> <span class="mi">2</span> <span class="mi">09</span><span class="p">:</span><span class="mi">39</span> <span class="n">abc</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>10个字符确定不同用户能对文件干什么</p>
+<ul>
+<li><p>第一个字符代表文件类型： -l d c b</p></li>
+<li><p>其余字符每三个一组（rwx）读（r）写（w）执行（x）</p></li>
+<li><p>第一组rwx：文件拥有者的权限是读、写但不能执行</p></li>
+<li><p>第二组rw-：与文件拥有者同一组的用户的权限是读、写但不能执行</p></li>
+<li><p>第三组r–：不与文件拥有者同组的其他用户的权限是都只能读</p></li>
+</ul>
+</li>
+<li><p>可用数字表示为：r=4,w=2,x=1 因此rwx=4+2+1=7</p></li>
+<li><p>其他说明</p>
+<ul>
+<li><p>1 若是文件：硬件连接 若是目录：子目录数+文件数</p></li>
+<li><p>root 用户</p></li>
+<li><p>root 组</p></li>
+<li><p>1213 文件大小（字节），如果是文件夹显示4096字节</p></li>
+<li><p>Feb 2 09：39 最后修改日期</p></li>
+<li><p>abc 文件</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="chmod">
+<h3>7.8==修改文件和目录权限-chmod==<a class="headerlink" href="#chmod" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>基本说明：</p></li>
+</ul>
+<p>通过chmod指令，可以修改文件或者目录的权限</p>
+<p><strong>注意: 用户目录也是目录</strong></p>
+<ul class="simple">
+<li><p>第一种方式：+ 、- 、=变更权限</p></li>
+</ul>
+<p><strong>u:所有者       g:所有组       o：其他用户       a：所有人（u、g、o的总和）</strong></p>
+<p><strong>(是指文件或者是目录的拥有者)</strong></p>
+<p>1）chmod u=rwx,g=rx,o=x 文件/目录名</p>
+<p>2）chmod o+w 文件/目录名</p>
+<p>3）chmod a-x 文件/目录名</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1）给abc文件的所有者读写执行的权限，给所在组读执行权限， 给其他组读执行权限
+chmod u=rwx,g=rx,0=x abc
+
+2)给abc文件的所有者除去执行的权限，增加组写的权限
+chmod u-x,g+w abc
+
+3)给abc文件的所有用户添加读的权限
+chmod a+r abc
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>第二种方式：通过数字变更权限</p></li>
+</ul>
+<p><strong>r=4   w=2   x=1</strong>    rwx=4+2+1</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chmod</span> <span class="n">u</span><span class="o">=</span><span class="n">rwx</span><span class="p">,</span><span class="n">g</span><span class="o">=</span><span class="n">rx</span><span class="p">,</span><span class="n">o</span><span class="o">=</span><span class="n">x</span> <span class="n">文件目录名</span>
+<span class="n">相当于chmod</span> <span class="mi">751</span> <span class="n">文件目录</span>
+</pre></div>
+</div>
+<p><strong>要求：将/home/abc.txt文件的权限修改成 rwxr-xr-x,使用数字的方式实现</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chmod</span> <span class="mi">755</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">abc</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</section>
+<section id="chown">
+<h3>7.9==修改文件和目录  所有者-chown==<a class="headerlink" href="#chown" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>基本介绍</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chown</span> <span class="n">newowener</span> <span class="n">文件</span><span class="o">/</span><span class="n">目录</span> <span class="n">改变所有者</span>
+<span class="n">chown</span> <span class="n">newonwner</span><span class="p">:</span><span class="n">newgroup</span> <span class="n">改变所有者和所在组</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>-R 如果是目录则使其下所有子文件或目录递归生效</strong>（recursion）</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">文件</span>    <span class="n">chown</span> <span class="n">mikasa</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">mikasa</span><span class="o">/</span><span class="n">hello</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">目录</span>    <span class="n">chown</span> <span class="o">-</span><span class="n">R</span> <span class="n">mikasa</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">qianxin</span>
+</pre></div>
+</div>
+</section>
+<section id="chgrp">
+<h3>7.10==修改文件和目录   所在组-chgrp==<a class="headerlink" href="#chgrp" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>基本介绍</p></li>
+<li><p><strong>-R 如果是目录则使其下所有子文件或目录递归生效</strong>（recursion）</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">文件</span>   <span class="n">chgrp</span> <span class="n">newgroup</span> <span class="n">文件</span> <span class="p">[</span><span class="n">改变所在组</span><span class="p">]</span>
+<span class="n">目录</span>   <span class="n">chown</span> <span class="o">-</span><span class="n">R</span> <span class="n">目录</span> <span class="p">[</span><span class="n">改变所在组</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="rwx">
+<h3>7.11对文件夹(目录）的rwx的细节讨论<a class="headerlink" href="#rwx" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>x：表示可有进入到该目录，比如cd</p></li>
+<li><p>r：表示可以ls，将目录的内容显示</p></li>
+<li><p>w：表示可以在该目录删除或者创建文件</p></li>
+</ul>
+</section>
+<section id="id34">
+<h3>案例<a class="headerlink" href="#id34" title="永久链接至标题">¶</a></h3>
+<hr class="docutils" />
+<p><img alt="image-20220808204844979" src="../_images/image-20220808204844979.png" /></p>
+<p><strong>用su进入到jack用户的，得切换到home目录，再切换到jack(自己的目录)就能创建文件了</strong></p>
+<p><img alt="image-20220809151501614" src="../_images/image-20220809151501614.png" /></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="crond">
+<h2>八、crond任务调度(定时任务)<a class="headerlink" href="#crond" title="永久链接至标题">¶</a></h2>
+<section id="crontab">
+<h3>8.1crontab 进行 定时任务的设置<a class="headerlink" href="#crontab" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>概述</p>
+<ul>
+<li><p><strong>任务调度：是指系统在某个时间执行的特定的命令或程序。</strong></p></li>
+<li><p>任务调度分类.</p>
+<ul>
+<li><p>系统工作：<strong>有些重要的工作必须周而复始地执行</strong>。如病毒扫描等</p></li>
+<li><p>个别用户工作：个别用户可能希望执行某些程序，比如对mysql数据库的备份</p></li>
+</ul>
+</li>
+<li><p>基本语法</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-linux notranslate"><div class="highlight"><pre><span></span>crontab [选项]
+常用选项有：
+	-e				编辑crontab定时任务
+	-l				查询crontab任务
+	-r				删除当前用户所有的crontab任务
+</pre></div>
+</div>
+<p><strong>语法:</strong></p>
+<div class="highlight-crontab notranslate"><div class="highlight"><pre><span></span>// 通过 crontab -e 进入
+
+*/每隔多久执行一次(可选)  分钟  小时  月 年 星期  脚本位置
+
+默认 * 代表 每(全部)
+, 代表不连续的时间。比如“* * * * 1,6     代表在周一和周六执行
+- 代表连续的时间范围。比如”* * * * 1-6   代表在周一到周六执行
+</pre></div>
+</div>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjMyNDE0,size_16,color_FFFFFF,t_70-165962385850610.png" /></p>
+<ul>
+<li><p>快速入门</p>
+<ul>
+<li><p>设置任务调度文件：/etc/crontab</p></li>
+<li><p>设置个人任务调度。执行crontab -e命令</p></li>
+<li><p>接着输入任务到调度文件</p></li>
+<li><p>如：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*/</span><span class="mi">1</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="n">ls</span> <span class="o">-</span><span class="n">l</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">to</span><span class="o">.</span><span class="n">txt</span>
+
+<span class="n">意思说每个小时的每分钟执行</span>  <span class="n">ls</span> <span class="o">-</span><span class="n">l</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">to</span><span class="o">.</span><span class="n">txt</span> <span class="n">命令</span>
+</pre></div>
+</div>
+</li>
+<li><p>参数细节说明</p></li>
+<li><p>5个占位符的说明</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjMyNDE0,size_16,color_FFFFFF,t_70-165962385850611.png" /></p>
+<ul class="simple">
+<li><p>特殊符号说明</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>特殊符号</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>代表任何时间。比如第一个 “ * ” 就代表一小时中每分钟都执行一次的意识</td>
+</tr>
+<tr>
+<td>‘</td>
+<td>代表不连续的时间。比如“0 8，12，16 *** 命令，就代表在每天的8点0分，12点0分，16点0分都执行一次命令</td>
+</tr>
+<tr>
+<td>-</td>
+<td>代表连续的时间范围。比如”0 5 * * 1-6 命令“，代表在周一到周六的凌晨5点0分执行命令</td>
+</tr>
+<tr>
+<td>*/n</td>
+<td>代表每隔多久执行一次。比如 ” <em>/10 * </em> * * 命令" ，代表每隔10分钟就执行一遍命令</td>
+</tr>
+</tbody>
+</table><ul class="simple">
+<li><p>特定时间执行任务案例</p></li>
+</ul>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjMyNDE0,size_16,color_FFFFFF,t_70-165962385850612.png" /></p>
+<div class="highlight-ASN.1 notranslate"><div class="highlight"><pre><span></span>应用实列：
+案例1：每隔1分钟，就将当前的日期信息，追加到/tmp/mydate文件中
+	crontab -e
+		*/1 * * * * data &gt;&gt; /tmp/mydata
+	
+案例2：每隔2分钟，将当前日期和日历都追加到/home/mycal文件中
+	第一步 编辑一个脚本文件
+		vim /home/my.sh
+				date &gt;&gt; /home/mycal
+				cal &gt;&gt; /home/mycal
+				
+	给my.sh增加执行权限
+				
+	使用执行:
+				./my.sh
+				cat mycal 
+	第二步：
+		crontab -e
+				*/1 * * * * /home/my.sh            //满一分钟就调用 my.sh
+				
+				
+案列3：每天凌晨2：00将mysql数据库testdb，备份到文件中，提示：
+
+    指令为mysqldump -u root -p密码 数据库 &gt;&gt; /home/bd.bak
+	
+	第一步：crontab -e
+	第二步：0 2 * * * mysqldump -u root -proot testdb &gt; /home/db.bak
+</pre></div>
+</div>
+</section>
+<section id="at">
+<h3>8.2 at定时任务<a class="headerlink" href="#at" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><p>基本介绍</p>
+<ul class="simple">
+<li><p>at命令是一次性定时计划任务，at的守护进程atd会以后台模式运行，检查作业队列来运行</p></li>
+<li><p>默认情况下，<strong>atd守护进程每60秒检查作业队列，有作业时，会检查作业运行时间，如果时间与当前时间匹配，则运行此作业</strong></p></li>
+<li><p><strong>at命令是一次性定时任务计划，执行完一个任务后不再执行此任务了</strong></p></li>
+<li><p>在使用at命令的时候，<strong>一定要保证atd进程的启动</strong>，可以使用相关指令来查看</p></li>
+</ul>
+<div class="highlight-linux notranslate"><div class="highlight"><pre><span></span>ps -ef | grep xx
+</pre></div>
+</div>
+</li>
+<li><p>at命令格式</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>at [选项] [时间]
+ctrl + D 结束at命令输入（两次）
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjMyNDE0,size_16,color_FFFFFF,t_70-165962385850613.png" /></p>
+<ul class="simple">
+<li><p>at命令选项
+<img alt="在这里插入图片描述" src="../_images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjMyNDE0,size_16,color_FFFFFF,t_70-165962385850614.png" /></p></li>
+</ul>
+<p>​		atq 查看任务</p>
+<ul class="simple">
+<li><p>at时间定义的方法</p></li>
+</ul>
+<p><img alt="在这里插入图片描述" src="../_images/20210702232317796.png" /></p>
+<ul class="simple">
+<li><p>相关方法</p>
+<ul>
+<li><p>atq命令，来查看系统中没有执行的工作任务</p></li>
+<li><p>atrm 编号 删除已经设置的任务</p></li>
+</ul>
+</li>
+<li><p>案列</p>
+<ul>
+<li><p>2天后的下午5点  执行/bin/ls /home</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="在这里插入图片描述" src="../_images/20210702232342962.png" /></p>
+<ul class="simple">
+<li><ul>
+<li><p>明天17点钟，输出时间到指定文件内 比如/root/date100.log</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="在这里插入图片描述" src="../_images/20210702232402337.png" /></p>
+</section>
+</section>
+<section id="id35">
+<h2>九、Linux磁盘分区、挂载<a class="headerlink" href="#id35" title="永久链接至标题">¶</a></h2>
+<section id="id36">
+<h3>9.1Linux分区<a class="headerlink" href="#id36" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>原理介绍</p>
+<ul>
+<li><ol class="simple">
+<li><p>Linux来说无论有几个分区，分给哪一目录使用，它归根结底就只有一个根目录，一个独立且唯一的文件结构，Linux中每个分区都是用来组成整个文件系统的一部分</p></li>
+<li><p>**Linux采用了一种叫”载入“的处理方法，**它的整个文件系统包含了一整套的目录，且将一个分区和一个目录联系起来。这时要载入的一个分区将使它的存储空间在一个目录下获得</p></li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjMyNDE0,size_16,color_FFFFFF,t_70-165962385850915.png" /></p>
+<ul>
+<li><p>硬盘shuo’ming</p>
+<ul class="simple">
+<li><p>Linux硬盘分IDE硬盘和SCSI硬盘，目前基本上是SCSI硬盘</p></li>
+<li><p>对于IDE硬盘，驱动驱动标识符为” hdx~ “，其中”hd“表明分区所在的设备类型，这里是指IDE硬盘了。”x“为盘号（a为基本盘，b为基本从属盘，c为辅助主盘，d为辅助从属盘），”~“代表分区，前四个分区用数字1到4表示，他们是主分区和拓展分区；从5开始就是逻辑分区。例，hda3表示为第一个IDE硬盘上的第三个主分区或拓展分区，hdb2表示为第二个IDE硬盘上的第二个主分区或拓展分区</p></li>
+<li><p><strong>对于SCSI硬盘则标识为”sdx~“</strong>，**SCSI硬盘是用”sd“来表示分区所在设备的类型的，**其余则和IDE硬盘的标识方式一样</p></li>
+</ul>
+</li>
+<li><p>查看所有的设备挂载情况</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>命令：lsblk  或者 lsblk -f
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="image-20220809161123048" src="../_images/image-20220809161123048.png" /></p>
+<ul class="simple">
+<li><p>针对第二张图</p>
+<ul>
+<li><p>sda下指得是分区情况</p>
+<ul>
+<li><p>FSTYPE 指的是文件类型</p></li>
+</ul>
+</li>
+<li><p>UUID值得是分区得唯一标识符（40个位）</p></li>
+<li><p>MOUNTPOIN 挂载点</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id37">
+<h3>9.2挂载的经典案例<a class="headerlink" href="#id37" title="永久链接至标题">¶</a></h3>
+<p>以增加一块硬盘为例来熟悉磁盘的相关指令和深入理解磁盘分区、挂载、卸载的概念。</p>
+<p><strong>如何为linux系统增加一块硬盘？</strong>
+<img alt="在这里插入图片描述" src="../_images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjMyNDE0,size_16,color_FFFFFF,t_70-165962385851117.png" /></p>
+<ul>
+<li><p>1.虚拟机添加硬盘</p>
+<ul class="simple">
+<li><p>在vmware上实现</p></li>
+</ul>
+<img src="linux.assets/image-20220809161450299.png" alt="image-20220809161450299" style="zoom:50%;" /><ul class="simple">
+<li><p>重启虚拟机</p></li>
+<li><p>重启后的分区情况[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传
+<img alt="在这里插入图片描述" src="../_images/20210702232544259.png" /></p></li>
+</ul>
+</li>
+<li><p>2.分区</p>
+<ul>
+<li><p>分区命令</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fdisk</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdb</span>
+</pre></div>
+</div>
+</li>
+<li><p>(dev（device)这个目录中包含了所有Linux系统中使用的外部设备。但是不是存放外部设备的驱动程序。它实际上是一个访问这些外部设备的端口就。我们可以非常方便的去访问这些外部设备，和访问一个文件，一个目录没有任何区别）</p></li>
+<li><p><strong>sdb就是再dev下面的</strong></p></li>
+<li><p>开始对 /sdb分区</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>m	显示命令列表
+p	显示磁盘分区 同 fdisk -l
+n	新增分区
+d	删除分区
+w	写入并退出
+说明：开始分区后输入n，新增分区，然后选者p，分区类型为主分区。两次回车默认剩余全部空间。最后输入w写入分区并退出，若不保存退出输入q
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="image-20220809161854758" src="../_images/image-20220809161854758.png" /></p>
+<ul>
+<li><p>3.格式化</p>
+<ul class="simple">
+<li><p>格式化磁盘    // <strong>格式化指定文件类型 之后才能用</strong></p></li>
+<li><p>分区命令：</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkfs</span> <span class="o">-</span><span class="n">f</span> <span class="n">ext4</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdb1</span>    <span class="o">//</span> <span class="n">vext4是分区类型</span>
+</pre></div>
+</div>
+</li>
+<li></li>
+</ul>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjMyNDE0,size_16,color_FFFFFF,t_70-165962385851219.png" /></p>
+<ul>
+<li><p>4.挂载（将一个分区与一个目录联系起来）</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>挂载令： mount 设备名称 挂载目录
+
+卸载命令： umout 设备名称（或者已挂载的目录）
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="image-20220809162522976" src="../_images/image-20220809162522976.png" /></p>
+<p>注意:    用命令行挂载，重启后就会失效</p>
+<ul>
+<li><p>5.设置可以自动挂载</p>
+<ul class="simple">
+<li><p><strong>永久挂载：通过修改/etc/fstab实现挂载</strong></p></li>
+</ul>
+<p><img alt="image-20220809163326952" src="../_images/image-20220809163326952.png" /></p>
+<ul class="simple">
+<li><p>添加完成后，执行mount -a立即生效</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id38">
+<h3>9.3磁盘情况查询<a class="headerlink" href="#id38" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><ol class="simple">
+<li><p><strong>查看系统整体磁盘</strong>  使用情况</p></li>
+</ol>
+<ul class="simple">
+<li><p>基本语法</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">-</span><span class="n">h</span>
+</pre></div>
+</div>
+</li>
+<li><p>应用实例：查询系统整体磁盘使用情况（<strong>使用率到了80以上就不正常了</strong>）</p></li>
+</ul>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjMyNDE0,size_16,color_FFFFFF,t_70-165962385851220.png" /></p>
+<ul>
+<li><ol class="simple">
+<li><p><strong>查询指定目录</strong>  的磁盘占用情况</p></li>
+</ol>
+<ul class="simple">
+<li><p>基本语法</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">du</span> <span class="o">-</span><span class="n">h</span> <span class="n">目录名</span>
+</pre></div>
+</div>
+</li>
+<li><p>查询指定目录的磁盘占用情况，默认为当前目录</p>
+<ul class="simple">
+<li><p>选项</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  -s		指定目录占用大小汇总
+  -h		带计量单位
+  -a		含文件
+  -c 		列出明细的同时，增加汇总值
+  
+  --max-depth=1 子目录深度
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>案例：查询opt目录的磁盘占用情况，深度为1</p></li>
+</ul>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjMyNDE0,size_16,color_FFFFFF,t_70-165962385851221.png" /></p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>十、LInux网络配置</p></li>
+</ul>
+</section>
+<section id="id39">
+<h3>10.1Linux网络配置原理图<a class="headerlink" href="#id39" title="永久链接至标题">¶</a></h3>
+<p><img alt="image-20220809165328170" src="../_images/image-20220809165328170.png" /></p>
+</section>
+<section id="ip">
+<h3>10.2配置一个指定的ip(不然每次都会变)<a class="headerlink" href="#ip" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>直接修改配置文件来制定IP，并可以连接到外网（cxy推荐）</p></li>
+<li><p>编辑 vim /etc /sysconfig/network-scripts/ifcfg-ens33</p></li>
+<li><p>修改前</p></li>
+</ul>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjMyNDE0,size_16,color_FFFFFF,t_70-165962385851322.png" /></p>
+<ul class="simple">
+<li><p>要求：将IP地址配置为静态的，比如ip地址为192.168.200.130</p></li>
+<li><p>修改后
+<img alt="在这里插入图片描述" src="../_images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjMyNDE0,size_16,color_FFFFFF,t_70-165962385851423.png" /></p></li>
+<li><p>ifcfg-ens33文件说明</p></li>
+</ul>
+<p><img alt="在这里插入图片描述" src="../_images/20210702232900772.png" /></p>
+<ul>
+<li><img src="linux.assets/image-20220809173359153.png" alt="image-20220809173359153" style="zoom:50%;" /></li>
+<li><p>重启网络服务或者重启兄系统生效</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">service</span> <span class="n">network</span> <span class="n">restart</span>
+
+<span class="n">reboot</span>
+</pre></div>
+</div>
+</li>
+<li><p>ping指令</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ping ip(或域名)    （测试连通性） 
+ping www.baidu.com
+</pre></div>
+</div>
+</section>
+<section id="hosts">
+<h3>10.3设置主机名和hosts映射  (配置别名)<a class="headerlink" href="#hosts" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><p>设置hosts映射</p>
+<ul class="simple">
+<li><p>windows</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">windows</span>\<span class="n">System32</span>\<span class="n">drivers</span>\<span class="n">etc</span>\<span class="n">hosts</span> <span class="n">文件指定即可</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>liunx</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">在</span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">hosts</span> <span class="n">文件</span> <span class="n">指定</span>
+</pre></div>
+</div>
+</li>
+<li><p>主机名解析过程分析（hosts、DNS）</p>
+<ul class="simple">
+<li><p>hosts文件是什么：一个文本文件，用来记录IP和hostname（主机名）的映射关系</p></li>
+<li><p>DNS（Domain Name System，域名系统）：是互联网上作为域名和IP地址相互映射的一个分布式数据库</p></li>
+</ul>
+</li>
+<li><p>主机名解析机制分析
+应用实例：用户在浏览器输输入了www.baidu.com</p>
+<ul>
+<li><p>1.浏览器先检查浏览器缓存中有没有该域名解析ip地址，有就先调用这个IP完成解析；如果没有，就检查DNS解析器缓存，如果有就直接返回ip完成解析。（这两个缓存可以理解为本地解析器缓存）</p>
+<p>（一般来说，当电脑第一次成功访问某一网站后，在一定的时间内，浏览器或者操作系统会缓存它的ip地址DNS解析记录，如在命令行输入</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ipconfig</span> <span class="o">/</span><span class="n">displaydns</span>		<span class="o">//</span><span class="n">DNS缓存解析</span>
+<span class="n">ipconifg</span> <span class="o">/</span><span class="n">flushdns</span>			<span class="o">//</span><span class="n">手动清理dns缓存</span>
+</pre></div>
+</div>
+</li>
+<li><p>2.如果本地解析器缓存没有找到对应的映射，则检查系统系统中的hosts文件中有没有配置对应的域名ip映射。如果有，则完成解析并返回</p></li>
+<li><p>3.如果本地DNS解析器缓存和hosts文件中均没有找到对应的ip，则到域名服务DNS进行解析</p></li>
+<li><p><img alt="在这里插入图片描述" src="../_images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjMyNDE0,size_16,color_FFFFFF,t_70-165962385851424.png" /></p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="ps">
+<h2>十一、进程管理(ps)<a class="headerlink" href="#ps" title="永久链接至标题">¶</a></h2>
+<section id="id40">
+<h3>11.1基本<a class="headerlink" href="#id40" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>在Linux中，<strong>每一个执行的程序都被称为一个进程</strong>。每一个进程都被分配一个ID号（pid，进程号）</p>
+<ul>
+<li><p>windows下的pid</p></li>
+<li><p><img alt="image-20220810141416258" src="../_images/image-20220810141416258.png" /></p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjMyNDE0,size_16,color_FFFFFF,t_70-165962385851725.png" /></p>
+<ul class="simple">
+<li><p>linux：<strong>top指令</strong>  ==可以看动态监控那章==</p></li>
+</ul>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjMyNDE0,size_16,color_FFFFFF,t_70-165962385851826.png" /></p>
+<ul class="simple">
+<li><p>每个进程都可能以两种方式存在。前台与后台，所谓前台进程就是用户目前屏幕上可以进行操作的。后台进程则是实际在操作，但由于屏幕上无法看到的进程，通常使用后台方式执行。</p></li>
+<li><p>一般系统的服务都是以后台进程的方式存在，而且都会常驻在系统中。直到关机才会结束</p></li>
+</ul>
+</section>
+<section id="id41">
+<h3>11.2显示系统执行的进程<a class="headerlink" href="#id41" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>ps    命令是用来查看目前系统中，有哪些正在执行的进程 ，以及他们的执行状况。可以不加任何参数</p></li>
+</ul>
+<p><img alt="在这里插入图片描述" src="../_images/1bbb1ec37aea4ff9b7ba4c6b58b7b523.png" /></p>
+<p>ps显示的信息选项</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>字段</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PID</td>
+<td>进程识别号</td>
+</tr>
+<tr>
+<td>TTY</td>
+<td>终端机号</td>
+</tr>
+<tr>
+<td>TIME</td>
+<td>此进程所消耗CPU时间</td>
+</tr>
+<tr>
+<td>CMD</td>
+<td>正在执行的命令或进程名</td>
+</tr>
+</tbody>
+</table><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ps</span> <span class="o">-</span><span class="n">a</span><span class="p">:</span><span class="n">显示当前终端的所有进程信息</span>
+<span class="n">ps</span> <span class="o">-</span><span class="n">u</span><span class="p">:</span><span class="n">以用户的格式显示进程信息</span>
+<span class="n">ps</span> <span class="o">-</span><span class="n">x</span><span class="p">:</span><span class="n">显示后台进程运行的参数</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>执行ps  -aux</strong></p></li>
+</ul>
+<p><img alt="image-20220810141947872" src="../_images/image-20220810141947872.png" /></p>
+<ul>
+<li><p>参数解释</p>
+<ul class="simple">
+<li><p>USER：进程执行用户</p></li>
+<li><p>PID：进程号</p></li>
+<li><p>%CPU：当前进程占用cpu的百分比</p></li>
+<li><p>%MEM：占用物理内存的百分比</p></li>
+<li><p>VSZ：进程占用虚拟内存大小（KB）</p></li>
+<li><p>RSS：进程占用的物理内存的大小（KB）</p></li>
+<li><p>TTY：终端名称</p></li>
+<li><p>STAT：<strong>运行状态，S-表示sleep休眠、s-表示该进程是会话的先导进程，N-表示进程拥有比普通优先级更低的优先级，R-表示正在运行，D-短期等待，z-僵尸进程，T-被跟踪或者被停止等等</strong></p></li>
+<li><p>STARTED：执行的开始时间</p></li>
+<li><p>TIME：占用CPU时间</p></li>
+<li><p>COMMAND：启动进程所用的命令和参数，如果过长会被截断显示</p></li>
+</ul>
+</li>
+<li><p><strong>ps -ef | grep xxx   是以全格式显示xxx的进程，查看进程的父进程</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">e</span>	<span class="n">显示所有的进程</span>
+<span class="o">-</span><span class="n">f</span>	<span class="n">全格式</span>
+
+<span class="n">BSD风格</span><span class="p">:</span>
+<span class="n">ps</span> <span class="o">-</span><span class="n">ef</span><span class="o">|</span><span class="n">grep</span> <span class="n">xxx</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5aSq6I-c5LqG5oCO5LmI5Yqe77yf,size_20,color_FFFFFF,t_70,g_se,x_16-165962385851927.png" /></p>
+<ul>
+<li><p>UID：用户ID</p></li>
+<li><p>PID：进程ID</p></li>
+<li><p>PPID：父进程ID</p></li>
+<li><p>C：cpu用于计算执行优先的因子。数值越大，表明进程是CPU密集型运算，执行优先级会降低；数值越小，表明进程是I/O密集型运算，执行优先级会提高</p></li>
+<li><p>STIME：进程启动时间</p></li>
+<li><p>TTY：完整的终端名称</p></li>
+<li><p>TIME：CPU占用时间</p></li>
+<li><p>CMD启动进程所用的命令和参数</p></li>
+<li><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ps</span> <span class="o">-</span><span class="n">ef</span><span class="o">|</span><span class="n">grep</span> <span class="n">sshd</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="在这里插入图片描述" src="../_images/66e0d4ef69a24399ae438fbae7ccf659.png" /></p>
+<p>sshd进程是1号进程的子进程，9579有是7756的子进程</p>
+<ul>
+<li><p><strong>终止进程kill 和 killall</strong></p>
+<ul class="simple">
+<li><p>若是某一个进程执行一半需要停止时，或是已消了很大的系统资源时，此时可以考虑停止该进程。使用kill命令来完成此项任务</p></li>
+<li><p>基本语法</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>kill -9 进程号		 功能描述：通过进程号杀死进程
+killall 进程名称 	功能描述：通过进程名杀死进程也支持通配符，这在系统因负载过的很慢时很有用
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>常用选项：-9 表示强迫进程立即停止</p></li>
+</ul>
+</li>
+</ul>
+<p>案例:</p>
+<ol class="simple">
+<li><p><strong>踢掉某个非法登录用户（mikasa）</strong></p></li>
+</ol>
+<p><img alt="在这里插入图片描述" src="../_images/6787bfae5aee4ff4afb4019333400ab4.png" /></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ps</span><span class="o">-</span> <span class="n">ef</span><span class="o">|</span><span class="n">grep</span> <span class="n">sshd后可知用户mikasa登录的进程号为9583</span>
+
+<span class="n">kill</span> <span class="n">进程号</span>
+<span class="n">kill</span> <span class="mi">9583</span>
+
+<span class="n">用户mikasa的连接关闭</span>
+</pre></div>
+</div>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5aSq6I-c5LqG5oCO5LmI5Yqe77yf,size_17,color_FFFFFF,t_70,g_se,x_16.png" /></p>
+<hr class="docutils" />
+<ol class="simple">
+<li><p><strong>终止远程登录服务sshd，在适当时候再次重启sshd服务</strong>
+<img alt="在这里插入图片描述" src="../_images/617a79f8f81b47d591dd46f2bcbb8139.png" /></p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kill</span> <span class="mi">7756</span>
+<span class="n">结束远程登录服务sshd后用户无法通过xshell连上Linux虚拟机</span>
+
+<span class="n">启动sshd服务</span>
+<span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">systemctl</span> <span class="n">start</span> <span class="n">sshd</span><span class="o">.</span><span class="n">service</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<ol class="simple">
+<li><p><strong>终止多个gedit</strong></p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">killall</span> <span class="n">gedit</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<ol class="simple">
+<li><p><strong>强制杀掉一个终端</strong></p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">ps</span> <span class="o">-</span><span class="n">aux</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">bash</span>   <span class="n">找出终端的进程号</span>
+ 
+ <span class="n">killall</span> <span class="o">-</span><span class="mi">9</span> <span class="n">bash对应的进程号</span>
+</pre></div>
+</div>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5aSq6I-c5LqG5oCO5LmI5Yqe77yf,size_20,color_FFFFFF,t_70,g_se,x_16-165962385852028.png" /></p>
+</section>
+<section id="pstree">
+<h3>11.3查看进程树 pstree<a class="headerlink" href="#pstree" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>基本语法</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pstree</span> <span class="p">[</span><span class="n">选项</span><span class="p">]</span>         <span class="n">可以更加直观的来看进程信息</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>常用选项</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">p</span>	<span class="n">树状形式显示进程的pid</span>
+<span class="o">-</span><span class="n">u</span>	<span class="n">树状形式显示进程的所属用户</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="service">
+<h2>十二、服务（service）管理<a class="headerlink" href="#service" title="永久链接至标题">¶</a></h2>
+<p>**服务（service）本质就是进程，但是时运行在后台的，通常都会监听某个端口，等待其他程序的请求，**比如（mysqld，sshd 防火墙等），因此称为守护进程，是Linux中非常重要的知识点</p>
+<p><img alt="image-20220810145401086" src="../_images/image-20220810145401086.png" /></p>
+<section id="id42">
+<h3>12.1service命令<a class="headerlink" href="#id42" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><p><strong>service管理指令</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">service</span> <span class="n">服务名</span> <span class="p">[</span><span class="n">start</span><span class="o">|</span> <span class="n">stop</span><span class="o">|</span> <span class="n">restart</span><span class="o">|</span> <span class="n">reload</span> <span class="o">|</span> <span class="n">status</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>在CentOS7.0后很多服务不再使用service，而是systemctl</strong></p></li>
+<li><p><strong>service指令管理的服务在 /etc/init.d查看</strong></p></li>
+<li><p><img alt="在这里插入图片描述" src="../_images/7fac5df12b7a494eb045ddd432382950.png" /></p></li>
+<li><p>案例</p>
+<p>使用servce指令，查看，关闭，启动network  不要在xshell中执行，关闭网络后，连接sshd服务会断开连接)</p>
+</li>
+</ul>
+<p><img alt="image-20220810145810704" src="../_images/image-20220810145810704.png" /></p>
+<ul class="simple">
+<li><p><strong>查看 服务名：</strong></p>
+<ul>
+<li><p>方式1：使用setup——&gt;系统服务，就可以看到全部</p>
+<ul>
+<li><p><strong>带*号</strong>的服务  是随着linux的启动 <strong>自动启动</strong>，没有带 *号的都是需要手动启动的</p></li>
+<li><p>退出按Tab</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5aSq6I-c5LqG5oCO5LmI5Yqe77yf,size_20,color_FFFFFF,t_70,g_se,x_16-165962385852029.png" /></p>
+<ul class="simple">
+<li><p>方式2：/etc/init.d 看到service指令管理的服务ls -l /etc/init.d</p></li>
+<li><p>扩展：linux很多服务以d结尾的原因:</p>
+<ul>
+<li><p>d代表deamon 守护进程</p></li>
+<li><p>Linux的大多数服务就是用守护进程</p></li>
+<li><p>守护进程是运行在Linux服务器后台的一种服务程序</p></li>
+<li><p>它周期地执行某种任务或等待处理某些发生的事件</p></li>
+<li><p>比如：xinetd提供网络服务，sshd提供ssh登录服务，httpd提供web服务</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id43">
+<h3>12.2服务的运行级别<a class="headerlink" href="#id43" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><p>linux系统有七种运行级别（runlevel）：</p>
+<p>常用的是级别3和5</p>
+<ul class="simple">
+<li><p>运行级别0：系统停机状态，系统默认运行级别不能设为0，否则不能正常启动</p></li>
+<li><p>运行级别1：单用户工作状态，root权限，用于系统维护，禁止远程登录</p></li>
+<li><p>运行级别2：多用户状态（没有NFS），不支持网络</p></li>
+<li><p>运行级别3：完全的多用户状态（有NFS），登录后进入控制台命令行模式</p></li>
+<li><p>运行级别4：系统未使用，保留</p></li>
+<li><p>运行级别5：X11控制台，登陆后进入图形GUI模式</p></li>
+<li><p>运行级别6：系统正常关闭并重启，默认运行级别不能设为6，否则不能正常启动</p></li>
+</ul>
+</li>
+<li><p>开机的流程说明</p></li>
+</ul>
+<p><img alt="在这里插入图片描述" src="../_images/0ab36c974a044efb80d796c5269ad371.png" /></p>
+<ul>
+<li><p>CentOS7运行级别说明</p>
+<ul class="simple">
+<li><p>在/etc/initab，进行了简化如下</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">multi</span><span class="o">-</span><span class="n">user</span><span class="o">.</span><span class="n">target</span><span class="p">:</span><span class="n">analogous</span> <span class="n">to</span> <span class="n">runlevel</span> <span class="mi">3</span>
+<span class="n">graphical</span><span class="o">.</span><span class="n">target</span><span class="p">:</span><span class="n">analogous</span> <span class="n">to</span> <span class="n">runlevel</span> <span class="mi">5</span>
+</pre></div>
+</div>
+<ul>
+<li><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#to view current default target,run:</span>
+<span class="n">systemctl</span> <span class="n">get</span><span class="o">-</span><span class="n">default</span>
+</pre></div>
+</div>
+</li>
+<li><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#To set a default target,run:</span>
+<span class="n">systemctl</span> <span class="nb">set</span><span class="o">-</span><span class="n">default</span> <span class="n">TARGET</span><span class="o">.</span><span class="n">target</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="chkconfig">
+<h3>12.3chkconfig指令(在各个运行级别中)<a class="headerlink" href="#chkconfig" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>作用:</p>
+<ul>
+<li><p>1.通过chkconfig命令可以<strong>给服务在各个运行级别中的 启动/关闭</strong></p></li>
+<li><p>2.chkconfig指令管理的服务在 /etc/init.d查看</p></li>
+<li><p>注意：CentOS7.0后，很多服务使用systemctl管理</p></li>
+</ul>
+</li>
+<li><p>基本语法:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chkconfig</span> <span class="o">--</span><span class="nb">list</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">xxx</span>				    <span class="n">查看某个服务</span>
+<span class="o">//</span> <span class="n">chkconfig</span> <span class="n">服务名</span> <span class="o">--</span><span class="nb">list</span>					  <span class="n">查看服务</span>
+<span class="n">chkconfig</span> <span class="o">--</span><span class="n">level</span> <span class="mi">5</span> <span class="n">服务名</span> <span class="n">on</span><span class="o">/</span><span class="n">off</span>            <span class="n">对服务在各等级下的状态进行控制</span>
+</pre></div>
+</div>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5aSq6I-c5LqG5oCO5LmI5Yqe77yf,size_18,color_FFFFFF,t_70,g_se,x_16.png" /></p>
+<ul class="simple">
+<li><p>案列</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>对network服务进行操作，把network在3运行级别关闭自启动
+chkconfig --level 3 network off
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>注意：chkconfig重新设置服务后自启动或关闭，需要重启机器reboot生效</strong></p></li>
+</ul>
+</section>
+<section id="systemctl">
+<h3>12.4systemctl命令<a class="headerlink" href="#systemctl" title="永久链接至标题">¶</a></h3>
+<p><strong>CentOS7.0后很多服务不再使用service，而是systemctl</strong></p>
+<ul>
+<li><p><strong>systemctl管理命令</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">systemctl</span> <span class="p">[</span><span class="n">start</span> <span class="o">|</span> <span class="n">stop</span> <span class="o">|</span><span class="n">restart</span> <span class="o">|</span><span class="n">status</span> <span class="p">]</span> <span class="n">服务名</span>   <span class="o">//</span> <span class="n">临时的</span>
+</pre></div>
+</div>
+<ul>
+<li><p><strong>使用 ls -l  /usr/lib/systemd/system   |  grep xxx  中查看systemctr服务</strong></p></li>
+<li><p>比如看防火墙的:</p>
+<p><img alt="image-20220810151841101" src="../_images/image-20220810151841101.png" /></p>
+</li>
+</ul>
+</li>
+<li><p><strong>systemctl设置服务的自启动状态</strong></p>
+<div class="highlight-linux notranslate"><div class="highlight"><pre><span></span>systemctl list-unit-files | grep 服务名  (查看服务开机启动状态)
+
+systemctl enable 服务名			  （设置服务开机启动） // 永久设置
+systemctl disable 服务名 			   (关闭服务开机启动)关闭和开启都是默认的3和5两级别 // 永久设置
+
+systemctl is-enabled 服务名             (查询某个服务是否是自启动的)
+</pre></div>
+</div>
+</li>
+<li><p>案列：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ll /usr/lib/systemd/system |grep fire 查找防火墙服务
+
+systemctl list-unit-files | grep firewalld 查看当防火墙的服务状态
+
+systemctl is-enabled firewalld  查看防火墙服务是否是自启的
+
+
+查看当前防火墙的状态，关闭防火墙和重启防火墙
+systemctl status firewalld
+
+停止防火墙
+systemctl stop firewalld
+
+启动防火墙
+systemctl s
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="在这里插入图片描述" src="../_images/44368600c75b4e539e667cd941237ead.png" /></p>
+<ul>
+<li><p>细节点</p>
+<p><img alt="image-20220810152244738" src="../_images/image-20220810152244738.png" /></p>
+<ul class="simple">
+<li><p>关闭或者启动防火墙后，立即生效。[telnet测试 某个端口即可]</p></li>
+<li><p>这种方式只是临时生效，当重启系统后，还是回归以前对服务的设置</p></li>
+<li><p><strong>如果设置某个服务自启动或关闭永久生效，要使用systemctl [enable|disable]服务名</strong></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id44">
+<h3>12.5打开或者关闭指定端口<a class="headerlink" href="#id44" title="永久链接至标题">¶</a></h3>
+<p>在真正的生产环境，往往需要将防火墙打开，但是如果我们把防火墙打开，那么外部请求数据包就不能给服务器监听端口通讯。这时，需要打开指定的端口。比如80，22，8080</p>
+<ul>
+<li><p><strong>firewall指令</strong></p>
+<p>==注意:  端口号/协议   通过  netstat -anp | more==</p>
+<ul class="simple">
+<li><p>打开端口</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">firewall</span><span class="o">-</span><span class="n">cmd</span> <span class="o">--</span><span class="n">permanent</span> <span class="o">--</span><span class="n">add</span><span class="o">-</span><span class="n">port</span><span class="o">=</span><span class="n">端口号</span><span class="o">/</span><span class="n">协议</span>        <span class="o">//</span> <span class="n">permanent</span> <span class="n">n</span><span class="o">.</span><span class="n">永久</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>关闭端口</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">firewall</span><span class="o">-</span><span class="n">cmd</span> <span class="o">--</span><span class="n">permanent</span> <span class="o">--</span><span class="n">remove</span><span class="o">-</span><span class="n">port</span>	<span class="o">=</span><span class="n">端口号</span><span class="o">/</span><span class="n">协议</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>无论是关闭还是开启端口都需要重新载入防火墙才能生效</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">firewall</span><span class="o">-</span><span class="n">cmd</span> <span class="o">--</span><span class="n">reload</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>查看端口是否开放</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">firewall</span><span class="o">-</span><span class="n">cmd</span> <span class="o">--</span><span class="n">query</span><span class="o">-</span><span class="n">port</span><span class="o">=</span><span class="n">端口</span><span class="o">/</span><span class="n">协议</span>
+</pre></div>
+</div>
+</li>
+<li><p>案例</p>
+<ul class="simple">
+<li><p>启用防火墙，测试111端口是否能telnet</p></li>
+<li><p>开放111端口
+<img alt="在这里插入图片描述" src="../_images/064cfe1edc464429b1354e5da8e58668.png" /></p></li>
+<li><p>再次关闭111端口
+<img alt="在这里插入图片描述" src="../_images/efca8c89ad4341c5a52f22eeccce8c10.png" /></p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="top">
+<h2>十三、动态监控(top)<a class="headerlink" href="#top" title="永久链接至标题">¶</a></h2>
+<section id="id45">
+<h3>13.1动态监控进程的基本语法<a class="headerlink" href="#id45" title="永久链接至标题">¶</a></h3>
+<p><strong>top和ps命令很相似</strong>。他们都用来显示正在执行的进程Top和ps最大的不同处在于<strong>top在执行一段时间可以更行正在运行的进程</strong></p>
+<ul class="simple">
+<li><p>基本语法</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">top</span> <span class="p">[</span><span class="n">选项</span><span class="p">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>选项说明</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>选项</th>
+<th>功能</th>
+<th>实例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-d 秒数</td>
+<td>指定top命令每隔几秒更新。默认是3秒</td>
+<td>top -d 5</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>是top不显示任何闲置或者僵死进程</td>
+<td></td>
+</tr>
+<tr>
+<td>-p</td>
+<td>通过指定监控进程ID来仅仅监控某个进程的状态</td>
+<td></td>
+</tr>
+</tbody>
+</table><ul class="simple">
+<li><p><img alt="image-20220810154254413" src="../_images/image-20220810154254413.png" /></p></li>
+<li><p>僵死进程：进程已经死掉了（进程运行结束），但是内存没有被释放掉。僵死进程需要定时清除！！
+<img alt="image-20220810154414364" src="../_images/image-20220810154414364.png" /></p></li>
+<li><p>其中cpu使用率和KiB Mem(内存管理）最为重要</p></li>
+</ul>
+</section>
+<section id="id46">
+<h3>13.2动态监控进程的交互操作<a class="headerlink" href="#id46" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>交互操作说明</p></li>
+</ul>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>操作</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P</td>
+<td>以CPU施一公率排序，默认就是此项</td>
+</tr>
+<tr>
+<td>M</td>
+<td>以内存使用率排序</td>
+</tr>
+<tr>
+<td>u</td>
+<td>输入用户名</td>
+</tr>
+<tr>
+<td>N</td>
+<td>以PID排序</td>
+</tr>
+<tr>
+<td>q</td>
+<td>退出top</td>
+</tr>
+</tbody>
+</table><ul>
+<li><p>实例</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>案例1.监视特定用户，比如说监控mikasa用户
+top：输入此命令，按回车键，查看执行的进程
+然后输入“u”,回车，在输入用户名，即可
+
+案例2：终止指令的进程
+先输入top指令后，在输入“k“ ，在输入想要终止的进程号
+
+案例3：指定系统状态更新的时间（每隔10秒自动更新）（默认的是3秒）
+top -d 10
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id47">
+<h3>13.3监控网络状态<a class="headerlink" href="#id47" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><p><strong>查看系统网络情况netstat</strong></p>
+<ul class="simple">
+<li><p>基本语法</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">netstat</span> <span class="p">[</span><span class="o">-</span><span class="n">anp</span><span class="p">]</span> 
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>选项说明</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">an</span> <span class="n">按一定顺序排列输出</span>
+<span class="o">-</span><span class="n">p</span> <span class="n">显示所在进程</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>例子:</p>
+<p>使用 netstat -an  :</p>
+<p><img alt="image-20220810155937295" src="../_images/image-20220810155937295.png" /></p>
+<p><img alt="image-20220810160306561" src="../_images/image-20220810160306561.png" /></p>
+<p><strong>增加一个tom用户</strong></p>
+<p><img alt="image-20220810160255938" src="../_images/image-20220810160255938.png" /></p>
+<ul class="simple">
+<li><p>检测主机连接命令ping</p>
+<ul>
+<li><p>是一种网络检测工具，它主要是用来检测远程主机是否正常，或是两部主机间的网线或网卡故障</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="rpmyum">
+<h2>十四、RPM与YUM<a class="headerlink" href="#rpmyum" title="永久链接至标题">¶</a></h2>
+<section id="rpm">
+<h3>14.1rpm包的管理<a class="headerlink" href="#rpm" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><p>介绍</p>
+<ul class="simple">
+<li><p>rpm用于互联网下载包的打包及安装工具，它包含在某些LInux分发版中。它生成具有.RPM拓展名的文件。RPM是RedHat Package Manager （RedHat软件包管理工具）的缩写，类似windows的setup.ext，这一文件格式名称虽然打上了RedHat的标志，但理念是通用的。</p></li>
+<li><p>Linux的分发版都有采用（suse，redhat，centos等），可以说是公用的行业标准。</p></li>
+</ul>
+</li>
+<li><p>rpm包的简单查询指令</p>
+<ul class="simple">
+<li><p>rpm -qa 查询所安装的所rpm包软件包</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>rpm -qa | more
+rpm -qa | grep xxx(如：rpm -qa | grep firefox)
+
+查看当前系统是否安装firefoxrpm -qa | grep firefox
+</pre></div>
+</div>
+<p><img alt="在这里插入图片描述" src="../_images/da874a90f3174a8c987a3e091fe5ae13.png" /></p>
+<ul class="simple">
+<li><p>rpm包名基本格式</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>一个rpm包名：firefox-60.2.2-1.el7.centos.x86_64
+名称：firefox
+版本号：60.2.2-1
+适用操作系统：el7.centos.x86_64     表示centos7.x的64位系统
+（如果似乎i686、i386表示32位系统，noarch表示通用）
+</pre></div>
+</div>
+</li>
+<li><p>rpm包的其它查询指令</p>
+<ul class="simple">
+<li><p>rpm -q 软件包名 查询软件包信息</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rpm</span> <span class="o">-</span><span class="n">q</span> <span class="n">firefox</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>rpm -qi 软件包名 查询软件包信息</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rpm</span> <span class="o">-</span><span class="n">qi</span> <span class="n">firefox</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5aSq6I-c5LqG5oCO5LmI5Yqe77yf,size_20,color_FFFFFF,t_70,g_se,x_16-165962385852633.png" /></p>
+<ul class="simple">
+<li><p>rpm -ql 软件包名 查询软件包中的文件</p></li>
+</ul>
+<p><img alt="image-20220810175159297" src="../_images/image-20220810175159297.png" /></p>
+<ul class="simple">
+<li><ul>
+<li><p>rpm -qf 文件全路径名 查询文件所属的软件包</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rpm</span> <span class="o">-</span><span class="n">af</span> <span class="o">/</span><span class="n">etd</span><span class="o">/</span><span class="n">shadow</span>
+</pre></div>
+</div>
+<p><img alt="image-20220810175319091" src="../_images/image-20220810175319091.png" /></p>
+<ul>
+<li><p>安装rpm包</p>
+<ul class="simple">
+<li><p>基本语法</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rpm</span> <span class="o">-</span><span class="n">ivh</span> <span class="n">RPM包全路径名称</span>
+
+<span class="n">rpm</span> <span class="o">-</span><span class="n">ivh</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">firefox</span>      <span class="p">(</span><span class="n">tab补全再回车</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>参数说明</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">i</span><span class="o">=</span><span class="n">install</span>   <span class="n">安装</span>
+<span class="n">v</span><span class="o">=</span><span class="n">verbose</span>   <span class="n">提示</span>
+<span class="n">h</span><span class="o">=</span><span class="nb">hash</span>      <span class="n">进度条</span>
+</pre></div>
+</div>
+</li>
+<li><p>卸载rpm包</p>
+<ul class="simple">
+<li><p>基本语法</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rpm</span> <span class="o">-</span><span class="n">e</span> <span class="n">RPM包的名称</span>     <span class="o">//</span><span class="n">erass</span>
+
+<span class="n">rpm</span> <span class="o">-</span><span class="n">e</span> <span class="n">firefox</span>       <span class="n">删除firefox</span> <span class="n">软件包</span>
+</pre></div>
+</div>
+<ul>
+<li><p>注意</p>
+<ul class="simple">
+<li><p>如果其它软件包依赖于要卸载的软件包，卸载时则会产生错误的信息</p></li>
+<li><p>如果必须要删除这个软件包，可以增加参数 –nodeps，就可以强制删除，但是一般不推荐这么做，因为依赖于该软件包的程序可能无法运行</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rpm</span> <span class="o">-</span><span class="n">e</span> <span class="o">--</span><span class="n">nodeps</span> <span class="n">软件包名</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="yum">
+<h3>14.2yum<a class="headerlink" href="#yum" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><p><em><strong>介绍</strong></em>：Yum是一个Shell前端软件包管理器。基于RPM包管理，<strong>能够从指定的服务器自动下载RPM包并安装</strong>. <strong>相当于应用商店</strong>，可以自动处理依赖关系，并且一次安装所有依赖的软件包</p></li>
+<li><p><strong>yum的基本指令</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>查询yum服务器是否有需要安装的软件（软件列表）
+yum list|grep xx
+
+安装指定的yum包（下载安装)
+yum install xxx 
+</pre></div>
+</div>
+</li>
+<li><p>实列：使用yum的方式安装firefox</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>rpm -e firefox              先卸载centos中的firefox
+yum list | grep firefox		 查询firefox的软件
+yum install firefox			下载！
+</pre></div>
+</div>
+</li>
+</ul>
+<p>注意:   opt是放软件包的</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="linux-g">
+<h2>十五、 linux  g++<a class="headerlink" href="#linux-g" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p><strong>g++是干什么用的</strong></p></li>
+</ul>
+<p>首先  c++不一定要用这个g++。1. 如果电脑是Windows，那么就不用C++，用VS系列的IDE，一口气写代码+编译。2.如果是Linux系统学习C++，一般用g++，Mac上用clang（Linux也可以用clang,  不过g++是Linux上的主流）</p>
+<p><strong>文件其实就是普通的纯文本文件。 在文本和可执行程序之间，g++做所谓的编译。</strong></p>
+<p>g++就是将包含了代码的文本文件编译（预处理、编译、汇编、链接）成可执行的文件。</p>
+<p>==比如:==</p>
+<p>你写了一段代码(名为a.cpp)，可以用任意文本编辑软件来写，不需要是IDE。</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span> 
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> 
+<span class="p">{</span>    
+    <span class="n">cout</span><span class="o">&lt;&lt;</span> <span class="s">&quot;Hello, World!&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>    
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span> 
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>下面我们开始编译程序，会经历4个步骤。</p>
+<p>预处理</p>
+<p>第一步，预处理， <strong>以#开头的行都将被预处理器当做预处理命令来解释</strong>，比如#include包含头文件，在这一步就会将系统或本地的头文件插入的当前文本中。如果 #define 定义的宏则这这一步做展开（直接替换）</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="o">++</span> <span class="o">-</span><span class="n">E</span> <span class="n">a</span><span class="o">.</span><span class="n">cpp</span>
+</pre></div>
+</div>
+<p>编译</p>
+<p>第二步，编译,  <strong>就是把文本中的代码转成汇编代码。</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="o">++</span> <span class="o">-</span><span class="n">S</span> <span class="n">a</span><span class="o">.</span><span class="n">cpp</span>
+</pre></div>
+</div>
+<p>会生成一个a  .s文件，里面是汇编代码，这一步还是文本文件。</p>
+<p>汇编</p>
+<p>第三步，汇编，<strong>就是把汇编代码转成目标文件的格式</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="o">++</span> <span class="o">-</span><span class="n">c</span> <span class="n">a</span><span class="o">.</span><span class="n">cpp</span>
+</pre></div>
+</div>
+<p>会生成一个a  .o文件，这一步开始已经是二进制文件了。但还不是可执行文件。</p>
+<p>链接</p>
+<p>第四步，链接，<strong>就是把上一步的目标文件转成可执行文件。</strong></p>
+<p>默认生成的可执行文件名称就是  a.out （默认可执行文件都叫是a.out)</p>
+<hr class="docutils" />
+<p><strong>例子:</strong></p>
+<p><img alt="img" src="../_images/clip_image002.jpg" /></p>
+<p>预编译，宏替换，头文件加载：</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="o">++</span> <span class="o">-</span><span class="n">E</span> <span class="n">test</span><span class="p">.</span><span class="n">cpp</span> <span class="n">test</span><span class="p">.</span><span class="n">h</span> <span class="o">-</span><span class="n">o</span> <span class="n">test</span><span class="p">.</span><span class="n">i</span>   <span class="c1">//  -o test.i  输出成什么文件</span>
+</pre></div>
+</div>
+<p><img alt="img" src="../_images/clip_image003.png" /></p>
+<p>编译，生成汇编代码：</p>
+<p><img alt="img" src="../_images/clip_image004.png" /></p>
+<p>汇编，生成机器码：</p>
+<p><img alt="img" src="../_images/clip_image005.png" /></p>
+<p>汇编+链接，生成可执行文件：</p>
+<p><img alt="img" src="../_images/clip_image006.png" /></p>
+<hr class="docutils" />
+<p><a class="reference external" href="https://blog.csdn.net/Three_dog/article/details/103688043">(28条消息) g++编译详解_三级狗的博客-CSDN博客_g++编译</a></p>
+</section>
+<section id="shell">
+<h2>十六、 shell脚本<a class="headerlink" href="#shell" title="永久链接至标题">¶</a></h2>
+<p>Shell是一个命令行解释器，它为用户提供了一个向Linux内核发送请求以便运行程序的界面系统级程序，用户可以用Shell来启动、挂起、停止甚至是编写一些程序。看一个示意图</p>
+<p><img alt="image-20220811152228379" src="../_images/image-20220811152228379.png" /></p>
+<section id="id48">
+<h3>16.1 shell脚本的执行方式<a class="headerlink" href="#id48" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>脚本格式要求</p>
+<ol class="simple">
+<li><p>脚本以#!/bin/bash开头</p></li>
+</ol>
+</li>
+</ul>
+<p>​			 2. 脚本需要有可执行权限</p>
+<p>编写第一个Shell脚本
+需求说明:创建一个Shell脚本，输出hello world!</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nb">echo</span> <span class="s2">&quot;hello, world~&quot;</span>
+</pre></div>
+</div>
+<ul>
+<li><p>脚本的常用执行方式
+方式1   (./脚本)
+说明:首先要赋予helloworld.sh脚本的 加上 可执行权限，再执行脚本</p>
+<p>比如: ./hell.sh</p>
+</li>
+</ul>
+<p><img alt="image-20220811153845725" src="../_images/image-20220811153845725.png" /></p>
+<p>​		方式2  (sh + 脚本)
+​		说明:不用赋予脚本+x权限，直接执行即可。</p>
+<p><img alt="image-20220811154041039" src="../_images/image-20220811154041039.png" /></p>
+</section>
+<hr class="docutils" />
+<section id="id49">
+<h3>16.2 shell变量<a class="headerlink" href="#id49" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><p><strong>Shell变量介绍</strong></p>
+<ol>
+<li><p>Linux Shell中的变量分为，系统变量和用户自定义变量</p></li>
+<li><p>系统变量:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$HOME、$PWD、$SHELL、$USER等等，
+比如:echo $HOME 等等.
+</pre></div>
+</div>
+</li>
+<li><p>显示当前shell中所有变量:  set</p></li>
+</ol>
+</li>
+<li><p><strong>shell变量的定义</strong>
+基本语法</p>
+<ol>
+<li><p>定义变量:   变量名=值  (不能有空格)</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nv">a</span><span class="o">=</span><span class="m">100</span>
+<span class="nb">echo</span> <span class="s2">&quot;a=</span><span class="nv">$a</span><span class="s2">&quot;</span>
+
+结果:
+<span class="nv">a</span><span class="o">=</span><span class="m">100</span>
+</pre></div>
+</div>
+</li>
+<li><p>撤销变量:    unset变量</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nv">a</span><span class="o">=</span><span class="m">100</span>
+<span class="nb">echo</span> <span class="s2">&quot;a=</span><span class="nv">$a</span><span class="s2">&quot;</span>
+
+<span class="nb">unset</span> a
+<span class="nb">echo</span> <span class="s2">&quot;a=</span><span class="nv">$a</span><span class="s2">&quot;</span>
+
+结果:
+<span class="nv">a</span><span class="o">=</span><span class="m">100</span>
+<span class="nv">a</span><span class="o">=</span>
+</pre></div>
+</div>
+</li>
+<li><p>声明静态变量:  readonly 变量.   注意:不能对静态变量 unset</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">readonly</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">unset</span> <span class="n">b</span>
+</pre></div>
+</div>
+<img src="linux.assets/image-20220811155904815.png" alt="image-20220811155904815" style="zoom:67%;" /></li>
+</ol>
+</li>
+<li><p><strong>shell变量的使用</strong></p>
+<p>个人喜欢加” “ 并且一般是字符串都加上 “”</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;a=</span><span class="nv">$a</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>定义变量规范</strong></p>
+<ol class="simple">
+<li><p>变量名称可以由字母、数字和下划线组成，但是不<strong>能以数字开头</strong>。5A=200(×)</p></li>
+<li><p>等号两侧不能有空格</p></li>
+<li><p><strong>变量名称一般习惯为大写</strong>，这是一个规范</p></li>
+</ol>
+</li>
+</ul>
+</section>
+<section id="id50">
+<h3>16.3 <strong>将命令的结果  赋给变量</strong><a class="headerlink" href="#id50" title="永久链接至标题">¶</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">A</span><span class="o">=</span><span class="sb">`</span>date<span class="sb">`</span>    反引号，运行里面的命令，并把结果返回给变量A
+<span class="nv">A</span><span class="o">=</span><span class="k">$(</span>date<span class="k">)</span>   等价于反引号  // 推荐
+</pre></div>
+</div>
+<p>​</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="sb">```</span>shell
+<span class="c1">#!/bin/bash</span>
+
+<span class="nv">c</span><span class="o">=</span><span class="sb">`</span>date<span class="sb">`</span>
+<span class="nv">D</span><span class="o">=</span><span class="k">$(</span>date<span class="k">)</span> 
+
+<span class="nb">echo</span> <span class="s2">&quot;C=</span><span class="nv">$c</span><span class="s2">&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;D=</span><span class="nv">$D</span><span class="s2">&quot;</span> 
+      
+结果:
+<span class="nv">C</span><span class="o">=</span>Thu Aug <span class="m">11</span> <span class="m">01</span>:06:53 PDT <span class="m">2022</span>
+<span class="nv">D</span><span class="o">=</span>Thu Aug <span class="m">11</span> <span class="m">01</span>:06:53 PDT <span class="m">2022</span>
+<span class="sb">```</span>
+</pre></div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">DATETIME</span><span class="o">=</span>$ <span class="o">(</span>date <span class="s2">&quot;+%Y-%m-%d %H:%M:%S&quot;</span><span class="o">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id51">
+<h3>16.4 设置环境变量<a class="headerlink" href="#id51" title="永久链接至标题">¶</a></h3>
+<p>●基本语法</p>
+<ol class="simple">
+<li><p>export变量名=变量值（功能描述:将shell变量输出为环境变量/全局变</p></li>
+<li><p><strong>source  配置文件</strong>
+(功能描述:让修改后的配置信息立即生效)</p></li>
+<li><p>echo $变量名
+(功能描述:查询环境变量的值)</p></li>
+</ol>
+<ul>
+<li><p>使用</p>
+<ol>
+<li><p><strong>在vim  /etc/profile文件中定义TOMCAT_HOME环境变量·</strong></p>
+<p><img alt="image-20220811164018020" src="../_images/image-20220811164018020.png" /></p>
+<p><img alt="image-20220811164116393" src="../_images/image-20220811164116393.png" /></p>
+</li>
+<li><p>查看环境变量TOMCAT_HOME的</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>终端中 
+echo $TOMCAT_HOME
+</pre></div>
+</div>
+</li>
+<li><p>在shell程序中使用TOMCAT_HOME</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>脚本
+<span class="nb">echo</span> <span class="s2">&quot;tomcat_home=</span><span class="nv">$TOMCAT_HOME</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</li>
+</ul>
+<p>注意: 在输出TOMCAT_HOME 环境变量前，需要让其生效source /etc/profile</p>
+</section>
+<section id="id52">
+<h3>16.5 注释<a class="headerlink" href="#id52" title="永久链接至标题">¶</a></h3>
+<p>单行注释</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1">#案例1:计算(2+3)X4的值</span>
+</pre></div>
+</div>
+<p>多行注释</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>:&lt;&lt;!
+<span class="nv">c</span><span class="o">=</span><span class="sb">`</span>date<span class="sb">`</span>
+<span class="nv">D</span><span class="o">=</span><span class="k">$(</span>date<span class="k">)</span> 
+<span class="nb">echo</span> <span class="s2">&quot;C=</span><span class="nv">$c</span><span class="s2">&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;D=</span><span class="nv">$D</span><span class="s2">&quot;</span> 
+!
+</pre></div>
+</div>
+</section>
+<section id="id53">
+<h3>16.6 位置参数变量<a class="headerlink" href="#id53" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><p>介绍
+当我们执行一个shell脚本时，如果希望获取到命令行的参数信息，就可以使用到位置参数变量</p></li>
+<li><p>基本语法</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">$n</span>
+（功能描述:n为数字，<span class="nv">$0</span>代表命令本身，<span class="nv">$1</span>-<span class="nv">$9</span>代表第一到第九个参数，十以上的参数，十以上的参数需要用大括号包含，如<span class="si">${</span><span class="nv">10</span><span class="si">}</span><span class="o">)</span>
+
+<span class="nv">$*</span>（功能描述:这个变量代表命令行中所有的参数，<span class="nv">$*</span>把所有的参数看成一个整体<span class="o">)</span>
+
+<span class="nv">$@</span>（功能描述:这个变量也代表命令行中所有的参数，不过<span class="nv">$@</span>把每个参数区分对待<span class="o">)</span>
+
+<span class="nv">$#</span><span class="o">(</span>功能描述:这个变量代表命令行中所有参数的个数<span class="o">)</span>
+</pre></div>
+</div>
+<p>●位置参数变量
+案例:编写一个shell脚本position.sh，在脚本中获取到命令行的各个参数信息</p>
+</li>
+</ul>
+<p>案例:</p>
+<p>./myshell.sh 100 200，这个就是一个执行SnelI命令，可以在myshell脚本中获取到参数的信息</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$0</span><span class="s2"> </span><span class="nv">$1</span><span class="s2"> </span><span class="nv">$2</span><span class="s2">&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;所有的参数=</span><span class="nv">$*</span><span class="s2">&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;参数的个数=</span><span class="nv">$#</span><span class="s2">&quot;</span>
+
+
+效果:
+<span class="o">[</span>root@localhost shcode<span class="o">]</span><span class="c1"># ./myshell.sh </span>
+./myshell.sh  
+<span class="nv">所有的参数</span><span class="o">=</span>
+<span class="nv">参数的个数</span><span class="o">=</span><span class="m">0</span>
+
+<span class="o">[</span>root@localhost shcode<span class="o">]</span><span class="c1"># ./myshell.sh 100 200</span>
+./myshell.sh <span class="m">100</span> <span class="m">200</span>
+<span class="nv">所有的参数</span><span class="o">=</span><span class="m">100</span> <span class="m">200</span>
+<span class="m">100</span> <span class="m">200</span>
+<span class="nv">参数的个数</span><span class="o">=</span><span class="m">2</span>
+</pre></div>
+</div>
+</section>
+<section id="id54">
+<h3>16.7 预定义变量<a class="headerlink" href="#id54" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><p>基本介绍
+就是shell设计者事先已经定义好的变量，可以直接在shell脚本中使用</p></li>
+<li><p>基本语法</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">$$</span>（功能描述:  当前进程的进程号<span class="o">(</span>PID<span class="o">))</span>
+
+<span class="nv">$!</span>（功能描述:  后台运行的最后一个进程的进程号（PID<span class="o">))</span>
+
+<span class="nv">$?</span>（功能描述:  最后一次执行的命令的返回状态。如果这个变量的值为0，证明上一个命令正确执行<span class="p">;</span>如果这个变量的值为非0<span class="o">(</span>具体是哪个数，由命令自己来决定），则证明上一个命令执行不正确了。<span class="o">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>案例 :
+在一个shell脚本中简单使用一下预定义变量preVar.sh</p></li>
+</ul>
+<p><img alt="image-20220811170905266" src="../_images/image-20220811170905266.png" />·<img alt="image-20220811170918125" src="../_images/image-20220811170918125.png" /></p>
+</section>
+<hr class="docutils" />
+<section id="id55">
+<h3>16.8 运算符<a class="headerlink" href="#id55" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><p>基本介绍
+在shell中进行各种运算操作</p></li>
+<li><p>基本语法</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="m">1</span>. “$<span class="o">[</span>运算式<span class="o">]</span>”
+    或者“<span class="k">$((</span>运算式<span class="k">))</span>”
+
+或者 <span class="sb">`</span>expr m <span class="se">\*</span> n<span class="sb">`</span>        
+ . expression表达式  注意expr运算符间要有空格
+ . expr中的  <span class="se">\*</span>乘  /除  %取余
+</pre></div>
+</div>
+<p>案例1:   计算(2+3)X4的值</p>
+<p><img alt="image-20220811172452439" src="../_images/image-20220811172452439.png" /></p>
+<p>案例2∶  请求出命令行的两个参数[整数]的和</p>
+<p><img alt="image-20220811172644744" src="../_images/image-20220811172644744.png" /></p>
+<p><img alt="image-20220811172635222" src="../_images/image-20220811172635222.png" /></p>
+</li>
+</ul>
+</section>
+<section id="id56">
+<h3>16.9  条件判断<a class="headerlink" href="#id56" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><p>基本语法
+<strong>if [ condition ]</strong>     注意condition<strong>前后必须要有空格</strong>
+#空返回true,可使用  $?  验证   (0为true ,   &gt;1为false)</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;ok&quot;</span> <span class="o">=</span> <span class="s2">&quot;ok&quot;</span><span class="o">]</span>
+<span class="k">then</span> 
+		<span class="nb">echo</span> <span class="s2">&quot;equal&quot;</span>
+<span class="k">fi</span>
+</pre></div>
+</div>
+<p>√应用实例
+if  [ hspEdu ]   返回true
+if [  ]    返回false
+if  [condition ] &amp;&amp; echo OK || echo notok
+条件满足，执行后面的语句</p>
+</li>
+<li><p>判断语句</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="m">1</span><span class="o">)</span>  <span class="o">=</span> 字符串比较
+
+<span class="m">2</span><span class="o">)</span>  两个整数的比较
+-lt 小于
+-le 小于等于
+
+-eq 等于
+-ne 不等于
+
+-gt 大于
+-ge 大于等于
+
+<span class="m">3</span><span class="o">)</span>  按照文件权限进行判断
+-r 有读的权限
+-w 有写的权限
+-x 有执行的权限
+
+<span class="m">4</span><span class="o">)</span>按照文件类型进行判断
+-f <span class="s2">&quot;文件路径&quot;</span>   //文件存在并且是一个常规的文件
+-e <span class="s2">&quot;文件路径&quot;</span>   //文件存在
+-d <span class="s2">&quot;文件路径&quot;</span>   //文件存在并是一个目录
+! -d <span class="s2">&quot;文件路径&quot;</span>  // 文件存在并是一个目录不存在
+</pre></div>
+</div>
+</li>
+<li><p>案例
+案例1: “ok”是否等于”ok”</p>
+<p>判断语句:   =</p>
+<p><img alt="image-20220811174106941" src="../_images/image-20220811174106941.png" /></p>
+<p>案例2:  23是否大于等于 22
+判断语句:  -ge</p>
+<p><img alt="image-20220811174120966" src="../_images/image-20220811174120966.png" /></p>
+<p>案例3 :   /root/shcode/aaa.txt目录中的文件是否存在
+判断语句:  -f</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">[</span> -f  <span class="s2">&quot;/root/shcode/aaa.txt&quot;</span> <span class="o">]</span> 
+<span class="k">then</span>   
+		<span class="nb">echo</span> <span class="s2">&quot;存在&quot;</span> 
+<span class="k">else</span>   
+		<span class="nb">echo</span> <span class="s2">&quot;不存在&quot;</span> 
+<span class="k">fi</span>
+</pre></div>
+</div>
+<p><img alt="image-20220811174220307" src="../_images/image-20220811174220307.png" /></p>
+</li>
+</ul>
+</section>
+<section id="id57">
+<h3>16.10 流程控制<a class="headerlink" href="#id57" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><p><strong>1.  if 语法</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;ok&quot;</span> <span class="o">=</span> <span class="s2">&quot;ok&quot;</span><span class="o">]</span>
+<span class="k">then</span> 
+		<span class="nb">echo</span> <span class="s2">&quot;equal&quot;</span>
+<span class="k">fi</span>
+</pre></div>
+</div>
+<p>**多分支语法 : **</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;ok&quot;</span> <span class="o">=</span> <span class="s2">&quot;ok&quot;</span><span class="o">]</span>
+<span class="k">then</span> 
+		<span class="nb">echo</span> <span class="s2">&quot;equal&quot;</span>
+<span class="k">elif</span>  <span class="o">[</span> <span class="s2">&quot;o&quot;</span> <span class="o">=</span> <span class="s2">&quot;o&quot;</span><span class="o">]</span>
+<span class="k">then</span> 
+		<span class="nb">echo</span> <span class="s2">&quot;equal&quot;</span>
+<span class="k">fi</span>
+</pre></div>
+</div>
+<p>注意事项:[条件判断式]，中括号和条件判断式之间必须有空格√应用实例ifCase.sh</p>
+</li>
+<li><p><strong>案例:</strong></p>
+<p>请编写一个shell程序，如果输入的参数，大于等于60，则输出”及格了”，如果小于60,则输出“不及格”</p>
+<p><img alt="image-20220811175805700" src="../_images/image-20220811175805700.png" /></p>
+<p><img alt="image-20220811175753253" src="../_images/image-20220811175753253.png" /></p>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><strong>2.  case语句</strong></p></li>
+</ul>
+<p>**语法  : **</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="k">case</span> <span class="nv">$1</span> in
+<span class="s2">&quot;1&quot;</span><span class="o">)</span>
+<span class="nb">echo</span> <span class="s2">&quot;周一&quot;</span>
+<span class="p">;;</span>
+<span class="s2">&quot;2&quot;</span><span class="o">)</span>
+<span class="nb">echo</span> <span class="s2">&quot;周二&quot;</span>
+<span class="p">;;</span>
+*<span class="o">)</span>
+<span class="nb">echo</span> <span class="s2">&quot;other&quot;</span>
+<span class="p">;;</span>
+<span class="k">esac</span>
+</pre></div>
+</div>
+<p>效果:</p>
+<img src="linux.assets/image-20220811180836507.png" style="zoom:150%;" /></section>
+<section id="for">
+<h3>16.11 for循环<a class="headerlink" href="#for" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><p>基本语法1</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> 变量  in值1值2值3….
+<span class="k">do</span>
+程序/代码
+<span class="k">done</span>
+</pre></div>
+</div>
+<p>应用实例testFor1.sh</p>
+<p>案例: 打印命令行输入的参数</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>!bin/bash
+
+<span class="c1"># $* 是把终端参数当成一个整体   </span>
+<span class="c1"># $@ 是把终端参数会区分的  </span>
+<span class="k">for</span> i in <span class="s2">&quot;</span><span class="nv">$*</span><span class="s2">&quot;</span> <span class="c1"># 用$@ 或者 不加双引号就是一个一个依次输出了              </span>
+<span class="k">do</span>
+        <span class="nb">echo</span> <span class="s2">&quot;num is </span><span class="nv">$i</span><span class="s2">&quot;</span>
+<span class="k">done</span>
+
+<span class="c1">#效果:</span>
+<span class="c1"># 用&quot;$*&quot;</span>
+<span class="o">[</span>root@localhost shcode<span class="o">]</span><span class="c1"># sh testFor.sh 10 20 30</span>
+num is <span class="m">10</span> <span class="m">20</span> <span class="m">30</span>
+
+<span class="c1"># 用$@ 不加双引号就是一个一个依次输出了</span>
+<span class="o">[</span>root@localhost shcode<span class="o">]</span><span class="c1"># sh testFor.sh 10 20 30</span>
+num is <span class="m">10</span>
+num is <span class="m">20</span>
+num is <span class="m">30</span>
+</pre></div>
+</div>
+</li>
+<li><p>基本语法2</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="o">((</span>初始值<span class="p">;</span>循环控制条件<span class="p">;</span>变量变化<span class="o">))</span>   
+<span class="k">do</span>
+程序/代码
+<span class="k">done</span>
+</pre></div>
+</div>
+<p>应用实例testFor2.sh
+案例:  从1加到100的值输出显示</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="ch">#!bin/bash</span>
+
+<span class="nv">SUM</span><span class="o">=</span><span class="m">0</span>
+<span class="k">for</span> <span class="o">((</span><span class="nv">i</span> <span class="o">=</span> <span class="m">1</span><span class="p">;</span> i &lt;<span class="o">=</span> <span class="m">100</span><span class="p">;</span> i++<span class="o">))</span>
+<span class="k">do</span>
+        <span class="nv">SUM</span><span class="o">=</span>$<span class="o">[</span><span class="nv">$SUM</span>+<span class="nv">$i</span><span class="o">]</span>
+<span class="k">done</span>      
+<span class="nb">echo</span> <span class="s2">&quot;总和=</span><span class="nv">$SUM</span><span class="s2">&quot;</span>        
+
+<span class="c1">#效果:</span>
+<span class="o">[</span>root@localhost shcode<span class="o">]</span><span class="c1"># sh testFor.sh </span>
+<span class="nv">总和</span><span class="o">=</span><span class="m">5050</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="while">
+<h3>16.12 while循环<a class="headerlink" href="#while" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><p>基本语法1</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="o">[</span> 条件判断式 <span class="o">]</span>  <span class="c1">#while和 [ ] 有空格，条件判断式和[]也有空格</span>
+<span class="k">do</span>
+程序/代码
+<span class="k">done</span>
+</pre></div>
+</div>
+<p><strong>注意:  while和 [ ] 有空格，条件判断式和[]也有空格</strong></p>
+</li>
+</ul>
+<p>案例1:</p>
+<p>从命令行输入一个数n，统计从1+x+n的值是多少</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="nv">SUN</span><span class="o">=</span><span class="m">0</span>
+<span class="nv">i</span><span class="o">=</span><span class="m">0</span>
+
+<span class="k">while</span> <span class="o">[</span> <span class="nv">$i</span> -le <span class="nv">$1</span> <span class="o">]</span>
+<span class="k">do</span>
+        <span class="nv">SUM</span><span class="o">=</span>$<span class="o">[</span><span class="nv">$SUM</span>+<span class="nv">$i</span><span class="o">]</span>
+        <span class="nv">i</span><span class="o">=</span>$<span class="o">[</span><span class="nv">$i</span>+1<span class="o">]</span>
+<span class="k">done</span>
+
+<span class="nb">echo</span> <span class="nv">$SUM</span>                
+</pre></div>
+</div>
+<p><img alt="image-20220812180047080" src="../_images/image-20220812180047080.png" /></p>
+</section>
+<section id="read">
+<h3>16.13 read获取输入<a class="headerlink" href="#read" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><p>基本语法</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>read<span class="o">(</span>选项<span class="o">)(</span>参数<span class="o">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>选项:</p>
+<p>-p:   指定读取值时的提示符;
+-t:   指定读取值时等待的时间(秒），超出指定的时间内输入，就不再等待</p>
+<p>参数:
+变量:  指定读取值的变量名</p>
+<p>案例:
+案例1: 读取控制台输入一个NUM1值</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="nb">read</span> -p <span class="s2">&quot;请输入一个数=&quot;</span> NUM1
+<span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$NUM1</span><span class="s2">&quot;</span>
+
+<span class="c1">#结果:</span>
+<span class="nv">请输入一个数</span><span class="o">=</span><span class="m">22</span>
+<span class="m">22</span>
+</pre></div>
+</div>
+<p>案例2: 读取控制台输入一个num值，在10秒内输入。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>v#!/bin/bash
+
+<span class="nb">read</span> -t <span class="m">10</span> -p <span class="s2">&quot;请输入第二个数&quot;</span> NUM2
+<span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$NUM2</span><span class="s2">&quot;</span>       
+
+<span class="c1">#结果:</span>
+<span class="nv">请输入第二个数</span><span class="o">=</span><span class="m">22</span>
+<span class="m">22</span>
+</pre></div>
+</div>
+</section>
+<section id="id58">
+<h3>16.14 函数<a class="headerlink" href="#id58" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><p>函数介绍
+shell编程和其它编程语言一样，有系统函数，也可以自定义函数。</p></li>
+<li><p>系统函数
+<strong>basename基本语法</strong>
+功能:   返回完整路径最后/  的部分，<strong>常用于获取文件名</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>basename <span class="o">[</span>pathname<span class="o">]</span> <span class="o">[</span>suffix<span class="o">]</span>
+
+basename <span class="o">[</span>string<span class="o">]</span> <span class="o">[</span>suffix<span class="o">]</span>（功能描述:basename命令会删掉所有的前缀包括最后一个<span class="o">(</span>‘T<span class="o">)</span>字符，然后将字符串显示出来。
+</pre></div>
+</div>
+<p>选项:
+suffix为后缀，如果suffix被指定了,  basename会将pathname或string中的suffix去掉。</p>
+<p><strong>dirname基本语法</strong></p>
+<p>功能:   返回文件名前路径 的部分</p>
+</li>
+</ul>
+<p>案例;</p>
+<p>案例1:   请返回/home/aaa/test.txt   的”test.txt”部分</p>
+<p>basename</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@localhost shcode<span class="o">]</span><span class="c1"># basename /home/aaa/test.txt </span>
+test.txt
+  
+<span class="o">[</span>root@localhost shcode<span class="o">]</span><span class="c1"># basename /home/aaa/test.txt .txt</span>
+<span class="nb">test</span>
+</pre></div>
+</div>
+<p><img alt="image-20220812182059120" src="../_images/image-20220812182059120.png" /></p>
+<p>dirname</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@localhost shcode<span class="o">]</span><span class="c1"># dirname /home/aaa/test.txt </span>
+/home/aaa
+
+<span class="o">[</span>root@localhost shcode<span class="o">]</span><span class="c1"># dirname /home/aaa/bbb/test.txt </span>
+/home/aaa/bbb
+</pre></div>
+</div>
+<p><img alt="image-20220812182501916" src="../_images/image-20220812182501916.png" /></p>
+<p>注意:   这两个函数经常使用在脚本文件里，得到一般是全路径，需要用这两个函数做处理</p>
+</section>
+<section id="id59">
+<h3>16.15 自定义函数<a class="headerlink" href="#id59" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><p>基本语法</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> funname<span class="o">()</span>
+<span class="o">{</span>
+	程序/代码
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>调用直接写函数名:   funname 值1  值2</p>
+<p>案例:</p>
+<p>案例1:   计算辅入两个参数的和，getSum</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1">#定义函数 getSum</span>
+<span class="k">function</span> getSum<span class="o">()</span> 
+<span class="o">{</span>
+	<span class="nv">SUM</span><span class="o">=</span>$<span class="o">[</span><span class="nv">$n1</span>+<span class="nv">$n2</span><span class="o">]</span>
+	<span class="nb">echo</span> “和是<span class="o">=</span><span class="nv">$SUM</span><span class="s2">&quot;</span>
+<span class="s2">}</span>
+
+<span class="s2">#输入两个值</span>
+<span class="s2">read -p “请输入一个数&quot;</span> n1
+<span class="nb">read</span> -p “请输入一个数<span class="s2">&quot; n2</span>
+
+<span class="s2">#调用自定义函数</span>
+<span class="s2">getSum </span><span class="nv">$nl</span><span class="s2"> </span><span class="nv">$n2</span><span class="s2"></span>
+</pre></div>
+</div>
+<p>结果:</p>
+<p><img alt="image-20220812183941074" src="../_images/image-20220812183941074.png" /></p>
+</section>
+<hr class="docutils" />
+<section id="id60">
+<h3>16.16 综合案例<a class="headerlink" href="#id60" title="永久链接至标题">¶</a></h3>
+<p>Shell编程综合案例</p>
+<ol class="simple">
+<li><p>每天凌晨2:30备份;</p></li>
+<li><p>备份开始和备份结束能够给出相应的提示信息</p></li>
+<li><p>备份后的文件要求以备份时间为文件名，并打包成.tar.gz的形式，比如:2021-03-12_230201.tar.gz</p></li>
+<li><p>在备份的同时，检查是否有10天前备份的数据库文件，如果有就将其删除。</p></li>
+</ol>
+<img src="linux.assets/image-20220814162856138.png" alt="image-20220814162856138" style="zoom:67%;" /><div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">BACKUP</span><span class="o">=</span><span class="s2">&quot;/data/backup/db&quot;</span>
+
+<span class="nv">BATETIME</span><span class="o">=</span><span class="k">$(</span>date <span class="s2">&quot;+%Y-%m-%d_%H%M%S&quot;</span><span class="k">)</span>
+<span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$BATETIME</span><span class="s2">&quot;</span>
+
+<span class="nv">DATA</span><span class="o">=</span><span class="s2">&quot;数据库&quot;</span>
+
+<span class="k">if</span> <span class="o">[</span> ! -d <span class="s2">&quot;</span><span class="nv">$BACKUP</span><span class="s2">/</span><span class="nv">$BATETIME</span><span class="s2">&quot;</span> <span class="o">]</span>
+<span class="k">then</span>
+        mkdir -p <span class="s2">&quot;</span><span class="nv">$BACKUP</span><span class="s2">/</span><span class="nv">$BATETIME</span><span class="s2">&quot;</span>
+<span class="k">fi</span>
+
+<span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$DATA</span><span class="s2">&quot;</span> <span class="p">|</span> gzip &gt; <span class="s2">&quot;</span><span class="nv">$BACKUP</span><span class="s2">/</span><span class="nv">$BATETIME</span><span class="s2">/</span><span class="nv">$BATETIME</span><span class="s2">.gz&quot;</span>
+
+<span class="c1">#将文件处理成 tar.gz</span>
+<span class="nb">cd</span> <span class="s2">&quot;</span><span class="nv">$BACKUP</span><span class="s2">&quot;</span>
+tar -czvf <span class="s2">&quot;</span><span class="nv">$BATETIME</span><span class="s2">.tar.gz&quot;</span> <span class="s2">&quot;</span><span class="nv">$BATETIME</span><span class="s2">&quot;</span>
+
+<span class="c1">#删除对应的多余文件</span>
+rm -rf <span class="s2">&quot;</span><span class="nv">$BATETIME</span><span class="s2">&quot;</span>
+
+<span class="c1">#删除10天前的文件</span>
+find <span class="s2">&quot;</span><span class="nv">$BACKUP</span><span class="s2">&quot;</span> -atime +10 -name <span class="s2">&quot;*.tar.gz&quot;</span> -exec -rf <span class="o">{}</span> <span class="se">\;</span>
+<span class="nb">echo</span> <span class="s2">&quot;操作成功&quot;</span>
+<span class="s2">&quot;test.sh&quot;</span> 26L, 474C        
+</pre></div>
+</div>
+<p>设置crond任务调度(定时任务)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">crontab</span> <span class="o">-</span><span class="n">e</span>
+<span class="mi">0</span> <span class="mi">2</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">shcode</span><span class="o">/</span><span class="n">test</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>效果:</p>
+<p><img alt="image-20220813185729353" src="../_images/image-20220813185729353.png" /></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id61">
+<h2>十七、 日志管理<a class="headerlink" href="#id61" title="永久链接至标题">¶</a></h2>
+<section id="id62">
+<h3>17.1 基本介绍<a class="headerlink" href="#id62" title="永久链接至标题">¶</a></h3>
+<ol class="simple">
+<li><p>日志文件是重要的系统信息文件，其中记录了许多重要的系统事件，包括用户的登录信息、系统的
+启动信息、系统的安全信息、邮件相关信息、各种服务相关信息等。</p></li>
+<li><p>日志对于安全来说也很重要，它记录了系统每天发生的各种事情，通过日志来检查错误发生的原因，
+或者受到攻击时攻击者留下的痕迹。</p></li>
+<li><p>可以这样理解日志是用来记录重大事件的工具</p></li>
+</ol>
+<p><strong>/var/log/目录就是系统日志文件的保存位置</strong></p>
+<p>==<strong>进入 cd /var/log/ 可以查看日志</strong>==</p>
+<p><img alt="image-20220814200337803" src="../_images/image-20220814200337803.png" /></p>
+<p><img alt="image-20220814200123264" src="../_images/image-20220814200123264.png" /></p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th><strong>日志文件</strong></th>
+<th><strong>说 明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>/var/log/cron</strong></td>
+<td><strong>记录与系统定时任务相关的曰志</strong></td>
+</tr>
+<tr>
+<td>/var/log/cups/</td>
+<td>记录打印信息的曰志</td>
+</tr>
+<tr>
+<td>/var/log/dmesg</td>
+<td>记录了系统在开机时内核自检的信总。也可以使用dmesg命令直接查看内核自检信息</td>
+</tr>
+<tr>
+<td>/var/log/btmp</td>
+<td>记录错误登陆的日志。这个文件是二进制文件，不能直接用Vi查看，而要使用lastb命令查看。命令如下： [root@localhost log]#lastb root tty1 Tue Jun 4 22:38 - 22:38 (00:00) #有人在6月4 日 22:38便用root用户在本地终端 1 登陆错误</td>
+</tr>
+<tr>
+<td><strong>/var/log/lasllog</strong></td>
+<td>记录系统中所有用户最后一次的登录时间的曰志。这个文件也是二进制文件.不能直接用Vi 查看。而要使用lastlog命令查看</td>
+</tr>
+<tr>
+<td><strong>/var/Iog/mailog</strong></td>
+<td>记录邮件信息的曰志</td>
+</tr>
+<tr>
+<td><strong>/var/log/messages</strong></td>
+<td>它是核心系统日志文件，其中包含了系统启动时的引导信息，以及系统运行时的其他状态消息。I/O 错误、网络错误和其他系统错误都会记录到此文件中。其他信息，比如某个人的身份切换为 root，已经用户自定义安装软件的日志，也会在这里列出。</td>
+</tr>
+<tr>
+<td><strong>/var/log/secure</strong></td>
+<td>记录验证和授权方面的倍息，只要涉及账户和密码的程序都会记录，比如系统的登录、ssh的登录、su切换用户，sudo授权，甚至添加用户和修改用户密码都会记录在这个日志文件中</td>
+</tr>
+<tr>
+<td>/var/log/wtmp</td>
+<td>永久记录所有用户的登陆、注销信息，同时记录系统的后动、重启、关机事件。同样，这个文件也是二进制文件.不能直接用Vi查看，而要使用last命令查看</td>
+</tr>
+<tr>
+<td><strong>/var/tun/ulmp</strong></td>
+<td>记录当前已经登录的用户的信息。这个文件会随着用户的登录和注销而不断变化，只记录当前登录用户的信息。同样，这个文件不能直接用Vi查看，而要使用w、who、users等命令查看</td>
+</tr>
+</tbody>
+</table></section>
+<section id="id63">
+<h3>17.2 日志管理服务<a class="headerlink" href="#id63" title="永久链接至标题">¶</a></h3>
+<p><strong>日志管理服务  rsyslogd</strong>
+CentOS7.6日志服务是rsyslogd , CentOS6.x日志服务是syslogd 。 rsyslogd功能更强大。rsyslogd 的使用、日志文件的格式，和syslogd服务兼容的。</p>
+<p>原理示意图</p>
+<p><img alt="image-20220814203819075" src="../_images/image-20220814203819075.png" /></p>
+<ul class="simple">
+<li><p>查询Linux 中的rsyslogd 服务是否启动
+ps aux | grep “rsyslog” | grep -v “grep”</p></li>
+<li><p>查询rsyslogd 服务的自启动状态
+systemctl list-unit-files | grep rsyslog</p></li>
+</ul>
+<p><strong>配置文件:  /etc/rsyslog.conf</strong>
+日志级别分为:
+debug     ##有调试信息的，日志通信最多
+info         ##—般信息日志，最常用
+notice     ##最具有重要性的普通条件的信息
+warning   ##警告级别
+err          ##错误级别，阻止某个功能或者模块不能正常工作的信息
+crit         ##严重级别，阻止整个系统或者整个软件不能正常工作的信息
+alert       ##需要立刻修改的信息
+emerg    ##内核崩溃等重要信息
+none      ##什么都不记录
+注意:从上到下，级别从低到高，记录信息越来越少</p>
+<p>**由日志服务rsyslogd记录的日志文件，日志文件的格式包含以下4列:**基本日志格式包含以下四列：</p>
+<p><strong>（1）</strong> 事件产生的时间
+<strong>（2）</strong> 发生事件的服务器的主机名
+<strong>（3）</strong> 产生事件的服务名或程序名
+<strong>（4）</strong> 事件的具体信息</p>
+<p>日志如何查看实例
+查看一下/ar/log/secure日志，这个日志中记录的是用户验证和授权方面的信息来分析如何查看Nov 12 12:18:26</p>
+<p><img alt="image-20220814203654984" src="../_images/image-20220814203654984.png" /></p>
+</section>
+<section id="id64">
+<h3>17.3 自定义日志服务<a class="headerlink" href="#id64" title="永久链接至标题">¶</a></h3>
+<p>在/etc/rsyslog.conf 中添加一个日志文件/var/log/hsp.log,当有事件发送时(比如sshd服务相关事件)，该文件会接收到信息并保存。演示重启，登录的情况，看看是否有日志保存</p>
+<ol class="simple">
+<li><p>vim /etc/rsyslog.conf  进入日志管理服务</p></li>
+<li><p><img alt="image-20220814205005111" src="../_images/image-20220814205005111.png" /></p></li>
+<li><p>重启服务 systemctl restart rsyslog.service</p></li>
+<li><p>进入 cd /var/log/   使用  cat hsp.log  查看自定义的日志</p></li>
+</ol>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Cmake/index.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2022, JinDao.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

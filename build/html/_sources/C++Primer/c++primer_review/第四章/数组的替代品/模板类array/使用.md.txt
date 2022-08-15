@@ -1,0 +1,7 @@
++ 模板类array： 创建定长数组
++ 效率低
++ 不同于普通的数组 它可以进行相互之间的赋值
++ 格式：
+  ==#include<array>
+   array<typeanme，const size> name；==
+

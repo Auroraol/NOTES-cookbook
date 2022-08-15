@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>&lt;no title&gt; &mdash; X-NOTES latest 文档</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="CMake" href="Cmake.html" />
+    <link rel="prev" title="Qt" href="../Qt/Qt.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> X-NOTES
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Linux/Linux.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Qt/Qt.html">Qt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cmake.html">CMake</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">X-NOTES</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>&lt;no title&gt;</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Cmake/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <dl>
+<dt>Cmake</dt><dd><div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Cmake.html">CMake</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Cmake.html#cmake-minimum-required-cmake"><strong>==cmake_minimum_required== - 指定CMake的最小版本要求</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cmake.html#project"><strong>==project== - 定义工程名称，并可指定工程支持的语言</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cmake.html#set"><strong>==set==- 显式的定义变量</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cmake.html#include-directories-g-i"><strong>==include_directories== - 向工程添加多个 ==特定的头文件== 搜索路径 —&gt;相当于指定g++编译器的-I参数</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cmake.html#link-directories-g-l">==link_directories== - 向工程添加多个 ==特定的库文件== 搜索路径 —&gt;相当于指定g++编译器的-L参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cmake.html#add-library"><strong>==add_library== - 生成库文件</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Cmake.html#id1"><strong>构建实例</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Cmake.html#id2">1. 构建静态和动态库</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Cmake.html#id3">2. 安装头文件 和 共享库</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Cmake.html#id4"><strong>3. 使用</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Cmake.html#add-compile-options">==add_compile_options== - 添加编译参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cmake.html#add-executable">==add_executable==- 生成可执行文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cmake.html#target-link-libraries-target-g-l">==target_link_libraries== - 为 target 添加需要链接的共享库 —&gt;相同于指定g++编译器-l参数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cmake.html#add-subdirectory">==add_subdirectory== - 向当前工程添加存放源文件的子目录，指定 中间 和 目标的二进制存放的位置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cmake.html#aux-source-directory">==aux_source_directory== - 发现一个目录下所有的源代码文件并将列表存储在一个变量中，这个指令临时被用来自动构建源文件列表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cmake.html#id5">CMake常用变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cmake.html#id6">CMake编译工程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Cmake.html#id7">内部构建和外部构建</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Cmake.html#id8">外部构建</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Cmake.html#vscodejson">配置VSCode的json文件并调试项目</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Cmake.html#id9">多文件编译</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Cmake.html#id10">CMake入门到精通实战</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Qt/Qt.html" class="btn btn-neutral float-left" title="Qt" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Cmake.html" class="btn btn-neutral float-right" title="CMake" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2022, JinDao.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

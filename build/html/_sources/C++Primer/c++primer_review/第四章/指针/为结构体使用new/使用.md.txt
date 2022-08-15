@@ -1,0 +1,7 @@
++ 格式(与为数据使用new方法一样)：
+  structname* ps = new structname;
+  ps->element;  //访问成员元素
+  delete ps;
+
++ 区别普通结构体：
+  + 访问的方式不同：普通的用**.** 动态结构体用**->**. 
