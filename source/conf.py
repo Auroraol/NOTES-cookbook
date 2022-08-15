@@ -27,6 +27,9 @@ html_static_path = ['_static']
 
 #添加markdown支持
 extensions = [
+    'sphinx.ext.autodoc',
+    'sphinx.ext.napoleon',
+    'sphinx.ext.mathjax',
     'recommonmark',
     'sphinx_markdown_tables'
 ]
