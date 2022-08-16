@@ -8,7 +8,7 @@ DATETIME=$(date "+%Y/%m/%d")
 git add .
 git commit -m "$DATETIME"
 echo "$DATETIME"
-git remote set-url origin https://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@github.com/Auroraol/notes-cookbook.git
+git remote set-url origin https://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/Auroraol/notes-cookbook.git
 git push
 
 # 删除缓存
