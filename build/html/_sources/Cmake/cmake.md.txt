@@ -1,5 +1,3 @@
-# CMake
-
 ## **==cmake_minimum_required== - 指定CMake的最小版本要求**
 
 语法： cmake_minimum_required(VERSION versionNumber [FATAL_ERROR])

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CMake &mdash; X-NOTES latest 文档</title>
+  <title>==cmake_minimum_required== - 指定CMake的最小版本要求 &mdash; X-NOTES latest 文档</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -19,7 +19,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="index.html" /> 
+    <link rel="prev" title="Cmake" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -39,10 +39,10 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../Qt/Qt.html">Qt</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Linux/Linux.html">Linux</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">CMake</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#cmake-minimum-required-cmake"><strong>==cmake_minimum_required== - 指定CMake的最小版本要求</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Qt/index.html">Qt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Linux/index.html">Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Cmake</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><strong>==cmake_minimum_required== - 指定CMake的最小版本要求</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#project"><strong>==project== - 定义工程名称，并可指定工程支持的语言</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#set"><strong>==set==- 显式的定义变量</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#include-directories-g-i"><strong>==include_directories== - 向工程添加多个 ==特定的头文件== 搜索路径 —&gt;相当于指定g++编译器的-I参数</strong></a></li>
@@ -59,13 +59,13 @@
 <li class="toctree-l2"><a class="reference internal" href="#target-link-libraries-target-g-l">==target_link_libraries== - 为 target 添加需要链接的共享库 —&gt;相同于指定g++编译器-l参数</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#add-subdirectory">==add_subdirectory== - 向当前工程添加存放源文件的子目录，指定 中间 和 目标的二进制存放的位置</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#aux-source-directory">==aux_source_directory== - 发现一个目录下所有的源代码文件并将列表存储在一个变量中，这个指令临时被用来自动构建源文件列表</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">CMake常用变量</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id6">CMake编译工程</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id7">内部构建和外部构建</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id8">外部构建</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cmake">CMake常用变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">CMake编译工程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">内部构建和外部构建</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">外部构建</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#vscodejson">配置VSCode的json文件并调试项目</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id9">多文件编译</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id10">CMake入门到精通实战</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">多文件编译</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">CMake入门到精通实战</a></li>
 </ul>
 </li>
 </ul>
@@ -86,8 +86,8 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">&lt;no title&gt;</a> &raquo;</li>
-      <li>CMake</li>
+          <li><a href="index.html">Cmake</a> &raquo;</li>
+      <li><strong>==cmake_minimum_required== - 指定CMake的最小版本要求</strong></li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/Cmake/Cmake.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -97,10 +97,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="cmake">
-<h1>CMake<a class="headerlink" href="#cmake" title="永久链接至标题">¶</a></h1>
-<section id="cmake-minimum-required-cmake">
-<h2><strong>==cmake_minimum_required== - 指定CMake的最小版本要求</strong><a class="headerlink" href="#cmake-minimum-required-cmake" title="永久链接至标题">¶</a></h2>
+  <section id="cmake-minimum-required-cmake">
+<h1><strong>==cmake_minimum_required== - 指定CMake的最小版本要求</strong><a class="headerlink" href="#cmake-minimum-required-cmake" title="永久链接至标题">¶</a></h1>
 <p>语法： cmake_minimum_required(VERSION versionNumber [FATAL_ERROR])</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="c"># CMake最小版本要求为2.8.3</span>
 <span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span> <span class="s">2.8.3</span><span class="p">)</span>
@@ -108,7 +106,7 @@
 </div>
 </section>
 <section id="project">
-<h2><strong>==project== - 定义工程名称，并可指定工程支持的语言</strong><a class="headerlink" href="#project" title="永久链接至标题">¶</a></h2>
+<h1><strong>==project== - 定义工程名称，并可指定工程支持的语言</strong><a class="headerlink" href="#project" title="永久链接至标题">¶</a></h1>
 <p>语法： project(projectname [CXX] [C] [Java])</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span>#可以用来指定工程的名字和支持的语言，默认支持所有语言
 
@@ -128,7 +126,7 @@ PROJECT (HELLO CXX)      指定了工程的名字，并且支持语言是C++
 </div>
 </section>
 <section id="set">
-<h2><strong>==set==- 显式的定义变量</strong><a class="headerlink" href="#set" title="永久链接至标题">¶</a></h2>
+<h1><strong>==set==- 显式的定义变量</strong><a class="headerlink" href="#set" title="永久链接至标题">¶</a></h1>
 <p>语法：set(VAR [VALUE] [CACHE TYPE DOCSTRING [FORCE]])   <strong>如果源文件名中含有空格，就必须要加双引号</strong></p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="c"># 定义SRC变量，其值为sayhello.cpp hello.cpp</span>
 
@@ -137,7 +135,7 @@ PROJECT (HELLO CXX)      指定了工程的名字，并且支持语言是C++
 </div>
 </section>
 <section id="include-directories-g-i">
-<h2><strong>==include_directories== - 向工程添加多个 ==特定的头文件== 搜索路径 —&gt;相当于指定g++编译器的-I参数</strong><a class="headerlink" href="#include-directories-g-i" title="永久链接至标题">¶</a></h2>
+<h1><strong>==include_directories== - 向工程添加多个 ==特定的头文件== 搜索路径 —&gt;相当于指定g++编译器的-I参数</strong><a class="headerlink" href="#include-directories-g-i" title="永久链接至标题">¶</a></h1>
 <p>语法： include_directories([AFTER|BEFORE] [SYSTEM] dir1 dir2 …)</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="c"># 将/usr/include/myincludefolder 和  ./include 添加到头文件搜索路径</span>
 
@@ -169,7 +167,7 @@ int main(int argc, char **argv)
 </div>
 </section>
 <section id="link-directories-g-l">
-<h2>==link_directories== - 向工程添加多个 ==特定的库文件== 搜索路径 —&gt;相当于指定g++编译器的-L参数<a class="headerlink" href="#link-directories-g-l" title="永久链接至标题">¶</a></h2>
+<h1>==link_directories== - 向工程添加多个 ==特定的库文件== 搜索路径 —&gt;相当于指定g++编译器的-L参数<a class="headerlink" href="#link-directories-g-l" title="永久链接至标题">¶</a></h1>
 <p>语法： link_directories(dir1 dir2 …)</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="c"># 将/usr/lib/mylibfolder 和 ./lib 添加到库文件搜索路径</span>
 
@@ -178,7 +176,7 @@ int main(int argc, char **argv)
 </div>
 </section>
 <section id="add-library">
-<h2><strong>==add_library== - 生成库文件</strong><a class="headerlink" href="#add-library" title="永久链接至标题">¶</a></h2>
+<h1><strong>==add_library== - 生成库文件</strong><a class="headerlink" href="#add-library" title="永久链接至标题">¶</a></h1>
 <p>语法： add_library(libname [SHARED|STATIC|MODULE] [EXCLUDE_FROM_ALL]source1 source2 … sourceN)</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="c"># 通过变量 SRC 生成 libhello.so 共享库</span>
 
@@ -192,14 +190,14 @@ int main(int argc, char **argv)
 <li><p>${LIBHELLO_SRC} ：<strong>源文件</strong></p></li>
 </ul>
 <section id="id1">
-<h3><strong>构建实例</strong><a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h3>
+<h2><strong>构建实例</strong><a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>任务：</p>
 <p>１，建立一个静态库和动态库，提供 HelloFunc 函数供其他程序编程使用，HelloFunc 向终端输出 Hello World 字符串。</p>
 <p>２，安装头文件与共享库。</p>
 <p><strong>看code   构建静态和动态库</strong></p>
 </section>
 <section id="id2">
-<h3>1. 构建静态和动态库<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<h2>1. 构建静态和动态库<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span>[root@localhost cmake2]# tree
 .
 ├── build
@@ -280,7 +278,7 @@ SET_TARGET_PROPERTIES(hello PROPERTIES CLEAN_DIRECT_OUTPUT 1)
 <p>VERSION 指代动态库版本，SOVERSION 指代 API 版本</p>
 </section>
 <section id="id3">
-<h3>2. 安装头文件 和 共享库<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<h2>2. 安装头文件 和 共享库<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>动态库和静态库需要安装头文件</p>
 <p>将在lib里的 hello.h   安装到 usr/include/hello 目录</p>
 <p><img alt="image-20220812154523061" src="../_images/image-20220812154523061.png" /></p>
@@ -303,7 +301,7 @@ SET_TARGET_PROPERTIES(hello PROPERTIES CLEAN_DIRECT_OUTPUT 1)
 <p><img alt="image-20220812160113059" src="../_images/image-20220812160113059.png" /></p>
 </section>
 <section id="id4">
-<h3><strong>3. 使用</strong><a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<h2><strong>3. 使用</strong><a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>新建一个目录来使用外部共享库和头文件</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span>[root@MiWiFi-R4CM-srv cmake3]# tree
 .
@@ -348,7 +346,7 @@ TARGET_LINK_LIBRARIES(hello libhello.so)  //动态库的lib文件
 </section>
 <hr class="docutils" />
 <section id="add-compile-options">
-<h2>==add_compile_options== - 添加编译参数<a class="headerlink" href="#add-compile-options" title="永久链接至标题">¶</a></h2>
+<h1>==add_compile_options== - 添加编译参数<a class="headerlink" href="#add-compile-options" title="永久链接至标题">¶</a></h1>
 <p>语法：add_compile_options(</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="c"># 添加编译参数 -Wall -std=c++11 -O2</span>
 
@@ -357,7 +355,7 @@ TARGET_LINK_LIBRARIES(hello libhello.so)  //动态库的lib文件
 </div>
 </section>
 <section id="add-executable">
-<h2>==add_executable==- 生成可执行文件<a class="headerlink" href="#add-executable" title="永久链接至标题">¶</a></h2>
+<h1>==add_executable==- 生成可执行文件<a class="headerlink" href="#add-executable" title="永久链接至标题">¶</a></h1>
 <p>语法：add_executable(exename source1 source2 … sourceN)</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="c"># 编译main.cpp  生成 可执行文件main</span>
 
@@ -369,7 +367,7 @@ TARGET_LINK_LIBRARIES(hello libhello.so)  //动态库的lib文件
 <p><img alt="image-20220728090945010" src="../_images/image-20220728090945010.png" /></p>
 </section>
 <section id="target-link-libraries-target-g-l">
-<h2>==target_link_libraries== - 为 target 添加需要链接的共享库 —&gt;相同于指定g++编译器-l参数<a class="headerlink" href="#target-link-libraries-target-g-l" title="永久链接至标题">¶</a></h2>
+<h1>==target_link_libraries== - 为 target 添加需要链接的共享库 —&gt;相同于指定g++编译器-l参数<a class="headerlink" href="#target-link-libraries-target-g-l" title="永久链接至标题">¶</a></h1>
 <p>语法： target_link_libraries(target library1&lt;debug | optimized&gt; library2…)</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span># 将hello动态库文件链接到可执行文件main
 
@@ -378,7 +376,7 @@ target_link_libraries(main hello)    //hello是生成的库文件
 </div>
 </section>
 <section id="add-subdirectory">
-<h2>==add_subdirectory== - 向当前工程添加存放源文件的子目录，指定 中间 和 目标的二进制存放的位置<a class="headerlink" href="#add-subdirectory" title="永久链接至标题">¶</a></h2>
+<h1>==add_subdirectory== - 向当前工程添加存放源文件的子目录，指定 中间 和 目标的二进制存放的位置<a class="headerlink" href="#add-subdirectory" title="永久链接至标题">¶</a></h1>
 <p>语法： add_subdirectory(source_dir [binary_dir] [EXCLUDE_FROM_ALL])</p>
 <p>#添加包含CMakeLists.txt和源文件的子目录 —&gt; 相当于把整个文件变成一个.cpp文件</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="c"># 添加src子目录，src中需有一个CMakeLists.txt</span>
@@ -391,7 +389,7 @@ target_link_libraries(main hello)    //hello是生成的库文件
 <p>如果不进行 bin 目录的指定，那么编译结果(包括中间结果)都将存放在build/src 目录</p>
 </section>
 <section id="aux-source-directory">
-<h2>==aux_source_directory== - 发现一个目录下所有的源代码文件并将列表存储在一个变量中，这个指令临时被用来自动构建源文件列表<a class="headerlink" href="#aux-source-directory" title="永久链接至标题">¶</a></h2>
+<h1>==aux_source_directory== - 发现一个目录下所有的源代码文件并将列表存储在一个变量中，这个指令临时被用来自动构建源文件列表<a class="headerlink" href="#aux-source-directory" title="永久链接至标题">¶</a></h1>
 <p>语法： aux_source_directory(dir VARIABLE)</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="c"># 定义SRC变量，其值为当前目录下所有的源代码文件</span>
 <span class="nb">aux_source_directory</span><span class="p">(</span><span class="s">.</span> <span class="s">SRC</span><span class="p">)</span>
@@ -431,8 +429,8 @@ target_link_libraries<span class="o">(</span>out_file tool1lib<span class="o">)<
 </pre></div>
 </div>
 </section>
-<section id="id5">
-<h2>CMake常用变量<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<section id="cmake">
+<h1>CMake常用变量<a class="headerlink" href="#cmake" title="永久链接至标题">¶</a></h1>
 <ul class="simple">
 <li><p><strong>CMAKE_C_FLAGS gcc编译选项</strong>                 // c语言</p></li>
 <li><p><strong>CMAKE_CXX_FLAGS g++编译选项</strong>             // c++</p></li>
@@ -481,8 +479,8 @@ CMAKE_CXX_COMPILER：指定C++编译器
 EXECUTABLE_OUTPUT_PATH：可执行文件输出的存放路径
 LIBRARY_OUTPUT_PATH：库文件输出的存放路径</p>
 </section>
-<section id="id6">
-<h2>CMake编译工程<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<section id="id5">
+<h1>CMake编译工程<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h1>
 <p>CMake目录结构：项目主目录存在一个CMakeLists.txt文件
 两种方式设置编译规则：</p>
 <ol class="simple">
@@ -498,8 +496,8 @@ CMakeLists.txt中；
 6.4.2 两</p></li>
 </ol>
 </section>
-<section id="id7">
-<h2>内部构建和外部构建<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<section id="id6">
+<h1>内部构建和外部构建<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h1>
 <p><strong>内部构建:</strong></p>
 <p><img alt="image-20220728161428721" src="../_images/image-20220728161428721.png" /></p>
 <p>cmake .</p>
@@ -511,8 +509,8 @@ CMakeLists.txt中；
 <p><strong>外部构建</strong> :</p>
 <p>进入build文件    camke ..</p>
 <p>cmake 点点”表示在上一级目录(CMakeLists.txt所在目录)编译</p>
-<section id="id8">
-<h3>外部构建<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<section id="id7">
+<h2>外部构建<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
 <p>将编译输出文件与源文件放到不同目录中</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span>## 外部构建
 # 1. 在当前目录下，创建build文件夹
@@ -538,12 +536,12 @@ make
 </section>
 <hr class="docutils" />
 <section id="vscodejson">
-<h3>配置VSCode的json文件并调试项目<a class="headerlink" href="#vscodejson" title="永久链接至标题">¶</a></h3>
+<h2>配置VSCode的json文件并调试项目<a class="headerlink" href="#vscodejson" title="永久链接至标题">¶</a></h2>
 <p>xiaobing</p>
 <p><img alt="image-20220728170419101" src="../_images/image-20220728170419101.png" /></p>
 </section>
-<section id="id9">
-<h3>多文件编译<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<section id="id8">
+<h2>多文件编译<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
 <p><img alt="image-20220728214607008" src="../_images/image-20220728214607008.png" /></p>
 <p>看文件  mutil</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span> <span class="s">3.0</span><span class="p">)</span>
@@ -638,9 +636,8 @@ add_library(src STATIC ${DIRSRCS})
 </pre></div>
 </div>
 </section>
-<section id="id10">
-<h3>CMake入门到精通实战<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
-</section>
+<section id="id9">
+<h2>CMake入门到精通实战<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
 </section>
 </section>
 
@@ -648,7 +645,7 @@ add_library(src STATIC ${DIRSRCS})
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Cmake" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
