@@ -15,7 +15,7 @@ DATETIME=$(date "+%Y/%m/%d")
 git add .
 git commit -m "$DATETIME"
 echo "####### commit #######"
-# git remote set-url origin https://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@github.com/Auroraol/notes-cookbook.git
+# git remote set-url origin https://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@github.com/Auroraol/notes-cookbook.git
 echo "####### 开始推送 #######"
 git push
 
