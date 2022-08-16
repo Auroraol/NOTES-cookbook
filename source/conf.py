@@ -34,6 +34,15 @@ extensions = [
     'sphinx_markdown_tables'
 ]
 
+# from recommonmark.parser import CommonMarkParser
+
+# source_parsers = {
+#     '.md': CommonMarkParser,
+# }
+
+# source_suffix = ['.rst', '.md']
+
+
 #更改主题
 #默认
 import sphinx_rtd_theme

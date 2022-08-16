@@ -315,7 +315,7 @@ Widget::Widget(QWidget *parent) : QWidget(parent)
 
 +  **QT中main（）认识：**
 
-+  ![image-20220317214141637](C:\Users\16658\AppData\Roaming\Typora\typora-user-images\image-20220317214141637.png)
++  ![image-20220816095142173](Qt.assets/image-20220816095142173.png)
 
 +++++
 
