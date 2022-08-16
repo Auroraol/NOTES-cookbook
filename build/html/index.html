@@ -19,7 +19,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="搜索" href="search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="Linux/index.html" /> 
+    <link rel="next" title="Qt" href="Qt/index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -39,6 +39,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="Qt/index.html">Qt</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Linux/Linux.html">Linux</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Cmake/Cmake.html">CMake</a></li>
 </ul>
@@ -71,6 +72,226 @@
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="Qt/index.html">Qt</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Qt/Qt.html">Qt</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#app">程序运行发布和设置APP图标</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id1">程序运行发布(给别人电脑上能够正常运行):</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id2">设置APP图标</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#qmainwindowqwidgetqdialog">QMainWindow、QWidget、QDialog的区别</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id3">选用原则</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#id4">项目文件组成及分析</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id5">0.创建项目注意事项</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#pro">一. 项目管理文件（.pro文件）</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#main-cpp">二. main.cpp介绍</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#qtwidget-h">三. Qt的widget.h介绍</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#qtwidget-cpp">四.Qt的widget.cpp介绍</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#ui-widght-h">五ui_widght.h文件</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#main"><strong>main（）认识：</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#id6">知识点一: 按钮的使用与窗体的简单设置(重要)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#id7">对象树</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#id8">知识点二: 信号槽机制(重要)(难点)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id9">普通信号普通槽(系统自带)</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#id10">自定义槽函数</a></li>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#signal-slot">重点  看 Signal_Slot的代码</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id11">**自定义信号和槽函数 **</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#id12">定义槽函数</a></li>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#id13">定义信号</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#qtqdebug">QT的输出qDebug()函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#qstringlist">QStringlist  所有字符串的列表</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#qtlambda">知识点四: QT中的lambda表达式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#ui">知识点五: 带UI界面的项目</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id14"><strong>通过ui-&gt;控件名</strong>        访问到控件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id15">一般情况下;   回去点击跳转到槽—–&gt;可以直接自动声明槽函数(方便)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id16">各种控件作用</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#buttons">Buttons控件</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#push-button">0. Push Button样式设置</a></li>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#toolbutton">1. ToolButton</a></li>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#radio-button-group-button">2.Radio Button  &amp;&amp;  Group Button</a></li>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#cheak-bax">3.Cheak Bax</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#list-widget">List Widget控件</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#id17">1.list Widget</a></li>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#tree-widget">2. Tree Widget控件</a></li>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#table-widget">3.Table Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#containers">Containers控件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#input-widget">Input Widget控件</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#id19"><strong>同时加上图标</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id20">自定义控件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#lable">lable标签控件(重要)</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#id21">加图片\动态图片</a></li>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#label">设置label的颜色：</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#id22">项目动态桌面壁纸开发</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#qmainwindow">QMainWindow</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id23">QMainWindow(代码版 )</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#id24"><strong>QMainWindow_菜单栏和工具栏</strong></a></li>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#id25">QMainWindow_状态栏和停靠窗口</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#qmainwindow-ui">QMainWindow(ui界面版)</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#id26">1.<strong>菜单栏</strong>：</a></li>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#id27">2.<strong>工具栏：</strong></a></li>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#id28">3.状态栏：</a></li>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#id29">4.  浮动窗口</a></li>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#id30">5. 中心组件</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#id31">设置图标   和   设置按钮背景图片   (资源文件)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id32">具体操作</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id33">使用格式:</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#id34">设置图标</a></li>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#id35">按钮设置背景图片</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#id36">设置任务栏托盘角标</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#id37">八大对话框</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id38">**标准对话框分类 **</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id39">模态和非模块对话框</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id40">文件对话窗</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id41">消息对话框</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#id42">消息对话框</a></li>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#id45">问题对话框</a></li>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#id46">警告对话框</a></li>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#id47">提示对话框</a></li>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#id48">错误对话框</a></li>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#id49">关于对话框</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id50">知识点九: 颜色对话框</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id51">字体对话框 和 输入对话框</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#id52">字体对话框</a></li>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#id53">输入对话框</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id54">进度对话框</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id55">导向对话框</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id56">对话框的总结</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#qstring">知识点十二: QString（格式化输出）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#id57">项目: 串口调试助手</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#id58">事件</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id59">1.鼠标事件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id60">2.定时器</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id61">第二种定时器用法：（推荐)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id62">3.事件分发</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#id63">绘图</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#qpainter">绘图基本操作—&gt;QPainter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id64">核心</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id65"><strong>常见图形</strong></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#id66">个一个图片创建矩形</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id67"><strong>画笔</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id68"><strong>画刷</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id69"><strong>字体</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id70">写字</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id71">锥形渐变</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#conical-gradient">Conical  Gradient 函数</a></li>
+<li class="toctree-l5"><a class="reference internal" href="Qt/Qt.html#id72"><strong>通过设置透明度</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id73">绘制容器–作用可以重复使用</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#id74">抗锯齿和坐标系变换</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id75">1.抗锯齿</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id76">2.坐标轴变换</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id77">3.坐标轴缩放</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id78">4.坐标轴扭曲</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#id79">刷新窗口—&gt;实现动的效果</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id80">案例1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id81">案例2</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#id82">绘图设备（给画家的纸）</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id83"><strong>总述</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#widget">1. 在widget中画图 —&gt; 画背景图</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#qpixmap">2. 在QPixmap中画图:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#qimage">3. 在QImage中画图：</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#qpicture">4. 在QPicture中画图（只是一个绘图设备）:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#qbitmap">5.在QBitmap中画图(黑白图)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id84">代码集合：</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#id85">知识点十七: 不规则窗口—&gt;透明窗口</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#id86"><strong>绘制弧线</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#id87">项目超声波雷达项目界面设计</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id88">基础界面设置</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id89">扫描</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#id90">知识点十八: Qt中的随机数</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#event-eventfilter">知识点十九: 重写事件event/eventFilter–&gt;过滤事件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#eventfilter">知识点二十: 事件过滤器eventFilter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#id91">知识点二十一:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id92">QT文件读取</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id93">QT文件写入</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#id94">知识点二十二: QT中的文本流和数据流</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#qtextstream">文本流QTextStream的读写方式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#qdatastream"><strong>数据流QDataStream的读写方式</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#qfileinfo">知识点二十三: QFileInfo文件属性</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#qdatetime">QDateTime 获取系统时间</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#qttcp">知识点二十四: QT中的TCP通信</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id95">服务器端：</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id96">客户端：</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#qtudp">知识点二十五: QT中的UDP通信</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id97">服务器端</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id98"><strong>客户端</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#id99">知识点二 十六: QT广播/组播</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#udp"><strong>广播</strong>：UDP</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#tcp">知识点二十七: TCP文件传输</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id100"><strong>服务端</strong>：</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Qt/Qt.html#id101"><strong>客户端</strong>：</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Qt/Qt.html#id102">知识点二十八：视频播放 —&gt;基础  视频功能实现</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="Linux/Linux.html">Linux</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Linux/Linux.html#linux-unixlinux">一、Linux概述  unix和LInux的关系</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Linux/Linux.html#id1">二、Linux目录结构（重点）</a><ul>
@@ -236,7 +457,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="Linux/index.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Qt/index.html" class="btn btn-neutral float-right" title="Qt" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

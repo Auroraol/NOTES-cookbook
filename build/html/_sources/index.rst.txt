@@ -8,7 +8,8 @@
 .. toctree::
    :maxdepth: 5
    :caption: Contents:
-
+   
+   Qt/index
    Linux/index
    Cmake/index
    
