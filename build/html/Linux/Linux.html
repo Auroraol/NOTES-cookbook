@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Linux &mdash; X-NOTES latest 文档</title>
+  <title>一、Linux概述 unix和LInux的关系 &mdash; X-NOTES latest 文档</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -19,8 +19,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="../Cmake/index.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="index.html" /> 
+    <link rel="next" title="Cmake" href="../Cmake/index.html" />
+    <link rel="prev" title="Linux" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -41,58 +41,60 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../Qt/index.html">Qt</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Linux</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#linux-unixlinux">一、Linux概述  unix和LInux的关系</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">二、Linux目录结构（重点）</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">2.1基本介绍</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">2.2具体的目录结构</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Linux</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">一、Linux概述  unix和LInux的关系</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#linux">二、Linux目录结构（重点）</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">2.1基本介绍</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">2.2具体的目录结构</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#vivim">三、vi和vim编辑器</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id4">3.1 vi和vim的基本介绍</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">3.2 vi和vim常用的三种模式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">3.1 vi和vim的基本介绍</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">3.2 vi和vim常用的三种模式</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id6">四、LInux开机，重启和用户登录注销</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id7">4.1关机和重启的命令</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id8">4.2用户登录和注销</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">四、LInux开机，重启和用户登录注销</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">4.1关机和重启的命令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">4.2用户登录和注销</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id9">五、用户管理</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id10">5.1基本介绍</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id11">5.2添加用户</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id12">5.3指定/修改密码</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id13">5.4 删除用户</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id14">5.5查询用户信息  指令</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id15">5.6切换用户</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id16">5.7 查看当前用户/登录用户的信息</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id17">5.8 用户组</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id18">5.9 用户和组相关文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">五、用户管理</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id9">5.1基本介绍</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">5.2添加用户</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">5.3指定/修改密码</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">5.4 删除用户</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">5.5查询用户信息  指令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">5.6切换用户</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">5.7 查看当前用户/登录用户的信息</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">5.8 用户组</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id17">5.9 用户和组相关文件</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id19">六、实用指令</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id20">6.1指定运行级别</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id21">6.2帮助指令</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id22">6.3文件目录类(重要)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id23">6.4时间日期类</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id24">6.5搜索查找类</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id25">6.6 压缩和解压</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id26">6.7清屏命令</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id18">六、实用指令</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id19">6.1指定运行级别</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id20">6.2帮助指令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id21">6.3文件目录类(重要)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id22">6.4时间日期类</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id23">6.5搜索查找类</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id24">6.6 压缩和解压</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id25">6.7清屏命令</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id27">七、linux的主管理和权限管理</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id26">七、linux的主管理和权限管理</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#liunx">7.1Liunx组的基本介绍</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id28">7.2文件/目录的 所有者</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id29">7.3文件/目录的  所在组</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id30">7.4其他组</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id31">7.5==改变用户所在组==</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id32">7.6 权限的基本介绍</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id33">7.7文件及目录权限说明  实际案例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id27">7.2文件/目录的 所有者</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id28">7.3文件/目录的  所在组</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id29">7.4其他组</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id30">7.5==改变用户所在组==</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id31">7.6 权限的基本介绍</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id32">7.7文件及目录权限说明  实际案例</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#chmod">7.8==修改文件和目录权限-chmod==</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#chown">7.9==修改文件和目录  所有者-chown==</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#chgrp">7.10==修改文件和目录   所在组-chgrp==</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#rwx">7.11对文件夹(目录）的rwx的细节讨论</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id34">案例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rwx">7.11对文件夹(目录）的rwx的细节讨论</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id33">案例</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#crond">八、crond任务调度(定时任务)</a><ul>
@@ -100,33 +102,33 @@
 <li class="toctree-l3"><a class="reference internal" href="#at">8.2 at定时任务</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id35">九、Linux磁盘分区、挂载</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id36">9.1Linux分区</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id37">9.2挂载的经典案例</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id38">9.3磁盘情况查询</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id39">10.1Linux网络配置原理图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id34">九、Linux磁盘分区、挂载</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id35">9.1Linux分区</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id36">9.2挂载的经典案例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id37">9.3磁盘情况查询</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id38">10.1Linux网络配置原理图</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ip">10.2配置一个指定的ip(不然每次都会变)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#hosts">10.3设置主机名和hosts映射  (配置别名)</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#ps">十一、进程管理(ps)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id40">11.1基本</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id41">11.2显示系统执行的进程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id39">11.1基本</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id40">11.2显示系统执行的进程</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pstree">11.3查看进程树 pstree</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#service">十二、服务（service）管理</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id42">12.1service命令</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id43">12.2服务的运行级别</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id41">12.1service命令</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id42">12.2服务的运行级别</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#chkconfig">12.3chkconfig指令(在各个运行级别中)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#systemctl">12.4systemctl命令</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id44">12.5打开或者关闭指定端口</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id43">12.5打开或者关闭指定端口</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#top">十三、动态监控(top)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id45">13.1动态监控进程的基本语法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id46">13.2动态监控进程的交互操作</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id47">13.3监控网络状态</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id44">13.1动态监控进程的基本语法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id45">13.2动态监控进程的交互操作</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id46">13.3监控网络状态</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#rpmyum">十四、RPM与YUM</a><ul>
@@ -136,33 +138,33 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#linux-g">十五、 linux  g++</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#shell">十六、 shell脚本</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id48">16.1 shell脚本的执行方式</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id49">16.2 shell变量</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id50">16.3 <strong>将命令的结果  赋给变量</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id51">16.4 设置环境变量</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id52">16.5 注释</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id53">16.6 位置参数变量</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id54">16.7 预定义变量</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id55">16.8 运算符</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id56">16.9  条件判断</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id57">16.10 流程控制</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id47">16.1 shell脚本的执行方式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id48">16.2 shell变量</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id49">16.3 <strong>将命令的结果  赋给变量</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id50">16.4 设置环境变量</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id51">16.5 注释</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id52">16.6 位置参数变量</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id53">16.7 预定义变量</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id54">16.8 运算符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id55">16.9  条件判断</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id56">16.10 流程控制</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#for">16.11 for循环</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#while">16.12 while循环</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#read">16.13 read获取输入</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id58">16.14 函数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id59">16.15 自定义函数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id60">16.16 综合案例</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id57">16.14 函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id58">16.15 自定义函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id59">16.16 综合案例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id61">十七、 日志管理</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id62">17.1 基本介绍</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id63">17.2 日志管理服务</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id64">17.3 自定义日志服务</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id60">十七、 日志管理</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id61">17.1 基本介绍</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id62">17.2 日志管理服务</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id63">17.3 自定义日志服务</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../Cmake/Cmake.html">CMake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Cmake/index.html">Cmake</a></li>
 </ul>
 
         </div>
@@ -179,8 +181,8 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">&lt;no title&gt;</a> &raquo;</li>
-      <li>Linux</li>
+          <li><a href="index.html">Linux</a> &raquo;</li>
+      <li>一、Linux概述  unix和LInux的关系</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/Linux/Linux.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -190,10 +192,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="linux">
-<h1>Linux<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h1>
-<section id="linux-unixlinux">
-<h2>一、Linux概述  unix和LInux的关系<a class="headerlink" href="#linux-unixlinux" title="永久链接至标题">¶</a></h2>
+  <section id="linux-unixlinux">
+<h1>一、Linux概述  unix和LInux的关系<a class="headerlink" href="#linux-unixlinux" title="永久链接至标题">¶</a></h1>
 <p><strong>LInux的应用领域</strong> 服务器领域 - Linux在服务器领域的应用是最强的 - LInux免费、稳定、高效等特点在这里得到了很好的体现，尤其是在一些高端领域尤为广泛 嵌入式领域 - linux运行稳定、对网络的良好支持性、低成本，且可以根据需要进行网络裁剪，内核最小可达到几百kb的特点，使近些年来在嵌入式领域的应用得到非常大的提高 - 主要应用:机顶盒、数字电视、网络电话、程控交换机、手机、PDA、智能家居、智能硬件等都是其应用领域。以后在物联网中应用会更加广泛。</p>
 <p>unix和LInux的关系</p>
 <p><img alt="img" src="../_images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjMyNDE0,size_16,color_FFFFFF,t_70.png" /></p>
@@ -234,18 +234,18 @@
 <li><p>他就是一个独立的系统，不和外界发生联系</p></li>
 </ul>
 </section>
+<section id="linux">
+<h1>二、Linux目录结构（重点）<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h1>
 <section id="id1">
-<h2>二、Linux目录结构（重点）<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
-<section id="id2">
-<h3>2.1基本介绍<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<h2>2.1基本介绍<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>linux的文件系统是采用级层式的树状目录结构，在此结构上的<strong>最上层是根目录“/”</strong>，然后在此目录下在创建其他的目录。</p></li>
 <li><p>深刻理解linux树状文件目录是非常重要的</p></li>
 <li><p>记住一句很经典的话：在LInux世界里，<strong>一切皆文件</strong></p></li>
 </ul>
 </section>
-<section id="id3">
-<h3>2.2具体的目录结构<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<section id="id2">
+<h2>2.2具体的目录结构<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <ul>
 <li><p>/bin 【常用】（/usr/bin、/uer/local/bin)</p>
 <p>是Binary的缩写，这个<strong>目录存放着最常使用的命令</strong></p>
@@ -298,14 +298,14 @@
 </section>
 <hr class="docutils" />
 <section id="vivim">
-<h2>三、vi和vim编辑器<a class="headerlink" href="#vivim" title="永久链接至标题">¶</a></h2>
-<section id="id4">
-<h3>3.1 vi和vim的基本介绍<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<h1>三、vi和vim编辑器<a class="headerlink" href="#vivim" title="永久链接至标题">¶</a></h1>
+<section id="id3">
+<h2>3.1 vi和vim的基本介绍<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>Linux系统会内置vi文本编辑器</p>
 <p>Vim具有程序编辑的能力，可以看做是Vi的增强版本，可以主动的以字体颜色辨别语法的正确性，方便程序设计。代码补完、编译错误跳转等方便编程的功能相当丰富，在程序员中被广泛使用。（vim就是vi的增强版）</p>
 </section>
-<section id="id5">
-<h3>3.2 vi和vim常用的三种模式<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<section id="id4">
+<h2>3.2 vi和vim常用的三种模式<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>正常模式</p></li>
 </ul>
@@ -323,10 +323,10 @@
 <p><img alt="在这里插入图片描述" src="../_images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjMyNDE0,size_16,color_FFFFFF,t_70-16596238585025.png" /></p>
 </section>
 </section>
+<section id="id5">
+<h1>四、LInux开机，重启和用户登录注销<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h1>
 <section id="id6">
-<h2>四、LInux开机，重启和用户登录注销<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
-<section id="id7">
-<h3>4.1关机和重启的命令<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<h2>4.1关机和重启的命令<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>基本介绍</p></li>
 </ul>
@@ -348,8 +348,8 @@ syn					把内存的数据同步到磁盘
 <p>1.不管是重启系统还是关闭系统，首先要运行sync命令，把内存中的数据写到磁盘中</p>
 <p>2.目前的shutdown/reboot/halt等<strong>命令均已	在关机前进行了sync</strong></p>
 </section>
-<section id="id8">
-<h3>4.2用户登录和注销<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<section id="id7">
+<h2>4.2用户登录和注销<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>基本介绍</p></li>
 </ul>
@@ -362,15 +362,15 @@ syn					把内存的数据同步到磁盘
 <p><strong>logout  注销指令在图形运行级别无效</strong>，在shell界面有效</p>
 </section>
 </section>
+<section id="id8">
+<h1>五、用户管理<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h1>
 <section id="id9">
-<h2>五、用户管理<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
-<section id="id10">
-<h3>5.1基本介绍<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<h2>5.1基本介绍<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
 <p>Linux系统是一个多用户多任务的操作系统，任何一个要使用系统资源的用户，都必须先向系统管理员申请一个账号，然后以这个账号的身份进入系统</p>
 </section>
 <hr class="docutils" />
-<section id="id11">
-<h3>5.2添加用户<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+<section id="id10">
+<h2>5.2添加用户<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>基本语法</p></li>
 </ul>
@@ -400,8 +400,8 @@ syn					把内存的数据同步到磁盘
 </pre></div>
 </div>
 </section>
-<section id="id12">
-<h3>5.3指定/修改密码<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+<section id="id11">
+<h2>5.3指定/修改密码<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>基本语法</p></li>
 </ul>
@@ -416,8 +416,8 @@ syn					把内存的数据同步到磁盘
 <li><p>补充，<strong>显示当前用户所在的目录pwd</strong></p></li>
 </ul>
 </section>
-<section id="id13">
-<h3>5.4 删除用户<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
+<section id="id12">
+<h2>5.4 删除用户<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>基本语法</p></li>
 </ul>
@@ -434,8 +434,8 @@ syn					把内存的数据同步到磁盘
 <p><strong><img alt="image-20220805175827349" src="../_images/image-20220805175827349.png" /></strong></p>
 <p>​</p>
 </section>
-<section id="id14">
-<h3>5.5查询用户信息  指令<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
+<section id="id13">
+<h2>5.5查询用户信息  指令<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>基本语法</p></li>
 </ul>
@@ -451,8 +451,8 @@ syn					把内存的数据同步到磁盘
 </ul>
 <p>当用户不存在是，返回无此用户</p>
 </section>
-<section id="id15">
-<h3>5.6切换用户<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
+<section id="id14">
+<h2>5.6切换用户<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>介绍</p></li>
 </ul>
@@ -474,8 +474,8 @@ syn					把内存的数据同步到磁盘
 <p>2**.当需要返回到原来用户时，使用exit/logout指令   建议使用 logout **</p>
 </section>
 <hr class="docutils" />
-<section id="id16">
-<h3>5.7 查看当前用户/登录用户的信息<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
+<section id="id15">
+<h2>5.7 查看当前用户/登录用户的信息<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>基本语法</p></li>
 </ul>
@@ -490,8 +490,8 @@ syn					把内存的数据同步到磁盘
 <p>查看的是登录的用户！</p>
 </section>
 <hr class="docutils" />
-<section id="id17">
-<h3>5.8 用户组<a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h3>
+<section id="id16">
+<h2>5.8 用户组<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>介绍</p></li>
 </ul>
@@ -528,8 +528,8 @@ syn					把内存的数据同步到磁盘
 <p><img alt="在这里插入图片描述" src="../_images/20210620104421631.png" /></p>
 </section>
 <hr class="docutils" />
-<section id="id18">
-<h3>5.9 用户和组相关文件<a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h3>
+<section id="id17">
+<h2>5.9 用户和组相关文件<a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>/<strong>etc/passwd 文件</strong></p></li>
 </ul>
@@ -547,10 +547,10 @@ syn					把内存的数据同步到磁盘
 <p>每行含义：组名：口令：组标识号：组内用户列表</p>
 </section>
 </section>
+<section id="id18">
+<h1>六、实用指令<a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h1>
 <section id="id19">
-<h2>六、实用指令<a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h2>
-<section id="id20">
-<h3>6.1指定运行级别<a class="headerlink" href="#id20" title="永久链接至标题">¶</a></h3>
+<h2>6.1指定运行级别<a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>基本介绍</p></li>
 </ul>
@@ -577,8 +577,8 @@ syn					把内存的数据同步到磁盘
 </div>
 </section>
 <hr class="docutils" />
-<section id="id21">
-<h3>6.2帮助指令<a class="headerlink" href="#id21" title="永久链接至标题">¶</a></h3>
+<section id="id20">
+<h2>6.2帮助指令<a class="headerlink" href="#id20" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>man获得帮助信息</p></li>
 </ul>
@@ -601,8 +601,8 @@ cman ls
 </pre></div>
 </div>
 </section>
-<section id="id22">
-<h3>6.3文件目录类(重要)<a class="headerlink" href="#id22" title="永久链接至标题">¶</a></h3>
+<section id="id21">
+<h2>6.3文件目录类(重要)<a class="headerlink" href="#id21" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>pwd指令</p></li>
 </ul>
@@ -897,8 +897,8 @@ history 10    显示最近使用过的10个指令
 </ul>
 </section>
 <hr class="docutils" />
-<section id="id23">
-<h3>6.4时间日期类<a class="headerlink" href="#id23" title="永久链接至标题">¶</a></h3>
+<section id="id22">
+<h2>6.4时间日期类<a class="headerlink" href="#id22" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>date指令-显示当前日期</p></li>
 </ul>
@@ -925,8 +925,8 @@ cal 2021      显示2021整年的日历
 </div>
 </section>
 <hr class="docutils" />
-<section id="id24">
-<h3>6.5搜索查找类<a class="headerlink" href="#id24" title="永久链接至标题">¶</a></h3>
+<section id="id23">
+<h2>6.5搜索查找类<a class="headerlink" href="#id23" title="永久链接至标题">¶</a></h2>
 <ul>
 <li><p><strong>find指令    查找指定的文件</strong></p>
 <p>find指令指令 <strong>将从指定目录向下递归遍历各个子目录，只要满足条件的文件或者目录就显示在终端上</strong></p>
@@ -1013,8 +1013,8 @@ grep -n &quot;yes&quot; /home/hello.txt
 </pre></div>
 </div>
 </section>
-<section id="id25">
-<h3>6.6 压缩和解压<a class="headerlink" href="#id25" title="永久链接至标题">¶</a></h3>
+<section id="id24">
+<h2>6.6 压缩和解压<a class="headerlink" href="#id24" title="永久链接至标题">¶</a></h2>
 <p>格式:</p>
 <p>​	<strong>指令 目标文件.后缀  源文件1  源文件2</strong></p>
 <ul class="simple">
@@ -1097,18 +1097,18 @@ tar -xzvf myhome.tar.gz -C opt/tmp2
 </div>
 <p>因为解压的目标地址不是当前文件夹，<strong>要去别的文件加，所以要加-C</strong></p>
 </section>
-<section id="id26">
-<h3>6.7清屏命令<a class="headerlink" href="#id26" title="永久链接至标题">¶</a></h3>
+<section id="id25">
+<h2>6.7清屏命令<a class="headerlink" href="#id25" title="永久链接至标题">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">clear</span> <span class="n">清屏</span>        <span class="n">按住</span> <span class="n">cle</span> <span class="n">回车就行</span>
 </pre></div>
 </div>
 </section>
 </section>
 <hr class="docutils" />
-<section id="id27">
-<h2>七、linux的主管理和权限管理<a class="headerlink" href="#id27" title="永久链接至标题">¶</a></h2>
+<section id="id26">
+<h1>七、linux的主管理和权限管理<a class="headerlink" href="#id26" title="永久链接至标题">¶</a></h1>
 <section id="liunx">
-<h3>7.1Liunx组的基本介绍<a class="headerlink" href="#liunx" title="永久链接至标题">¶</a></h3>
+<h2>7.1Liunx组的基本介绍<a class="headerlink" href="#liunx" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>在Linux中的每个用户必须属于一个组，不能独立于组外。</p></li>
 <li><p>在Linux中每个文件都有所有者、所在组、其他组的概念</p>
@@ -1121,8 +1121,8 @@ tar -xzvf myhome.tar.gz -C opt/tmp2
 </li>
 </ul>
 </section>
-<section id="id28">
-<h3>7.2文件/目录的 所有者<a class="headerlink" href="#id28" title="永久链接至标题">¶</a></h3>
+<section id="id27">
+<h2>7.2文件/目录的 所有者<a class="headerlink" href="#id27" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>一般文件的创建者，谁创建了该文件，就自然成为该文件的所有者</p></li>
 <li><p>查看文件的所有者：</p></li>
@@ -1139,8 +1139,8 @@ chown 用户名 文件名
 </div>
 <p><img alt="在这里插入图片描述" src="../_images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjMyNDE0,size_16,color_FFFFFF,t_70-16596238585069.png" /></p>
 </section>
-<section id="id29">
-<h3>7.3文件/目录的  所在组<a class="headerlink" href="#id29" title="永久链接至标题">¶</a></h3>
+<section id="id28">
+<h2>7.3文件/目录的  所在组<a class="headerlink" href="#id28" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>当某个用户创建了一个文件后，这个文件的所在组就是该用户所在的组</p></li>
 <li><p>查看文件/目录所在组</p></li>
@@ -1155,12 +1155,12 @@ chown 用户名 文件名
 </pre></div>
 </div>
 </section>
-<section id="id30">
-<h3>7.4其他组<a class="headerlink" href="#id30" title="永久链接至标题">¶</a></h3>
+<section id="id29">
+<h2>7.4其他组<a class="headerlink" href="#id29" title="永久链接至标题">¶</a></h2>
 <p>除文件的所有者和所在组的用户外，系统的其他用户都是文件的其它组</p>
 </section>
-<section id="id31">
-<h3>7.5==改变用户所在组==<a class="headerlink" href="#id31" title="永久链接至标题">¶</a></h3>
+<section id="id30">
+<h2>7.5==改变用户所在组==<a class="headerlink" href="#id30" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>在添加用户时，可以指定将该用户添加到哪个组中，同样的用root的管理权限可以改变某个用户所在的组</p></li>
 <li><p>改变用户所在组</p></li>
@@ -1171,8 +1171,8 @@ chown 用户名 文件名
 </pre></div>
 </div>
 </section>
-<section id="id32">
-<h3>7.6 权限的基本介绍<a class="headerlink" href="#id32" title="永久链接至标题">¶</a></h3>
+<section id="id31">
+<h2>7.6 权限的基本介绍<a class="headerlink" href="#id31" title="永久链接至标题">¶</a></h2>
 <p>ls -l 显示的如下内容：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">rw</span><span class="o">-</span><span class="n">r</span><span class="o">--</span><span class="n">r</span><span class="o">--.</span> <span class="mi">1</span> <span class="n">mikasa</span> <span class="n">mikasa</span>      <span class="mi">141</span> <span class="mi">6</span><span class="n">月</span>  <span class="mi">22</span> <span class="mi">11</span><span class="p">:</span><span class="mi">19</span> <span class="n">hello</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
@@ -1212,8 +1212,8 @@ chown 用户名 文件名
 </ul>
 </section>
 <hr class="docutils" />
-<section id="id33">
-<h3>7.7文件及目录权限说明  实际案例<a class="headerlink" href="#id33" title="永久链接至标题">¶</a></h3>
+<section id="id32">
+<h2>7.7文件及目录权限说明  实际案例<a class="headerlink" href="#id32" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>ls -l 显示内容</p></li>
 </ul>
@@ -1244,7 +1244,7 @@ chown 用户名 文件名
 </ul>
 </section>
 <section id="chmod">
-<h3>7.8==修改文件和目录权限-chmod==<a class="headerlink" href="#chmod" title="永久链接至标题">¶</a></h3>
+<h2>7.8==修改文件和目录权限-chmod==<a class="headerlink" href="#chmod" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>基本说明：</p></li>
 </ul>
@@ -1282,7 +1282,7 @@ chmod a+r abc
 </div>
 </section>
 <section id="chown">
-<h3>7.9==修改文件和目录  所有者-chown==<a class="headerlink" href="#chown" title="永久链接至标题">¶</a></h3>
+<h2>7.9==修改文件和目录  所有者-chown==<a class="headerlink" href="#chown" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>基本介绍</p></li>
 </ul>
@@ -1299,7 +1299,7 @@ chmod a+r abc
 </div>
 </section>
 <section id="chgrp">
-<h3>7.10==修改文件和目录   所在组-chgrp==<a class="headerlink" href="#chgrp" title="永久链接至标题">¶</a></h3>
+<h2>7.10==修改文件和目录   所在组-chgrp==<a class="headerlink" href="#chgrp" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>基本介绍</p></li>
 <li><p><strong>-R 如果是目录则使其下所有子文件或目录递归生效</strong>（recursion）</p></li>
@@ -1310,26 +1310,26 @@ chmod a+r abc
 </div>
 </section>
 <section id="rwx">
-<h3>7.11对文件夹(目录）的rwx的细节讨论<a class="headerlink" href="#rwx" title="永久链接至标题">¶</a></h3>
+<h2>7.11对文件夹(目录）的rwx的细节讨论<a class="headerlink" href="#rwx" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>x：表示可有进入到该目录，比如cd</p></li>
 <li><p>r：表示可以ls，将目录的内容显示</p></li>
 <li><p>w：表示可以在该目录删除或者创建文件</p></li>
 </ul>
-</section>
-<section id="id34">
-<h3>案例<a class="headerlink" href="#id34" title="永久链接至标题">¶</a></h3>
+<section id="id33">
+<h3>案例<a class="headerlink" href="#id33" title="永久链接至标题">¶</a></h3>
 <hr class="docutils" />
 <p><img alt="image-20220808204844979" src="../_images/image-20220808204844979.png" /></p>
 <p><strong>用su进入到jack用户的，得切换到home目录，再切换到jack(自己的目录)就能创建文件了</strong></p>
 <p><img alt="image-20220809151501614" src="../_images/image-20220809151501614.png" /></p>
 </section>
 </section>
+</section>
 <hr class="docutils" />
 <section id="crond">
-<h2>八、crond任务调度(定时任务)<a class="headerlink" href="#crond" title="永久链接至标题">¶</a></h2>
+<h1>八、crond任务调度(定时任务)<a class="headerlink" href="#crond" title="永久链接至标题">¶</a></h1>
 <section id="crontab">
-<h3>8.1crontab 进行 定时任务的设置<a class="headerlink" href="#crontab" title="永久链接至标题">¶</a></h3>
+<h2>8.1crontab 进行 定时任务的设置<a class="headerlink" href="#crontab" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>概述</p>
 <ul>
@@ -1444,7 +1444,7 @@ chmod a+r abc
 </div>
 </section>
 <section id="at">
-<h3>8.2 at定时任务<a class="headerlink" href="#at" title="永久链接至标题">¶</a></h3>
+<h2>8.2 at定时任务<a class="headerlink" href="#at" title="永久链接至标题">¶</a></h2>
 <ul>
 <li><p>基本介绍</p>
 <ul class="simple">
@@ -1497,10 +1497,10 @@ ctrl + D 结束at命令输入（两次）
 <p><img alt="在这里插入图片描述" src="../_images/20210702232402337.png" /></p>
 </section>
 </section>
+<section id="id34">
+<h1>九、Linux磁盘分区、挂载<a class="headerlink" href="#id34" title="永久链接至标题">¶</a></h1>
 <section id="id35">
-<h2>九、Linux磁盘分区、挂载<a class="headerlink" href="#id35" title="永久链接至标题">¶</a></h2>
-<section id="id36">
-<h3>9.1Linux分区<a class="headerlink" href="#id36" title="永久链接至标题">¶</a></h3>
+<h2>9.1Linux分区<a class="headerlink" href="#id35" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>原理介绍</p>
 <ul>
@@ -1542,8 +1542,8 @@ ctrl + D 结束at命令输入（两次）
 </li>
 </ul>
 </section>
-<section id="id37">
-<h3>9.2挂载的经典案例<a class="headerlink" href="#id37" title="永久链接至标题">¶</a></h3>
+<section id="id36">
+<h2>9.2挂载的经典案例<a class="headerlink" href="#id36" title="永久链接至标题">¶</a></h2>
 <p>以增加一块硬盘为例来熟悉磁盘的相关指令和深入理解磁盘分区、挂载、卸载的概念。</p>
 <p><strong>如何为linux系统增加一块硬盘？</strong>
 <img alt="在这里插入图片描述" src="../_images/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjMyNDE0,size_16,color_FFFFFF,t_70-165962385851117.png" /></p>
@@ -1617,8 +1617,8 @@ w	写入并退出
 </ul>
 </section>
 <hr class="docutils" />
-<section id="id38">
-<h3>9.3磁盘情况查询<a class="headerlink" href="#id38" title="永久链接至标题">¶</a></h3>
+<section id="id37">
+<h2>9.3磁盘情况查询<a class="headerlink" href="#id37" title="永久链接至标题">¶</a></h2>
 <ul>
 <li><ol class="simple">
 <li><p><strong>查看系统整体磁盘</strong>  使用情况</p></li>
@@ -1667,12 +1667,12 @@ w	写入并退出
 <li><p>十、LInux网络配置</p></li>
 </ul>
 </section>
-<section id="id39">
-<h3>10.1Linux网络配置原理图<a class="headerlink" href="#id39" title="永久链接至标题">¶</a></h3>
+<section id="id38">
+<h2>10.1Linux网络配置原理图<a class="headerlink" href="#id38" title="永久链接至标题">¶</a></h2>
 <p><img alt="image-20220809165328170" src="../_images/image-20220809165328170.png" /></p>
 </section>
 <section id="ip">
-<h3>10.2配置一个指定的ip(不然每次都会变)<a class="headerlink" href="#ip" title="永久链接至标题">¶</a></h3>
+<h2>10.2配置一个指定的ip(不然每次都会变)<a class="headerlink" href="#ip" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>直接修改配置文件来制定IP，并可以连接到外网（cxy推荐）</p></li>
 <li><p>编辑 vim /etc /sysconfig/network-scripts/ifcfg-ens33</p></li>
@@ -1703,7 +1703,7 @@ ping www.baidu.com
 </div>
 </section>
 <section id="hosts">
-<h3>10.3设置主机名和hosts映射  (配置别名)<a class="headerlink" href="#hosts" title="永久链接至标题">¶</a></h3>
+<h2>10.3设置主机名和hosts映射  (配置别名)<a class="headerlink" href="#hosts" title="永久链接至标题">¶</a></h2>
 <ul>
 <li><p>设置hosts映射</p>
 <ul class="simple">
@@ -1744,9 +1744,9 @@ ping www.baidu.com
 </section>
 </section>
 <section id="ps">
-<h2>十一、进程管理(ps)<a class="headerlink" href="#ps" title="永久链接至标题">¶</a></h2>
-<section id="id40">
-<h3>11.1基本<a class="headerlink" href="#id40" title="永久链接至标题">¶</a></h3>
+<h1>十一、进程管理(ps)<a class="headerlink" href="#ps" title="永久链接至标题">¶</a></h1>
+<section id="id39">
+<h2>11.1基本<a class="headerlink" href="#id39" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>在Linux中，<strong>每一个执行的程序都被称为一个进程</strong>。每一个进程都被分配一个ID号（pid，进程号）</p>
 <ul>
@@ -1765,8 +1765,8 @@ ping www.baidu.com
 <li><p>一般系统的服务都是以后台进程的方式存在，而且都会常驻在系统中。直到关机才会结束</p></li>
 </ul>
 </section>
-<section id="id41">
-<h3>11.2显示系统执行的进程<a class="headerlink" href="#id41" title="永久链接至标题">¶</a></h3>
+<section id="id40">
+<h2>11.2显示系统执行的进程<a class="headerlink" href="#id40" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>ps    命令是用来查看目前系统中，有哪些正在执行的进程 ，以及他们的执行状况。可以不加任何参数</p></li>
 </ul>
@@ -1909,7 +1909,7 @@ killall 进程名称 	功能描述：通过进程名杀死进程也支持通配�
 <p><img alt="在这里插入图片描述" src="../_images/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5aSq6I-c5LqG5oCO5LmI5Yqe77yf,size_20,color_FFFFFF,t_70,g_se,x_16-165962385852028.png" /></p>
 </section>
 <section id="pstree">
-<h3>11.3查看进程树 pstree<a class="headerlink" href="#pstree" title="永久链接至标题">¶</a></h3>
+<h2>11.3查看进程树 pstree<a class="headerlink" href="#pstree" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>基本语法</p></li>
 </ul>
@@ -1926,11 +1926,11 @@ killall 进程名称 	功能描述：通过进程名杀死进程也支持通配�
 </section>
 </section>
 <section id="service">
-<h2>十二、服务（service）管理<a class="headerlink" href="#service" title="永久链接至标题">¶</a></h2>
+<h1>十二、服务（service）管理<a class="headerlink" href="#service" title="永久链接至标题">¶</a></h1>
 <p>**服务（service）本质就是进程，但是时运行在后台的，通常都会监听某个端口，等待其他程序的请求，**比如（mysqld，sshd 防火墙等），因此称为守护进程，是Linux中非常重要的知识点</p>
 <p><img alt="image-20220810145401086" src="../_images/image-20220810145401086.png" /></p>
-<section id="id42">
-<h3>12.1service命令<a class="headerlink" href="#id42" title="永久链接至标题">¶</a></h3>
+<section id="id41">
+<h2>12.1service命令<a class="headerlink" href="#id41" title="永久链接至标题">¶</a></h2>
 <ul>
 <li><p><strong>service管理指令</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">service</span> <span class="n">服务名</span> <span class="p">[</span><span class="n">start</span><span class="o">|</span> <span class="n">stop</span><span class="o">|</span> <span class="n">restart</span><span class="o">|</span> <span class="n">reload</span> <span class="o">|</span> <span class="n">status</span><span class="p">]</span>
@@ -1971,8 +1971,8 @@ killall 进程名称 	功能描述：通过进程名杀死进程也支持通配�
 </li>
 </ul>
 </section>
-<section id="id43">
-<h3>12.2服务的运行级别<a class="headerlink" href="#id43" title="永久链接至标题">¶</a></h3>
+<section id="id42">
+<h2>12.2服务的运行级别<a class="headerlink" href="#id42" title="永久链接至标题">¶</a></h2>
 <ul>
 <li><p>linux系统有七种运行级别（runlevel）：</p>
 <p>常用的是级别3和5</p>
@@ -2014,7 +2014,7 @@ killall 进程名称 	功能描述：通过进程名杀死进程也支持通配�
 </ul>
 </section>
 <section id="chkconfig">
-<h3>12.3chkconfig指令(在各个运行级别中)<a class="headerlink" href="#chkconfig" title="永久链接至标题">¶</a></h3>
+<h2>12.3chkconfig指令(在各个运行级别中)<a class="headerlink" href="#chkconfig" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>作用:</p>
 <ul>
@@ -2043,7 +2043,7 @@ chkconfig --level 3 network off
 </ul>
 </section>
 <section id="systemctl">
-<h3>12.4systemctl命令<a class="headerlink" href="#systemctl" title="永久链接至标题">¶</a></h3>
+<h2>12.4systemctl命令<a class="headerlink" href="#systemctl" title="永久链接至标题">¶</a></h2>
 <p><strong>CentOS7.0后很多服务不再使用service，而是systemctl</strong></p>
 <ul>
 <li><p><strong>systemctl管理命令</strong></p>
@@ -2099,8 +2099,8 @@ systemctl s
 </li>
 </ul>
 </section>
-<section id="id44">
-<h3>12.5打开或者关闭指定端口<a class="headerlink" href="#id44" title="永久链接至标题">¶</a></h3>
+<section id="id43">
+<h2>12.5打开或者关闭指定端口<a class="headerlink" href="#id43" title="永久链接至标题">¶</a></h2>
 <p>在真正的生产环境，往往需要将防火墙打开，但是如果我们把防火墙打开，那么外部请求数据包就不能给服务器监听端口通讯。这时，需要打开指定的端口。比如80，22，8080</p>
 <ul>
 <li><p><strong>firewall指令</strong></p>
@@ -2144,9 +2144,9 @@ systemctl s
 </section>
 <hr class="docutils" />
 <section id="top">
-<h2>十三、动态监控(top)<a class="headerlink" href="#top" title="永久链接至标题">¶</a></h2>
-<section id="id45">
-<h3>13.1动态监控进程的基本语法<a class="headerlink" href="#id45" title="永久链接至标题">¶</a></h3>
+<h1>十三、动态监控(top)<a class="headerlink" href="#top" title="永久链接至标题">¶</a></h1>
+<section id="id44">
+<h2>13.1动态监控进程的基本语法<a class="headerlink" href="#id44" title="永久链接至标题">¶</a></h2>
 <p><strong>top和ps命令很相似</strong>。他们都用来显示正在执行的进程Top和ps最大的不同处在于<strong>top在执行一段时间可以更行正在运行的进程</strong></p>
 <ul class="simple">
 <li><p>基本语法</p></li>
@@ -2189,8 +2189,8 @@ systemctl s
 <li><p>其中cpu使用率和KiB Mem(内存管理）最为重要</p></li>
 </ul>
 </section>
-<section id="id46">
-<h3>13.2动态监控进程的交互操作<a class="headerlink" href="#id46" title="永久链接至标题">¶</a></h3>
+<section id="id45">
+<h2>13.2动态监控进程的交互操作<a class="headerlink" href="#id45" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>交互操作说明</p></li>
 </ul>
@@ -2240,8 +2240,8 @@ top -d 10
 </ul>
 </section>
 <hr class="docutils" />
-<section id="id47">
-<h3>13.3监控网络状态<a class="headerlink" href="#id47" title="永久链接至标题">¶</a></h3>
+<section id="id46">
+<h2>13.3监控网络状态<a class="headerlink" href="#id46" title="永久链接至标题">¶</a></h2>
 <ul>
 <li><p><strong>查看系统网络情况netstat</strong></p>
 <ul class="simple">
@@ -2275,9 +2275,9 @@ top -d 10
 </section>
 </section>
 <section id="rpmyum">
-<h2>十四、RPM与YUM<a class="headerlink" href="#rpmyum" title="永久链接至标题">¶</a></h2>
+<h1>十四、RPM与YUM<a class="headerlink" href="#rpmyum" title="永久链接至标题">¶</a></h1>
 <section id="rpm">
-<h3>14.1rpm包的管理<a class="headerlink" href="#rpm" title="永久链接至标题">¶</a></h3>
+<h2>14.1rpm包的管理<a class="headerlink" href="#rpm" title="永久链接至标题">¶</a></h2>
 <ul>
 <li><p>介绍</p>
 <ul class="simple">
@@ -2380,7 +2380,7 @@ rpm -qa | grep xxx(如：rpm -qa | grep firefox)
 </ul>
 </section>
 <section id="yum">
-<h3>14.2yum<a class="headerlink" href="#yum" title="永久链接至标题">¶</a></h3>
+<h2>14.2yum<a class="headerlink" href="#yum" title="永久链接至标题">¶</a></h2>
 <ul>
 <li><p><em><strong>介绍</strong></em>：Yum是一个Shell前端软件包管理器。基于RPM包管理，<strong>能够从指定的服务器自动下载RPM包并安装</strong>. <strong>相当于应用商店</strong>，可以自动处理依赖关系，并且一次安装所有依赖的软件包</p></li>
 <li><p><strong>yum的基本指令</strong></p>
@@ -2405,7 +2405,7 @@ yum install firefox			下载！
 </section>
 <hr class="docutils" />
 <section id="linux-g">
-<h2>十五、 linux  g++<a class="headerlink" href="#linux-g" title="永久链接至标题">¶</a></h2>
+<h1>十五、 linux  g++<a class="headerlink" href="#linux-g" title="永久链接至标题">¶</a></h1>
 <ul class="simple">
 <li><p><strong>g++是干什么用的</strong></p></li>
 </ul>
@@ -2462,11 +2462,11 @@ yum install firefox			下载！
 <p><a class="reference external" href="https://blog.csdn.net/Three_dog/article/details/103688043">(28条消息) g++编译详解_三级狗的博客-CSDN博客_g++编译</a></p>
 </section>
 <section id="shell">
-<h2>十六、 shell脚本<a class="headerlink" href="#shell" title="永久链接至标题">¶</a></h2>
+<h1>十六、 shell脚本<a class="headerlink" href="#shell" title="永久链接至标题">¶</a></h1>
 <p>Shell是一个命令行解释器，它为用户提供了一个向Linux内核发送请求以便运行程序的界面系统级程序，用户可以用Shell来启动、挂起、停止甚至是编写一些程序。看一个示意图</p>
 <p><img alt="image-20220811152228379" src="../_images/image-20220811152228379.png" /></p>
-<section id="id48">
-<h3>16.1 shell脚本的执行方式<a class="headerlink" href="#id48" title="永久链接至标题">¶</a></h3>
+<section id="id47">
+<h2>16.1 shell脚本的执行方式<a class="headerlink" href="#id47" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>脚本格式要求</p>
 <ol class="simple">
@@ -2494,8 +2494,8 @@ yum install firefox			下载！
 <p><img alt="image-20220811154041039" src="../_images/image-20220811154041039.png" /></p>
 </section>
 <hr class="docutils" />
-<section id="id49">
-<h3>16.2 shell变量<a class="headerlink" href="#id49" title="永久链接至标题">¶</a></h3>
+<section id="id48">
+<h2>16.2 shell变量<a class="headerlink" href="#id48" title="永久链接至标题">¶</a></h2>
 <ul>
 <li><p><strong>Shell变量介绍</strong></p>
 <ol>
@@ -2559,8 +2559,8 @@ yum install firefox			下载！
 </li>
 </ul>
 </section>
-<section id="id50">
-<h3>16.3 <strong>将命令的结果  赋给变量</strong><a class="headerlink" href="#id50" title="永久链接至标题">¶</a></h3>
+<section id="id49">
+<h2>16.3 <strong>将命令的结果  赋给变量</strong><a class="headerlink" href="#id49" title="永久链接至标题">¶</a></h2>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">A</span><span class="o">=</span><span class="sb">`</span>date<span class="sb">`</span>    反引号，运行里面的命令，并把结果返回给变量A
 <span class="nv">A</span><span class="o">=</span><span class="k">$(</span>date<span class="k">)</span>   等价于反引号  // 推荐
 </pre></div>
@@ -2585,8 +2585,8 @@ yum install firefox			下载！
 </pre></div>
 </div>
 </section>
-<section id="id51">
-<h3>16.4 设置环境变量<a class="headerlink" href="#id51" title="永久链接至标题">¶</a></h3>
+<section id="id50">
+<h2>16.4 设置环境变量<a class="headerlink" href="#id50" title="永久链接至标题">¶</a></h2>
 <p>●基本语法</p>
 <ol class="simple">
 <li><p>export变量名=变量值（功能描述:将shell变量输出为环境变量/全局变</p></li>
@@ -2619,8 +2619,8 @@ echo $TOMCAT_HOME
 </ul>
 <p>注意: 在输出TOMCAT_HOME 环境变量前，需要让其生效source /etc/profile</p>
 </section>
-<section id="id52">
-<h3>16.5 注释<a class="headerlink" href="#id52" title="永久链接至标题">¶</a></h3>
+<section id="id51">
+<h2>16.5 注释<a class="headerlink" href="#id51" title="永久链接至标题">¶</a></h2>
 <p>单行注释</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1">#案例1:计算(2+3)X4的值</span>
 </pre></div>
@@ -2635,8 +2635,8 @@ echo $TOMCAT_HOME
 </pre></div>
 </div>
 </section>
-<section id="id53">
-<h3>16.6 位置参数变量<a class="headerlink" href="#id53" title="永久链接至标题">¶</a></h3>
+<section id="id52">
+<h2>16.6 位置参数变量<a class="headerlink" href="#id52" title="永久链接至标题">¶</a></h2>
 <ul>
 <li><p>介绍
 当我们执行一个shell脚本时，如果希望获取到命令行的参数信息，就可以使用到位置参数变量</p></li>
@@ -2679,8 +2679,8 @@ echo $TOMCAT_HOME
 </pre></div>
 </div>
 </section>
-<section id="id54">
-<h3>16.7 预定义变量<a class="headerlink" href="#id54" title="永久链接至标题">¶</a></h3>
+<section id="id53">
+<h2>16.7 预定义变量<a class="headerlink" href="#id53" title="永久链接至标题">¶</a></h2>
 <ul>
 <li><p>基本介绍
 就是shell设计者事先已经定义好的变量，可以直接在shell脚本中使用</p></li>
@@ -2689,7 +2689,9 @@ echo $TOMCAT_HOME
 
 <span class="nv">$!</span>（功能描述:  后台运行的最后一个进程的进程号（PID<span class="o">))</span>
 
-<span class="nv">$?</span>（功能描述:  最后一次执行的命令的返回状态。如果这个变量的值为0，证明上一个命令正确执行<span class="p">;</span>如果这个变量的值为非0<span class="o">(</span>具体是哪个数，由命令自己来决定），则证明上一个命令执行不正确了。<span class="o">)</span>
+<span class="nv">$?</span>（功能描述:  最后一次执行的命令的返回状态。如果这个变量的值为0，证明上一个命令正确执行<span class="p">;</span>
+             如果这个变量的值为非0<span class="o">(</span>具体是哪个数，由命令自己来决定），则证明上一个命令执行不正确了。<span class="o">)</span>
+             <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$?</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span> <span class="o">]</span>
 </pre></div>
 </div>
 </li>
@@ -2699,8 +2701,8 @@ echo $TOMCAT_HOME
 <p><img alt="image-20220811170905266" src="../_images/image-20220811170905266.png" />·<img alt="image-20220811170918125" src="../_images/image-20220811170918125.png" /></p>
 </section>
 <hr class="docutils" />
-<section id="id55">
-<h3>16.8 运算符<a class="headerlink" href="#id55" title="永久链接至标题">¶</a></h3>
+<section id="id54">
+<h2>16.8 运算符<a class="headerlink" href="#id54" title="永久链接至标题">¶</a></h2>
 <ul>
 <li><p>基本介绍
 在shell中进行各种运算操作</p></li>
@@ -2721,8 +2723,8 @@ echo $TOMCAT_HOME
 </li>
 </ul>
 </section>
-<section id="id56">
-<h3>16.9  条件判断<a class="headerlink" href="#id56" title="永久链接至标题">¶</a></h3>
+<section id="id55">
+<h2>16.9  条件判断<a class="headerlink" href="#id55" title="永久链接至标题">¶</a></h2>
 <ul>
 <li><p>基本语法
 <strong>if [ condition ]</strong>     注意condition<strong>前后必须要有空格</strong>
@@ -2786,8 +2788,8 @@ if  [condition ] &amp;&amp; echo OK || echo notok
 </li>
 </ul>
 </section>
-<section id="id57">
-<h3>16.10 流程控制<a class="headerlink" href="#id57" title="永久链接至标题">¶</a></h3>
+<section id="id56">
+<h2>16.10 流程控制<a class="headerlink" href="#id56" title="永久链接至标题">¶</a></h2>
 <ul>
 <li><p><strong>1.  if 语法</strong></p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;ok&quot;</span> <span class="o">=</span> <span class="s2">&quot;ok&quot;</span><span class="o">]</span>
@@ -2837,7 +2839,7 @@ if  [condition ] &amp;&amp; echo OK || echo notok
 <p>效果:</p>
 <img src="linux.assets/image-20220811180836507.png" style="zoom:150%;" /></section>
 <section id="for">
-<h3>16.11 for循环<a class="headerlink" href="#for" title="永久链接至标题">¶</a></h3>
+<h2>16.11 for循环<a class="headerlink" href="#for" title="永久链接至标题">¶</a></h2>
 <ul>
 <li><p>基本语法1</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> 变量  in值1值2值3….
@@ -2897,7 +2899,7 @@ num is <span class="m">30</span>
 </ul>
 </section>
 <section id="while">
-<h3>16.12 while循环<a class="headerlink" href="#while" title="永久链接至标题">¶</a></h3>
+<h2>16.12 while循环<a class="headerlink" href="#while" title="永久链接至标题">¶</a></h2>
 <ul>
 <li><p>基本语法1</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="o">[</span> 条件判断式 <span class="o">]</span>  <span class="c1">#while和 [ ] 有空格，条件判断式和[]也有空格</span>
@@ -2928,7 +2930,7 @@ num is <span class="m">30</span>
 <p><img alt="image-20220812180047080" src="../_images/image-20220812180047080.png" /></p>
 </section>
 <section id="read">
-<h3>16.13 read获取输入<a class="headerlink" href="#read" title="永久链接至标题">¶</a></h3>
+<h2>16.13 read获取输入<a class="headerlink" href="#read" title="永久链接至标题">¶</a></h2>
 <ul>
 <li><p>基本语法</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>read<span class="o">(</span>选项<span class="o">)(</span>参数<span class="o">)</span>
@@ -2965,8 +2967,8 @@ num is <span class="m">30</span>
 </pre></div>
 </div>
 </section>
-<section id="id58">
-<h3>16.14 函数<a class="headerlink" href="#id58" title="永久链接至标题">¶</a></h3>
+<section id="id57">
+<h2>16.14 函数<a class="headerlink" href="#id57" title="永久链接至标题">¶</a></h2>
 <ul>
 <li><p>函数介绍
 shell编程和其它编程语言一样，有系统函数，也可以自定义函数。</p></li>
@@ -3006,8 +3008,8 @@ test.txt
 <p><img alt="image-20220812182501916" src="../_images/image-20220812182501916.png" /></p>
 <p>注意:   这两个函数经常使用在脚本文件里，得到一般是全路径，需要用这两个函数做处理</p>
 </section>
-<section id="id59">
-<h3>16.15 自定义函数<a class="headerlink" href="#id59" title="永久链接至标题">¶</a></h3>
+<section id="id58">
+<h2>16.15 自定义函数<a class="headerlink" href="#id58" title="永久链接至标题">¶</a></h2>
 <ul>
 <li><p>基本语法</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> funname<span class="o">()</span>
@@ -3040,8 +3042,8 @@ test.txt
 <p><img alt="image-20220812183941074" src="../_images/image-20220812183941074.png" /></p>
 </section>
 <hr class="docutils" />
-<section id="id60">
-<h3>16.16 综合案例<a class="headerlink" href="#id60" title="永久链接至标题">¶</a></h3>
+<section id="id59">
+<h2>16.16 综合案例<a class="headerlink" href="#id59" title="永久链接至标题">¶</a></h2>
 <p>Shell编程综合案例</p>
 <ol class="simple">
 <li><p>每天凌晨2:30备份;</p></li>
@@ -3086,10 +3088,10 @@ find <span class="s2">&quot;</span><span class="nv">$BACKUP</span><span class="s
 </section>
 </section>
 <hr class="docutils" />
+<section id="id60">
+<h1>十七、 日志管理<a class="headerlink" href="#id60" title="永久链接至标题">¶</a></h1>
 <section id="id61">
-<h2>十七、 日志管理<a class="headerlink" href="#id61" title="永久链接至标题">¶</a></h2>
-<section id="id62">
-<h3>17.1 基本介绍<a class="headerlink" href="#id62" title="永久链接至标题">¶</a></h3>
+<h2>17.1 基本介绍<a class="headerlink" href="#id61" title="永久链接至标题">¶</a></h2>
 <ol class="simple">
 <li><p>日志文件是重要的系统信息文件，其中记录了许多重要的系统事件，包括用户的登录信息、系统的
 启动信息、系统的安全信息、邮件相关信息、各种服务相关信息等。</p></li>
@@ -3151,8 +3153,8 @@ find <span class="s2">&quot;</span><span class="nv">$BACKUP</span><span class="s
 </tr>
 </tbody>
 </table></section>
-<section id="id63">
-<h3>17.2 日志管理服务<a class="headerlink" href="#id63" title="永久链接至标题">¶</a></h3>
+<section id="id62">
+<h2>17.2 日志管理服务<a class="headerlink" href="#id62" title="永久链接至标题">¶</a></h2>
 <p><strong>日志管理服务  rsyslogd</strong>
 CentOS7.6日志服务是rsyslogd , CentOS6.x日志服务是syslogd 。 rsyslogd功能更强大。rsyslogd 的使用、日志文件的格式，和syslogd服务兼容的。</p>
 <p>原理示意图</p>
@@ -3184,8 +3186,8 @@ none      ##什么都不记录
 查看一下/ar/log/secure日志，这个日志中记录的是用户验证和授权方面的信息来分析如何查看Nov 12 12:18:26</p>
 <p><img alt="image-20220814203654984" src="../_images/image-20220814203654984.png" /></p>
 </section>
-<section id="id64">
-<h3>17.3 自定义日志服务<a class="headerlink" href="#id64" title="永久链接至标题">¶</a></h3>
+<section id="id63">
+<h2>17.3 自定义日志服务<a class="headerlink" href="#id63" title="永久链接至标题">¶</a></h2>
 <p>在/etc/rsyslog.conf 中添加一个日志文件/var/log/hsp.log,当有事件发送时(比如sshd服务相关事件)，该文件会接收到信息并保存。演示重启，登录的情况，看看是否有日志保存</p>
 <ol class="simple">
 <li><p>vim /etc/rsyslog.conf  进入日志管理服务</p></li>
@@ -3195,14 +3197,13 @@ none      ##什么都不记录
 </ol>
 </section>
 </section>
-</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../Cmake/index.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Linux" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Cmake/index.html" class="btn btn-neutral float-right" title="Cmake" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

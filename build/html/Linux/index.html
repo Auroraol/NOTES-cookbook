@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>&lt;no title&gt; &mdash; X-NOTES latest 文档</title>
+  <title>Linux &mdash; X-NOTES latest 文档</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -19,8 +19,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="Linux" href="Linux.html" />
-    <link rel="prev" title="Qt" href="../Qt/Qt.html" /> 
+    <link rel="next" title="一、Linux概述 unix和LInux的关系" href="Linux.html" />
+    <link rel="prev" title="程序运行发布和设置APP图标" href="../Qt/Qt.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -39,10 +39,28 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../Qt/index.html">Qt</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Linux.html">Linux</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Cmake/Cmake.html">CMake</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Linux</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html">一、Linux概述  unix和LInux的关系</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#linux">二、Linux目录结构（重点）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#vivim">三、vi和vim编辑器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id5">四、LInux开机，重启和用户登录注销</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id8">五、用户管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id18">六、实用指令</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id26">七、linux的主管理和权限管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#crond">八、crond任务调度(定时任务)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id34">九、Linux磁盘分区、挂载</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#ps">十一、进程管理(ps)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#service">十二、服务（service）管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#top">十三、动态监控(top)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#rpmyum">十四、RPM与YUM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#linux-g">十五、 linux  g++</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#shell">十六、 shell脚本</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id60">十七、 日志管理</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Cmake/index.html">Cmake</a></li>
 </ul>
 
         </div>
@@ -59,7 +77,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>&lt;no title&gt;</li>
+      <li>Linux</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/Linux/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -69,141 +87,142 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <dl>
-<dt>Linux</dt><dd><div class="toctree-wrapper compound">
+  <section id="linux">
+<h1>Linux<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h1>
+<blockquote>
+<div><div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Linux.html">Linux</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Linux.html#linux-unixlinux">一、Linux概述  unix和LInux的关系</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Linux.html#id1">二、Linux目录结构（重点）</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id2">2.1基本介绍</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id3">2.2具体的目录结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Linux.html">一、Linux概述  unix和LInux的关系</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Linux.html#linux">二、Linux目录结构（重点）</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id1">2.1基本介绍</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id2">2.2具体的目录结构</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Linux.html#vivim">三、vi和vim编辑器</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id4">3.1 vi和vim的基本介绍</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id5">3.2 vi和vim常用的三种模式</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Linux.html#vivim">三、vi和vim编辑器</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id3">3.1 vi和vim的基本介绍</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id4">3.2 vi和vim常用的三种模式</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Linux.html#id6">四、LInux开机，重启和用户登录注销</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id7">4.1关机和重启的命令</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id8">4.2用户登录和注销</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Linux.html#id5">四、LInux开机，重启和用户登录注销</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id6">4.1关机和重启的命令</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id7">4.2用户登录和注销</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Linux.html#id9">五、用户管理</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id10">5.1基本介绍</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id11">5.2添加用户</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id12">5.3指定/修改密码</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id13">5.4 删除用户</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id14">5.5查询用户信息  指令</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id15">5.6切换用户</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id16">5.7 查看当前用户/登录用户的信息</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id17">5.8 用户组</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id18">5.9 用户和组相关文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Linux.html#id8">五、用户管理</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id9">5.1基本介绍</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id10">5.2添加用户</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id11">5.3指定/修改密码</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id12">5.4 删除用户</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id13">5.5查询用户信息  指令</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id14">5.6切换用户</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id15">5.7 查看当前用户/登录用户的信息</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id16">5.8 用户组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id17">5.9 用户和组相关文件</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Linux.html#id19">六、实用指令</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id20">6.1指定运行级别</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id21">6.2帮助指令</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id22">6.3文件目录类(重要)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id23">6.4时间日期类</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id24">6.5搜索查找类</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id25">6.6 压缩和解压</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id26">6.7清屏命令</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Linux.html#id18">六、实用指令</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id19">6.1指定运行级别</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id20">6.2帮助指令</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id21">6.3文件目录类(重要)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id22">6.4时间日期类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id23">6.5搜索查找类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id24">6.6 压缩和解压</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id25">6.7清屏命令</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Linux.html#id27">七、linux的主管理和权限管理</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#liunx">7.1Liunx组的基本介绍</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id28">7.2文件/目录的 所有者</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id29">7.3文件/目录的  所在组</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id30">7.4其他组</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id31">7.5==改变用户所在组==</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id32">7.6 权限的基本介绍</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id33">7.7文件及目录权限说明  实际案例</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#chmod">7.8==修改文件和目录权限-chmod==</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#chown">7.9==修改文件和目录  所有者-chown==</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#chgrp">7.10==修改文件和目录   所在组-chgrp==</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#rwx">7.11对文件夹(目录）的rwx的细节讨论</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id34">案例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Linux.html#id26">七、linux的主管理和权限管理</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#liunx">7.1Liunx组的基本介绍</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id27">7.2文件/目录的 所有者</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id28">7.3文件/目录的  所在组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id29">7.4其他组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id30">7.5==改变用户所在组==</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id31">7.6 权限的基本介绍</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id32">7.7文件及目录权限说明  实际案例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#chmod">7.8==修改文件和目录权限-chmod==</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#chown">7.9==修改文件和目录  所有者-chown==</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#chgrp">7.10==修改文件和目录   所在组-chgrp==</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#rwx">7.11对文件夹(目录）的rwx的细节讨论</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Linux.html#id33">案例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Linux.html#crond">八、crond任务调度(定时任务)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#crontab">8.1crontab 进行 定时任务的设置</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#at">8.2 at定时任务</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Linux.html#id35">九、Linux磁盘分区、挂载</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id36">9.1Linux分区</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id37">9.2挂载的经典案例</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id38">9.3磁盘情况查询</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id39">10.1Linux网络配置原理图</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#ip">10.2配置一个指定的ip(不然每次都会变)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#hosts">10.3设置主机名和hosts映射  (配置别名)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Linux.html#crond">八、crond任务调度(定时任务)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#crontab">8.1crontab 进行 定时任务的设置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#at">8.2 at定时任务</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Linux.html#ps">十一、进程管理(ps)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id40">11.1基本</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id41">11.2显示系统执行的进程</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#pstree">11.3查看进程树 pstree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Linux.html#id34">九、Linux磁盘分区、挂载</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id35">9.1Linux分区</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id36">9.2挂载的经典案例</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id37">9.3磁盘情况查询</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id38">10.1Linux网络配置原理图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#ip">10.2配置一个指定的ip(不然每次都会变)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#hosts">10.3设置主机名和hosts映射  (配置别名)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Linux.html#service">十二、服务（service）管理</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id42">12.1service命令</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id43">12.2服务的运行级别</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#chkconfig">12.3chkconfig指令(在各个运行级别中)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#systemctl">12.4systemctl命令</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id44">12.5打开或者关闭指定端口</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Linux.html#ps">十一、进程管理(ps)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id39">11.1基本</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id40">11.2显示系统执行的进程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#pstree">11.3查看进程树 pstree</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Linux.html#top">十三、动态监控(top)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id45">13.1动态监控进程的基本语法</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id46">13.2动态监控进程的交互操作</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id47">13.3监控网络状态</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Linux.html#service">十二、服务（service）管理</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id41">12.1service命令</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id42">12.2服务的运行级别</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#chkconfig">12.3chkconfig指令(在各个运行级别中)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#systemctl">12.4systemctl命令</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id43">12.5打开或者关闭指定端口</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Linux.html#rpmyum">十四、RPM与YUM</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#rpm">14.1rpm包的管理</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#yum">14.2yum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Linux.html#top">十三、动态监控(top)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id44">13.1动态监控进程的基本语法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id45">13.2动态监控进程的交互操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id46">13.3监控网络状态</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Linux.html#linux-g">十五、 linux  g++</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Linux.html#shell">十六、 shell脚本</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id48">16.1 shell脚本的执行方式</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id49">16.2 shell变量</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id50">16.3 <strong>将命令的结果  赋给变量</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id51">16.4 设置环境变量</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id52">16.5 注释</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id53">16.6 位置参数变量</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id54">16.7 预定义变量</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id55">16.8 运算符</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id56">16.9  条件判断</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id57">16.10 流程控制</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#for">16.11 for循环</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#while">16.12 while循环</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#read">16.13 read获取输入</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id58">16.14 函数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id59">16.15 自定义函数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id60">16.16 综合案例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Linux.html#rpmyum">十四、RPM与YUM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#rpm">14.1rpm包的管理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#yum">14.2yum</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Linux.html#id61">十七、 日志管理</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id62">17.1 基本介绍</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id63">17.2 日志管理服务</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Linux.html#id64">17.3 自定义日志服务</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Linux.html#linux-g">十五、 linux  g++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Linux.html#shell">十六、 shell脚本</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id47">16.1 shell脚本的执行方式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id48">16.2 shell变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id49">16.3 <strong>将命令的结果  赋给变量</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id50">16.4 设置环境变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id51">16.5 注释</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id52">16.6 位置参数变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id53">16.7 预定义变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id54">16.8 运算符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id55">16.9  条件判断</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id56">16.10 流程控制</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#for">16.11 for循环</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#while">16.12 while循环</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#read">16.13 read获取输入</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id57">16.14 函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id58">16.15 自定义函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id59">16.16 综合案例</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="Linux.html#id60">十七、 日志管理</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id61">17.1 基本介绍</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id62">17.2 日志管理服务</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Linux.html#id63">17.3 自定义日志服务</a></li>
 </ul>
 </li>
 </ul>
 </div>
-</dd>
-</dl>
+</div></blockquote>
+</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../Qt/Qt.html" class="btn btn-neutral float-left" title="Qt" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="Linux.html" class="btn btn-neutral float-right" title="Linux" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../Qt/Qt.html" class="btn btn-neutral float-left" title="程序运行发布和设置APP图标" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Linux.html" class="btn btn-neutral float-right" title="一、Linux概述 unix和LInux的关系" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
