@@ -19,7 +19,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="Qt" href="Qt.html" />
+    <link rel="next" title="程序运行发布和设置APP图标" href="Qt.html" />
     <link rel="prev" title="Indices and tables" href="../index.html" /> 
 </head>
 
@@ -41,7 +41,8 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Qt</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Qt.html">Qt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Qt.html">程序运行发布和设置APP图标</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Qt.html#qmainwindowqwidgetqdialog">QMainWindow、QWidget、QDialog的区别</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../Linux/Linux.html">Linux</a></li>
@@ -77,16 +78,13 @@
 <blockquote>
 <div><div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="Qt.html">Qt</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Qt.html#app">程序运行发布和设置APP图标</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Qt.html#id1">程序运行发布(给别人电脑上能够正常运行):</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Qt.html#id2">设置APP图标</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Qt.html">程序运行发布和设置APP图标</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Qt.html#id1">程序运行发布(给别人电脑上能够正常运行):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Qt.html#id2">设置APP图标</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Qt.html#qmainwindowqwidgetqdialog">QMainWindow、QWidget、QDialog的区别</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Qt.html#id3">选用原则</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="Qt.html#qmainwindowqwidgetqdialog">QMainWindow、QWidget、QDialog的区别</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Qt.html#id3">选用原则</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Qt.html#id4">项目文件组成及分析</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="Qt.html#id5">0.创建项目注意事项</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Qt.html#pro">一. 项目管理文件（.pro文件）</a></li>
@@ -261,17 +259,17 @@
 <li class="toctree-l3"><a class="reference internal" href="Qt.html#id89">扫描</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Qt.html#id90">知识点十八: Qt中的随机数</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Qt.html#qt">知识点十八: Qt中的随机数</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="Qt.html#event-eventfilter">知识点十九: 重写事件event/eventFilter–&gt;过滤事件</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Qt.html#eventfilter">知识点二十: 事件过滤器eventFilter</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Qt.html#id91">知识点二十一:</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Qt.html#id92">QT文件读取</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Qt.html#id93">QT文件写入</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Qt.html#id90">知识点二十一:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Qt.html#id91">QT文件读取</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Qt.html#id92">QT文件写入</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Qt.html#id94">知识点二十二: QT中的文本流和数据流</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Qt.html#id93">知识点二十二: QT中的文本流和数据流</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="Qt.html#qtextstream">文本流QTextStream的读写方式</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Qt.html#qdatastream"><strong>数据流QDataStream的读写方式</strong></a></li>
 </ul>
@@ -281,25 +279,25 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="Qt.html#qttcp">知识点二十四: QT中的TCP通信</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Qt.html#id95">服务器端：</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Qt.html#id96">客户端：</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Qt.html#id94">服务器端：</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Qt.html#id95">客户端：</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="Qt.html#qtudp">知识点二十五: QT中的UDP通信</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Qt.html#id97">服务器端</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Qt.html#id98"><strong>客户端</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="Qt.html#id96">服务器端</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Qt.html#id97"><strong>客户端</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Qt.html#id99">知识点二 十六: QT广播/组播</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Qt.html#id98">知识点二 十六: QT广播/组播</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="Qt.html#udp"><strong>广播</strong>：UDP</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="Qt.html#tcp">知识点二十七: TCP文件传输</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Qt.html#id100"><strong>服务端</strong>：</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Qt.html#id101"><strong>客户端</strong>：</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Qt.html#id99"><strong>服务端</strong>：</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Qt.html#id100"><strong>客户端</strong>：</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="Qt.html#id102">知识点二十八：视频播放 —&gt;基础  视频功能实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Qt.html#id101">知识点二十八：视频播放 —&gt;基础  视频功能实现</a></li>
 </ul>
 </li>
 </ul>
@@ -312,7 +310,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../index.html" class="btn btn-neutral float-left" title="Indices and tables" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="Qt.html" class="btn btn-neutral float-right" title="Qt" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Qt.html" class="btn btn-neutral float-right" title="程序运行发布和设置APP图标" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

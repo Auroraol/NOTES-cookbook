@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Qt &mdash; X-NOTES latest 文档</title>
+  <title>程序运行发布和设置APP图标 &mdash; X-NOTES latest 文档</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -41,16 +41,13 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Qt</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Qt</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#app">程序运行发布和设置APP图标</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id1">程序运行发布(给别人电脑上能够正常运行):</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id2">设置APP图标</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">程序运行发布和设置APP图标</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">程序运行发布(给别人电脑上能够正常运行):</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">设置APP图标</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#qmainwindowqwidgetqdialog">QMainWindow、QWidget、QDialog的区别</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id3">选用原则</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#qmainwindowqwidgetqdialog">QMainWindow、QWidget、QDialog的区别</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">选用原则</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id4">项目文件组成及分析</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id5">0.创建项目注意事项</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#pro">一. 项目管理文件（.pro文件）</a></li>
@@ -157,17 +154,17 @@
 <li class="toctree-l4"><a class="reference internal" href="#id89">扫描</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id90">知识点十八: Qt中的随机数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#qt">知识点十八: Qt中的随机数</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#event-eventfilter">知识点十九: 重写事件event/eventFilter–&gt;过滤事件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#eventfilter">知识点二十: 事件过滤器eventFilter</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id91">知识点二十一:</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id92">QT文件读取</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id93">QT文件写入</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id90">知识点二十一:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id91">QT文件读取</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id92">QT文件写入</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id94">知识点二十二: QT中的文本流和数据流</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id93">知识点二十二: QT中的文本流和数据流</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#qtextstream">文本流QTextStream的读写方式</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#qdatastream"><strong>数据流QDataStream的读写方式</strong></a></li>
 </ul>
@@ -177,25 +174,25 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#qttcp">知识点二十四: QT中的TCP通信</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id95">服务器端：</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id96">客户端：</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id94">服务器端：</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id95">客户端：</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#qtudp">知识点二十五: QT中的UDP通信</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id97">服务器端</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id98"><strong>客户端</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id96">服务器端</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id97"><strong>客户端</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id99">知识点二 十六: QT广播/组播</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id98">知识点二 十六: QT广播/组播</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#udp"><strong>广播</strong>：UDP</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#tcp">知识点二十七: TCP文件传输</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id100"><strong>服务端</strong>：</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id101"><strong>客户端</strong>：</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id99"><strong>服务端</strong>：</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id100"><strong>客户端</strong>：</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id102">知识点二十八：视频播放 —&gt;基础  视频功能实现</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id101">知识点二十八：视频播放 —&gt;基础  视频功能实现</a></li>
 </ul>
 </li>
 </ul>
@@ -219,7 +216,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="index.html">Qt</a> &raquo;</li>
-      <li>Qt</li>
+      <li>程序运行发布和设置APP图标</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/Qt/Qt.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -229,20 +226,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="qt">
-<h1>Qt<a class="headerlink" href="#qt" title="永久链接至标题">¶</a></h1>
-<section id="app">
-<h2>程序运行发布和设置APP图标<a class="headerlink" href="#app" title="永久链接至标题">¶</a></h2>
+  <section id="app">
+<h1>程序运行发布和设置APP图标<a class="headerlink" href="#app" title="永久链接至标题">¶</a></h1>
 <section id="id1">
-<h3>程序运行发布(给别人电脑上能够正常运行):<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h3>
+<h2>程序运行发布(给别人电脑上能够正常运行):<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p><strong>用  release</strong> 下创建</p></li>
 </ul>
-<p><img alt="image-20220816091529859" src="Qt/Qt.assets/image-20220816091529859.png" /></p>
+<p><img alt="image-20220816091529859" src="../_images/image-20220816091529859.png" /></p>
 <ul class="simple">
 <li><p>得到 exe文件</p></li>
 </ul>
-<p><img alt="image-20220618213542612" src="Qt/Qt.assets/image-20220618213542612.png" /></p>
+<p><img alt="image-20220618213542612" src="../_images/image-20220618213542612.png" /></p>
 <ul class="simple">
 <li><p>拷贝exe文件道要发布的文件夹里</p></li>
 </ul>
@@ -252,18 +247,18 @@
 <p>添加好环境变量就能直接使用工具      windeployqt</p>
 </li>
 </ul>
-<p><img alt="image-20220618213457203" src="Qt/Qt.assets/image-20220618213457203.png" /></p>
+<p><img alt="image-20220618213457203" src="../_images/image-20220618213457203.png" /></p>
 <ul class="simple">
 <li><p>最终结果(可以打包成压缩包)</p></li>
 </ul>
-<p><img alt="image-20220816091658045" src="Qt/Qt.assets/image-20220816091658045.png" /></p>
+<p><img alt="image-20220816091658045" src="../_images/image-20220816091658045.png" /></p>
 </section>
 <section id="id2">
-<h3>设置APP图标<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<h2>设置APP图标<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>原本的:(比较丑)</p></li>
 </ul>
-<p><img alt="image-20220618214137098" src="Qt/Qt.assets/image-20220618214137098.png" /></p>
+<p><img alt="image-20220618214137098" src="../_images/image-20220618214137098.png" /></p>
 <ul class="simple">
 <li><p>**修改方式 ** 如下:</p></li>
 </ul>
@@ -271,18 +266,18 @@
 <li><p>网上找 .ico后缀的图片</p></li>
 <li><p>把图片放到源代码中,注意不是release中</p></li>
 <li><p>添加一行代码</p></li>
-<li><p><img alt="image-20220618214734781" src="Qt/Qt.assets/image-20220618214734781.png" /></p></li>
+<li><p><img alt="image-20220618214734781" src="../_images/image-20220618214734781.png" /></p></li>
 </ol>
 </section>
 </section>
 <hr class="docutils" />
 <section id="qmainwindowqwidgetqdialog">
-<h2>QMainWindow、QWidget、QDialog的区别<a class="headerlink" href="#qmainwindowqwidgetqdialog" title="永久链接至标题">¶</a></h2>
+<h1>QMainWindow、QWidget、QDialog的区别<a class="headerlink" href="#qmainwindowqwidgetqdialog" title="永久链接至标题">¶</a></h1>
 <p><strong>QMainWindow 类提供一个有菜单条、锚接窗口（例如工具条）和一个状态条的主应用程序窗口。</strong> 主窗口通常用在提供一个大的中央窗口部件（例如文本编辑或者绘制画布）以及周围菜单、工具条和一个状态条。QMainWindow常常被继承，因为这使得封装中央部件、菜单和工具条以及窗口状态条变得更容易，当用户点击菜单项或者工具条按钮时，槽会被调用。</p>
 <p><strong>QWidget类是所有用户界面对象的基类。</strong> 窗口部件是用户界面的一个基本单元：它从窗口系统接收鼠标、键盘和其它事件，并且在屏幕上绘制自己。每一个窗口部件都是矩形的，并且它们按Z轴顺序排列。一个窗口部件可以被它的父窗口部件或者它前面的窗口部件盖住一部分。</p>
 <p><strong>QDialog 是最普通的顶级窗口。</strong> 一个不会被嵌入到父窗口部件的窗口部件叫做顶级窗口部件。通常情况下，顶级窗口部件是有框架和标题栏的窗口（尽管使用了一定的窗口部件标记，创建顶级窗口部件时也可能没有这些装饰。）在Qt中，QMainWindow和不同的QDialog的子类是最普通的顶级窗口</p>
 <section id="id3">
-<h3>选用原则<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<h2>选用原则<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <ol class="simple">
 <li><p><strong>如果是主窗体</strong>，则基于QMainWindow创建。</p></li>
 <li><p>如果是顶级对话框，则基于QDialog创建。</p></li>
@@ -294,15 +289,14 @@
 <li></li>
 </ul>
 </section>
-</section>
 <section id="id4">
 <h2>项目文件组成及分析<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <section id="id5">
 <h3>0.创建项目注意事项<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
-<p><img alt="image-20220718164826418" src="Qt/Qt.assets/image-20220718164826418.png" /></p>
+<p><img alt="image-20220718164826418" src="../_images/image-20220718164826418.png" /></p>
 <hr class="docutils" />
 <p><strong>类名一定遵循首字母大写</strong></p>
-<p><img alt="image-20220718180408126" src="Qt/Qt.assets/image-20220718180408126.png" /></p>
+<p><img alt="image-20220718180408126" src="../_images/image-20220718180408126.png" /></p>
 <hr class="docutils" />
 <p>Qt项目文件</p>
 <ul class="simple">
@@ -316,7 +310,7 @@
 </li>
 </ul>
 <p>在 Qt Creator 中新建一个 Widget Application 项目 samp2_1，在选择窗口<a class="reference external" href="https://so.csdn.net/so/search?q=%E5%9F%BA%E7%B1%BB&amp;spm=1001.2101.3001.7020">基类</a>的页面选择 QWidget 作为窗体基类，并选中“Generate form”复选框。创建后的项目文件目录树如图 1 所示。
-<img alt="在这里插入图片描述" src="Qt/Qt.assets/20200325215703867.png" />图 1 项目文件的目录树
+<img alt="在这里插入图片描述" src="../_images/20200325215703867.png" />图 1 项目文件的目录树
 这个项目包含以下一些文件：#千锋教育#</p>
 <ul class="simple">
 <li><p>项目管理文件 samp2_1.pro，存储项目设置的文件。</p></li>
@@ -396,7 +390,7 @@ FORMS += \				//包含的ui文件
 <span class="p">}</span>
 </pre></div>
 </div>
-<p><img alt="image-20220317214141637" src="Qt/Qt.assets/image-20220317214141637.png" /></p>
+<p><img alt="image-20220317214141637" src="../_images/image-20220317214141637.png" /></p>
 </li>
 </ul>
 </section>
@@ -472,7 +466,7 @@ FORMS += \				//包含的ui文件
 <section id="ui-widght-h">
 <h3>五ui_widght.h文件<a class="headerlink" href="#ui-widght-h" title="永久链接至标题">¶</a></h3>
 <p>自动生成的</p>
-<p><img alt="image-20220618223909429" src="Qt/Qt.assets/image-20220618223909429.png" /></p>
+<p><img alt="image-20220618223909429" src="../_images/image-20220618223909429.png" /></p>
 </section>
 </section>
 <hr class="docutils" />
@@ -491,7 +485,7 @@ FORMS += \				//包含的ui文件
 <ul class="simple">
 <li><p>2，文件名和创建路径==一定不能用中文==</p></li>
 <li><p><strong>QT中main（）认识：</strong></p></li>
-<li><p><img alt="image-20220816095142173" src="Qt/Qt.assets/image-20220816095142173.png" /></p></li>
+<li><p><img alt="image-20220816095142173" src="../_images/image-20220816095142173.png" /></p></li>
 </ul>
 <p>+++++</p>
 <p><strong>QT有的类为什么不添加头文件也能直接使用原因</strong>：</p>
@@ -563,7 +557,7 @@ int b = this-&gt;height() ;
 <li><p><strong>资源文件：</strong></p>
 <ul class="simple">
 <li><p>设置图片（==setWindowIcon(QIcon(”E:\1.jpg图片路径”)); //给窗口加图标== ）</p></li>
-<li><p><img alt="image-20220816091845532" src="Qt/Qt.assets/image-20220816091845532.png" /></p></li>
+<li><p><img alt="image-20220816091845532" src="../_images/image-20220816091845532.png" /></p></li>
 </ul>
 </li>
 </ul>
@@ -628,15 +622,15 @@ int b = this-&gt;height() ;
 <ol class="simple">
 <li><p>声明</p></li>
 </ol>
-<p><img alt="image-20220619215514168" src="Qt/Qt.assets/image-20220619215514168.png" /></p>
+<p><img alt="image-20220619215514168" src="../_images/image-20220619215514168.png" /></p>
 <ol class="simple">
 <li><p>定义</p></li>
 </ol>
-<p><img alt="image-20220619215342075" src="Qt/Qt.assets/image-20220619215342075.png" /></p>
+<p><img alt="image-20220619215342075" src="../_images/image-20220619215342075.png" /></p>
 <ol class="simple">
 <li><p>使用</p></li>
 </ol>
-<p><img alt="Qt/Qt.assets/image-20220619215329089.png" src="Qt/Qt.assets/image-20220619215329089.png" /></p>
+<p><img alt="../_images/image-20220619215329089.png" src="../_images/image-20220619215329089.png" /></p>
 </section>
 <section id="signal-slot">
 <h4>重点  看 Signal_Slot的代码<a class="headerlink" href="#signal-slot" title="永久链接至标题">¶</a></h4>
@@ -901,7 +895,7 @@ int b = this-&gt;height() ;
 <hr class="docutils" />
 <section id="ui">
 <h2>知识点五: 带UI界面的项目<a class="headerlink" href="#ui" title="永久链接至标题">¶</a></h2>
-<p><img alt="image-20220618204639922" src="Qt/Qt.assets/image-20220618204639922.png" /></p>
+<p><img alt="image-20220618204639922" src="../_images/image-20220618204639922.png" /></p>
 <section id="id14">
 <h3><strong>通过ui-&gt;控件名</strong>        访问到控件<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
 </section>
@@ -911,19 +905,19 @@ int b = this-&gt;height() ;
 </section>
 <section id="id16">
 <h3>各种控件作用<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
-<p><img alt="image-20220318102127545" src="Qt/Qt.assets/image-20220318102127545.png" /></p>
+<p><img alt="image-20220318102127545" src="../_images/image-20220318102127545.png" /></p>
 </section>
 <section id="buttons">
 <h3>Buttons控件<a class="headerlink" href="#buttons" title="永久链接至标题">¶</a></h3>
-<p><img alt="image-20220318102916601" src="Qt/Qt.assets/image-20220318102916601.png" />![image-2022031810</p>
+<p><img alt="image-20220318102916601" src="../_images/image-20220318102916601.png" />![image-2022031810</p>
 <section id="push-button">
 <h4>0. Push Button样式设置<a class="headerlink" href="#push-button" title="永久链接至标题">¶</a></h4>
 </section>
 <section id="toolbutton">
 <h4>1. ToolButton<a class="headerlink" href="#toolbutton" title="永久链接至标题">¶</a></h4>
-<p><img alt="image-20220623211906934" src="Qt/Qt.assets/image-20220623211906934.png" /></p>
-<p><img alt="image-20220623212348014" src="Qt/Qt.assets/image-20220623212348014.png" /></p>
-<p><img alt="image-20220623212617590" src="Qt/Qt.assets/image-20220623212617590.png" /></p>
+<p><img alt="image-20220623211906934" src="../_images/image-20220623211906934.png" /></p>
+<p><img alt="image-20220623212348014" src="../_images/image-20220623212348014.png" /></p>
+<p><img alt="image-20220623212617590" src="../_images/image-20220623212617590.png" /></p>
 </section>
 <hr class="docutils" />
 <section id="radio-button-group-button">
@@ -931,15 +925,15 @@ int b = this-&gt;height() ;
 <ul class="simple">
 <li><p><strong>成组使用, 只能单选.</strong></p></li>
 </ul>
-<p><img alt="image-20220816092007876" src="Qt/Qt.assets/image-20220816092007876.png" /></p>
-<p><img alt="image-20220623213202592" src="Qt/Qt.assets/image-20220623213202592.png" /></p>
+<p><img alt="image-20220816092007876" src="../_images/image-20220816092007876.png" /></p>
+<p><img alt="image-20220623213202592" src="../_images/image-20220623213202592.png" /></p>
 <p><strong>组框一般与radio button 连用</strong>  .  目的: 让几个成组的radio button不是同一个组的东西,</p>
-<p><img alt="3208852" src="Qt/Qt.assets/image-20220318103208852.png" /></p>
+<p><img alt="3208852" src="../_images/image-20220318103208852.png" /></p>
 </section>
 <section id="cheak-bax">
 <h4>3.Cheak Bax<a class="headerlink" href="#cheak-bax" title="永久链接至标题">¶</a></h4>
-<p><img alt="image-20220623214910746" src="Qt/Qt.assets/image-20220623214910746.png" /></p>
-<p><img alt="image-20220623214959003" src="Qt/Qt.assets/image-20220623214959003.png" /></p>
+<p><img alt="image-20220623214910746" src="../_images/image-20220623214910746.png" /></p>
+<p><img alt="image-20220623214959003" src="../_images/image-20220623214959003.png" /></p>
 <p>​																<strong>勾选后会有三种状态</strong></p>
 </section>
 </section>
@@ -947,24 +941,24 @@ int b = this-&gt;height() ;
 <h3>List Widget控件<a class="headerlink" href="#list-widget" title="永久链接至标题">¶</a></h3>
 <section id="id17">
 <h4>1.list Widget<a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h4>
-<p><img alt="image-20220623220520901" src="Qt/Qt.assets/image-20220623220520901.png" /></p>
+<p><img alt="image-20220623220520901" src="../_images/image-20220623220520901.png" /></p>
 <section id="additem">
 <h5>additem(字符串)<a class="headerlink" href="#additem" title="永久链接至标题">¶</a></h5>
 <p>==<strong>使用在控件中添加一行内容 ：      additem（“一行内容”）</strong>==：    可以是文本可以是 图片 ,可以同时加</p>
-<p><img alt="image-20220623220804509" src="Qt/Qt.assets/image-20220623220804509.png" /></p>
+<p><img alt="image-20220623220804509" src="../_images/image-20220623220804509.png" /></p>
 <section id="id18">
 <h6>同时加上图标<a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h6>
-<p><img alt="image-20220623220452530" src="Qt/Qt.assets/image-20220623220452530.png" /></p>
+<p><img alt="image-20220623220452530" src="../_images/image-20220623220452530.png" /></p>
 <hr class="docutils" />
 <p><strong>文本对齐方式</strong>:     ==setTextAlignment()==    Alignment   对齐</p>
 <hr class="docutils" />
-<p><img alt="image-20220623221136135" src="Qt/Qt.assets/image-20220623221136135.png" /></p>
+<p><img alt="image-20220623221136135" src="../_images/image-20220623221136135.png" /></p>
 </section>
 </section>
 <section id="additems-list">
 <h5>addItems(list列表)<a class="headerlink" href="#additems-list" title="永久链接至标题">¶</a></h5>
-<p><img alt="image-20220623223011341" src="Qt/Qt.assets/image-20220623223011341.png" /></p>
-<p><img alt="image-20220623223029168" src="Qt/Qt.assets/image-20220623223029168.png" /></p>
+<p><img alt="image-20220623223011341" src="../_images/image-20220623223011341.png" /></p>
+<p><img alt="image-20220623223029168" src="../_images/image-20220623223029168.png" /></p>
 </section>
 </section>
 <hr class="docutils" />
@@ -986,22 +980,22 @@ QTreeWidget *二级文件 = new QTreeWidget(QStringList &lt;&lt; )
 </pre></div>
 </div>
 <p>基本</p>
-<p><img alt="image-20220629202516154" src="Qt/Qt.assets/image-20220629202516154.png" /></p>
-<p><img alt="image-20220629202627715" src="Qt/Qt.assets/image-20220629202627715.png" /></p>
+<p><img alt="image-20220629202516154" src="../_images/image-20220629202516154.png" /></p>
+<p><img alt="image-20220629202627715" src="../_images/image-20220629202627715.png" /></p>
 <p>设计图标</p>
-<p><img alt="image-20220629202713995" src="Qt/Qt.assets/image-20220629202713995.png" /></p>
-<p><img alt="image-20220816092053228" src="Qt/Qt.assets/image-20220816092053228.png" /></p>
+<p><img alt="image-20220629202713995" src="../_images/image-20220629202713995.png" /></p>
+<p><img alt="image-20220816092053228" src="../_images/image-20220816092053228.png" /></p>
 <hr class="docutils" />
 <p>再添加分支:</p>
-<p><img alt="image-20220629203337070" src="Qt/Qt.assets/image-20220629203337070.png" /></p>
-<p><img alt="Qt/Qt.assets/image-20220629203152639.png" src="Qt/Qt.assets/image-20220629203152639.png" /></p>
+<p><img alt="image-20220629203337070" src="../_images/image-20220629203337070.png" /></p>
+<p><img alt="../_images/image-20220629203152639.png" src="../_images/image-20220629203152639.png" /></p>
 </section>
 <section id="table-widget">
 <h4>3.Table Widget<a class="headerlink" href="#table-widget" title="永久链接至标题">¶</a></h4>
 <p>表格</p>
-<p><img alt="image-20220623224109784" src="Qt/Qt.assets/image-20220623224109784.png" /></p>
-<p><img alt="image-20220623224206049" src="Qt/Qt.assets/image-20220623224206049.png" /></p>
-<p><img alt="image-20220623224227521" src="Qt/Qt.assets/image-20220623224227521.png" /></p>
+<p><img alt="image-20220623224109784" src="../_images/image-20220623224109784.png" /></p>
+<p><img alt="image-20220623224206049" src="../_images/image-20220623224206049.png" /></p>
+<p><img alt="image-20220623224227521" src="../_images/image-20220623224227521.png" /></p>
 <ul class="simple">
 <li></li>
 </ul>
@@ -1018,57 +1012,57 @@ setItem（row, col, list）            以一行一行的设置内容
 </pre></div>
 </div>
 <hr class="docutils" />
-<p><img alt="image-20220816092120826" src="Qt/Qt.assets/image-20220816092120826.png" /></p>
-<p><img alt="image-20220629204216635" src="Qt/Qt.assets/image-20220629204216635.png" /></p>
-<p><img alt="image-20220629204231719" src="Qt/Qt.assets/image-20220629204231719.png" /></p>
-<p><img alt="image-20220816092133044" src="Qt/Qt.assets/image-20220816092133044.png" /></p>
+<p><img alt="image-20220816092120826" src="../_images/image-20220816092120826.png" /></p>
+<p><img alt="image-20220629204216635" src="../_images/image-20220629204216635.png" /></p>
+<p><img alt="image-20220629204231719" src="../_images/image-20220629204231719.png" /></p>
+<p><img alt="image-20220816092133044" src="../_images/image-20220816092133044.png" /></p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="containers">
 <h3>Containers控件<a class="headerlink" href="#containers" title="永久链接至标题">¶</a></h3>
 <p>++++</p>
-<p><img alt="image-20220629204842941" src="Qt/Qt.assets/image-20220629204842941.png" /></p>
+<p><img alt="image-20220629204842941" src="../_images/image-20220629204842941.png" /></p>
 <hr class="docutils" />
-<p><img alt="image-20220629204905208" src="Qt/Qt.assets/image-20220629204905208.png" /></p>
+<p><img alt="image-20220629204905208" src="../_images/image-20220629204905208.png" /></p>
 <hr class="docutils" />
-<p><img alt="image-20220629205047913" src="Qt/Qt.assets/image-20220629205047913.png" /></p>
+<p><img alt="image-20220629205047913" src="../_images/image-20220629205047913.png" /></p>
 <hr class="docutils" />
 <p><strong>通过按钮才能切换控件</strong></p>
 <p>stack wight 顾名思义一推控件</p>
-<p><img alt="image-20220629205329485" src="Qt/Qt.assets/image-20220629205329485.png" /></p>
+<p><img alt="image-20220629205329485" src="../_images/image-20220629205329485.png" /></p>
 <!---->==**使用setCurrentIndex（索引）**==   **跳转到相应页面**   “可瑞婷大克斯”<p>+++++++</p>
 </section>
 <hr class="docutils" />
 <section id="input-widget">
 <h3>Input Widget控件<a class="headerlink" href="#input-widget" title="永久链接至标题">¶</a></h3>
-<p><img alt="Qt/Qt.assets/image-20220318110540280.png" src="Qt/Qt.assets/image-20220318110540280.png" /></p>
+<p><img alt="../_images/image-20220318110540280.png" src="../_images/image-20220318110540280.png" /></p>
 <p>**读出edit中的文字   : **</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">toPlainText</span><span class="p">()</span>  
 </pre></div>
 </div>
 <p>**Combo Box : **</p>
-<p><img alt="image-20220629211447646" src="Qt/Qt.assets/image-20220629211447646.png" /></p>
+<p><img alt="image-20220629211447646" src="../_images/image-20220629211447646.png" /></p>
 <section id="id19">
 <h4><strong>同时加上图标</strong><a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h4>
-<p><img alt="image-20220629211508312" src="Qt/Qt.assets/image-20220629211508312.png" /></p>
-<p><img alt="image-20220629211621655" src="Qt/Qt.assets/image-20220629211621655.png" /></p>
+<p><img alt="image-20220629211508312" src="../_images/image-20220629211508312.png" /></p>
+<p><img alt="image-20220629211621655" src="../_images/image-20220629211621655.png" /></p>
 <p>……………</p>
 <p>++++</p>
 </section>
 </section>
 <section id="id20">
 <h3>自定义控件<a class="headerlink" href="#id20" title="永久链接至标题">¶</a></h3>
-<p><img alt="image-20220318145309087" src="Qt/Qt.assets/image-20220318145309087.png" /></p>
-<p><img alt="image-20220318145012878" src="Qt/Qt.assets/image-20220318145012878.png" /></p>
+<p><img alt="image-20220318145309087" src="../_images/image-20220318145309087.png" /></p>
+<p><img alt="image-20220318145012878" src="../_images/image-20220318145012878.png" /></p>
 <p>++++</p>
-<p><img alt="假如我们有如下的需求," src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164758606287253.png" /></p>
-<p><img alt="请添加图片描述" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164758610205255.png" /></p>
-<p><img alt="请添加图片描述" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164758611333557.png" /></p>
-<p><img alt="image-20220318145446910" src="Qt/Qt.assets/image-20220318145446910.png" /></p>
+<p><img alt="假如我们有如下的需求," src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164758606287253.png" /></p>
+<p><img alt="请添加图片描述" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164758610205255.png" /></p>
+<p><img alt="请添加图片描述" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164758611333557.png" /></p>
+<p><img alt="image-20220318145446910" src="../_images/image-20220318145446910.png" /></p>
 <p>+++</p>
 <p>QSpinBox ”死频波克斯 “和 horizontalSlider:   “死来爹儿”：</p>
-<p><img alt="image-20220318151833890" src="Qt/Qt.assets/image-20220318151833890.png" /></p>
+<p><img alt="image-20220318151833890" src="../_images/image-20220318151833890.png" /></p>
 <hr class="docutils" />
 <p><strong>是和上面有所不同的</strong></p>
 <p>代码：</p>
@@ -1140,7 +1134,7 @@ int SmallWidget::getValue() //获取值
 }
 </pre></div>
 </div>
-<p><img alt="image-20220318153243042" src="Qt/Qt.assets/image-20220318153243042.png" /></p>
+<p><img alt="image-20220318153243042" src="../_images/image-20220318153243042.png" /></p>
 <p><strong>上述代码用指针函数的原因：该信号就是重载的</strong></p>
 </section>
 <section id="lable">
@@ -1182,18 +1176,18 @@ int SmallWidget::getValue() //获取值
 <span class="p">}</span>
 </pre></div>
 </div>
-<p><img alt="image-20220701214706248" src="Qt/Qt.assets/image-20220701214706248.png" /></p>
+<p><img alt="image-20220701214706248" src="../_images/image-20220701214706248.png" /></p>
 <p><video src="../QQ录屏20220701214808.mp4"></video></p>
 <hr class="docutils" />
-<p><img alt="img" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164758212004548.png" /></p>
-<p><img alt="请添加图片描述" src="Qt/Qt.assets/77ec39d7dda04f44a0ece15f8ee9b48d-164758226287551.gif" /></p>
+<p><img alt="img" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164758212004548.png" /></p>
+<p><img alt="请添加图片描述" src="../_images/77ec39d7dda04f44a0ece15f8ee9b48d-164758226287551.gif" /></p>
 </section>
 <section id="label">
 <h4>设置label的颜色：<a class="headerlink" href="#label" title="永久链接至标题">¶</a></h4>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">background</span><span class="o">-</span><span class="nl">color</span><span class="p">:</span> <span class="n">rgb</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><img alt="image-20220320163514008" src="Qt/Qt.assets/image-20220320163514008.png" /></p>
+<p><img alt="image-20220320163514008" src="../_images/image-20220320163514008.png" /></p>
 <p>+++</p>
 </section>
 </section>
@@ -1202,9 +1196,9 @@ int SmallWidget::getValue() //获取值
 <section id="id22">
 <h2>项目动态桌面壁纸开发<a class="headerlink" href="#id22" title="永久链接至标题">¶</a></h2>
 <p>**lable标签控件显示动图 + 透明窗口  + 窗口阴影 + 按钮样式设置 **</p>
-<p><img alt="image-20220804095127313" src="Qt/Qt.assets/image-20220804095127313.png" /></p>
-<p><img alt="image-20220804095228306" src="Qt/Qt.assets/image-20220804095228306.png" /></p>
-<p><img alt="image-20220804095303399" src="Qt/Qt.assets/image-20220804095303399.png" /></p>
+<p><img alt="image-20220804095127313" src="../_images/image-20220804095127313.png" /></p>
+<p><img alt="image-20220804095228306" src="../_images/image-20220804095228306.png" /></p>
+<p><img alt="image-20220804095303399" src="../_images/image-20220804095303399.png" /></p>
 </section>
 <hr class="docutils" />
 <section id="qmainwindow">
@@ -1249,7 +1243,7 @@ int SmallWidget::getValue() //获取值
 <span class="p">}</span>
 </pre></div>
 </div>
-<p><img alt="image-20220816092225121" src="Qt/Qt.assets/image-20220816092225121.png" /></p>
+<p><img alt="image-20220816092225121" src="../_images/image-20220816092225121.png" /></p>
 </section>
 <section id="id25">
 <h4>QMainWindow_状态栏和停靠窗口<a class="headerlink" href="#id25" title="永久链接至标题">¶</a></h4>
@@ -1292,15 +1286,15 @@ int SmallWidget::getValue() //获取值
 <p><strong>快捷键:  (&amp; 快捷键的符号)</strong></p>
 <p>注意:  objectname 一定是中文</p>
 <p><strong>默认是不能输入中问的但是可以之后手动修改,找到text修改成中文即可</strong></p>
-<p><img alt="image-20220816092309563" src="Qt/Qt.assets/image-20220816092309563.png" /></p>
+<p><img alt="image-20220816092309563" src="../_images/image-20220816092309563.png" /></p>
 <p>​                                                                                                                                                          <strong>通过这个名字访问控件</strong></p>
 </section>
 <section id="id27">
 <h4>2.<strong>工具栏：</strong><a class="headerlink" href="#id27" title="永久链接至标题">¶</a></h4>
 <p>拖拽的是菜单栏中的东西</p>
-<p><img alt="image-20220816092321972" src="Qt/Qt.assets/image-20220816092321972.png" /></p>
+<p><img alt="image-20220816092321972" src="../_images/image-20220816092321972.png" /></p>
 <p><strong>点击工具栏, 找到绿色区域 (其实绿色区域大部分都是这些)   :</strong></p>
-<p><img alt="请添加图片描述" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164757370624118.png" /></p>
+<p><img alt="请添加图片描述" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164757370624118.png" /></p>
 <p>+++</p>
 </section>
 <section id="id28">
@@ -1311,27 +1305,27 @@ int SmallWidget::getValue() //获取值
 addWidget( 控件 )          将控件添加到状态栏 
 </pre></div>
 </div>
-<p><img alt="在这里插入图片描述" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164757453569420.png" /></p>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164757453569420.png" /></p>
 <p><strong>效果：</strong></p>
-<p><img alt="：" src="Qt/Qt.assets/image-20220318113632372.png" /></p>
+<p><img alt="：" src="../_images/image-20220318113632372.png" /></p>
 <p>++++</p>
 </section>
 <section id="id29">
 <h4>4.  浮动窗口<a class="headerlink" href="#id29" title="永久链接至标题">¶</a></h4>
-<p><img alt="image-20220620220527329" src="Qt/Qt.assets/image-20220620220527329.png" /></p>
-<p><img alt="image-20220620220850474" src="Qt/Qt.assets/image-20220620220850474.png" /></p>
-<p><img alt="image-20220620220900025" src="Qt/Qt.assets/image-20220620220900025.png" /></p>
+<p><img alt="image-20220620220527329" src="../_images/image-20220620220527329.png" /></p>
+<p><img alt="image-20220620220850474" src="../_images/image-20220620220850474.png" /></p>
+<p><img alt="image-20220620220900025" src="../_images/image-20220620220900025.png" /></p>
 <hr class="docutils" />
 <p><strong>浮动窗口：</strong></p>
-<p><img alt="image-20220318112349358" src="Qt/Qt.assets/image-20220318112349358.png" /></p>
-<p><img alt="image-20220318112423519" src="Qt/Qt.assets/image-20220318112423519.png" /></p>
+<p><img alt="image-20220318112349358" src="../_images/image-20220318112349358.png" /></p>
+<p><img alt="image-20220318112423519" src="../_images/image-20220318112423519.png" /></p>
 <p>浮动窗口要使用show()方法   会以顶层方式重新弹出来一个窗口</p>
 <hr class="docutils" />
 </section>
 <hr class="docutils" />
 <section id="id30">
 <h4>5. 中心组件<a class="headerlink" href="#id30" title="永久链接至标题">¶</a></h4>
-<p><img alt="image-20220620221206461" src="Qt/Qt.assets/image-20220620221206461.png" /></p>
+<p><img alt="image-20220620221206461" src="../_images/image-20220620221206461.png" /></p>
 </section>
 </section>
 </section>
@@ -1343,10 +1337,10 @@ addWidget( 控件 )          将控件添加到状态栏
 <h3>具体操作<a class="headerlink" href="#id32" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li><p><strong>现自己 定义文件放好东西,再把这个文件夹加入资源文件</strong></p></li>
-<li><p><img alt="image-20220620230512256" src="Qt/Qt.assets/image-20220620230512256.png" /></p></li>
+<li><p><img alt="image-20220620230512256" src="../_images/image-20220620230512256.png" /></p></li>
 <li><p><strong>添加新文件    选择   资源文件：</strong></p></li>
 <li><ul>
-<li><p><img alt="image-20220317222311789" src="Qt/Qt.assets/image-20220317222311789.png" /></p></li>
+<li><p><img alt="image-20220317222311789" src="../_images/image-20220317222311789.png" /></p></li>
 </ul>
 </li>
 <li><p>命名   <strong>resource</strong></p></li>
@@ -1354,21 +1348,21 @@ addWidget( 控件 )          将控件添加到状态栏
 </ul>
 <hr class="docutils" />
 <p><strong>详细步骤:</strong></p>
-<p><img alt="image-20220718172911760" src="Qt/Qt.assets/image-20220718172911760.png" /></p>
-<p><img alt="image-20220718173007323" src="Qt/Qt.assets/image-20220718173007323.png" /></p>
-<p><img alt="image-20220718173018646" src="Qt/Qt.assets/image-20220718173018646.png" /><img alt="image-20220718173043633" src="Qt/Qt.assets/image-20220718173043633.png" /></p>
-<p><img alt="image-20220718173104956" src="Qt/Qt.assets/image-20220718173104956.png" /></p>
+<p><img alt="image-20220718172911760" src="../_images/image-20220718172911760.png" /></p>
+<p><img alt="image-20220718173007323" src="../_images/image-20220718173007323.png" /></p>
+<p><img alt="image-20220718173018646" src="../_images/image-20220718173018646.png" /><img alt="image-20220718173043633" src="../_images/image-20220718173043633.png" /></p>
+<p><img alt="image-20220718173104956" src="../_images/image-20220718173104956.png" /></p>
 <hr class="docutils" />
-<p><img alt="image-20220718173120380" src="Qt/Qt.assets/image-20220718173120380.png" /></p>
+<p><img alt="image-20220718173120380" src="../_images/image-20220718173120380.png" /></p>
 <p>利用cmd打开终端，定位到res.qrc的目录下，输入命令</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rcc</span> <span class="o">-</span><span class="n">binary</span> <span class="o">.</span>\<span class="n">res</span><span class="o">.</span><span class="n">qrc</span> <span class="o">-</span><span class="n">o</span> <span class="n">plane</span><span class="o">.</span><span class="n">rcc</span>
 </pre></div>
 </div>
-<p><img alt="image-20220718173213172" src="Qt/Qt.assets/image-20220718173213172.png" /></p>
-<p><img alt="image-20220718173251731" src="Qt/Qt.assets/image-20220718173251731.png" /></p>
+<p><img alt="image-20220718173213172" src="../_images/image-20220718173213172.png" /></p>
+<p><img alt="image-20220718173251731" src="../_images/image-20220718173251731.png" /></p>
 <hr class="docutils" />
 <p>#define GAME_RES_PATH “./plane.rcc” //rcc文件路径</p>
-<p><img alt="image-20220718173309985" src="Qt/Qt.assets/image-20220718173309985.png" /></p>
+<p><img alt="image-20220718173309985" src="../_images/image-20220718173309985.png" /></p>
 <hr class="docutils" />
 <p>核心</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;QResource&gt;</span><span class="cp"></span>
@@ -1376,9 +1370,9 @@ addWidget( 控件 )          将控件添加到状态栏
 <span class="n">QResource</span><span class="o">::</span><span class="n">registerResource</span><span class="p">(</span><span class="n">GAME_RES_PATH</span><span class="p">);</span>
 </pre></div>
 </div>
-<p><img alt="image-20220718173357146" src="Qt/Qt.assets/image-20220718173357146.png" /></p>
-<p><img alt="image-20220718173427931" src="Qt/Qt.assets/image-20220718173427931.png" /></p>
-<p><img alt="image-20220718173446575" src="Qt/Qt.assets/image-20220718173446575.png" /></p>
+<p><img alt="image-20220718173357146" src="../_images/image-20220718173357146.png" /></p>
+<p><img alt="image-20220718173427931" src="../_images/image-20220718173427931.png" /></p>
+<p><img alt="image-20220718173446575" src="../_images/image-20220718173446575.png" /></p>
 <p><strong>res 存放是文件的名字 比如 也可以取img</strong></p>
 </section>
 <section id="id33">
@@ -1398,8 +1392,8 @@ addWidget( 控件 )          将控件添加到状态栏
 <ul class="simple">
 <li><p>设置控件的图标   setIcon()</p></li>
 </ul>
-<p><img alt="image-20220620230602157" src="Qt/Qt.assets/image-20220620230602157.png" /></p>
-<p><img alt="image-20220803175230403" src="Qt/Qt.assets/image-20220803175230403.png" /></p>
+<p><img alt="image-20220620230602157" src="../_images/image-20220620230602157.png" /></p>
+<p><img alt="image-20220803175230403" src="../_images/image-20220803175230403.png" /></p>
 </section>
 <section id="id35">
 <h4>按钮设置背景图片<a class="headerlink" href="#id35" title="永久链接至标题">¶</a></h4>
@@ -1415,7 +1409,7 @@ addWidget( 控件 )          将控件添加到状态栏
 <h2>设置任务栏托盘角标<a class="headerlink" href="#id36" title="永久链接至标题">¶</a></h2>
 <p>n. 托盘，碟；文件盘</p>
 <p><strong>当点击“叉叉”时，关闭窗口，但是不退出程序，用户通过点击任务栏角标再次打开窗口</strong></p>
-<p><img alt="img" src="Qt/Qt.assets/20210730220918741.png" /></p>
+<p><img alt="img" src="../_images/20210730220918741.png" /></p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span>#include &lt;QSystemTrayIcon&gt;
 #include &lt;QMenu&gt;
 
@@ -1483,15 +1477,15 @@ void Widget::on_exitButton_clicked() {
 <div class="highlight-ASN.1 notranslate"><div class="highlight"><pre><span></span>类型一: 模态对话框 ,特点弹出对话框不能操作其他窗口.
 </pre></div>
 </div>
-<p><img alt="img" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164757649566822.png" /></p>
+<p><img alt="img" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164757649566822.png" /></p>
 <hr class="docutils" />
 <div class="highlight-ASN.1 notranslate"><div class="highlight"><pre><span></span>类型二: 非模态对话框 ,特点弹出对话框依然能操作其他窗口.
 </pre></div>
 </div>
 <p>解释一：</p>
-<p><img alt="在这里插入图片描述" src="Qt/Qt.assets/image-20220318121046124.png" /></p>
+<p><img alt="在这里插入图片描述" src="../_images/image-20220318121046124.png" /></p>
 <p>解释二：</p>
-<p><img alt="在这里插入图片描述" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164757677125428.png" /></p>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164757677125428.png" /></p>
 <p><em>===要点：====</em>*</p>
 <ul class="simple">
 <li><p><strong>加一行 dialog-&gt;setModl(true);   // 阻塞 成为模态对话框</strong></p></li>
@@ -1513,7 +1507,7 @@ void Widget::on_exitButton_clicked() {
 <p>​     **dig-&gt;setAttribute(Qt::WA_DeleteOnClose); **    ///==Qt::WA_DeleteOnClose==主动关闭时候去析构      setAttribute（） 设     置属性</p>
 <p>​     **dig-&gt;show();  **</p>
 <p>==效果：==</p>
-<p><img alt="image-20220318123418308" src="Qt/Qt.assets/image-20220318123418308.png" /></p>
+<p><img alt="image-20220318123418308" src="../_images/image-20220318123418308.png" /></p>
 </section>
 <hr class="docutils" />
 <section id="id40">
@@ -1544,17 +1538,17 @@ connect(ui-&gt;selectFile,&amp;QPushButton::clicked,this,[=]()
 <p><strong>#include<QFileDialog>  //文件对话窗</strong></p>
 <p><strong>QString filename = QFileDialog::getOpenFileName(this,”窗口名（“标题”）”, “窗口路径（”C:\”）, “过滤条件”)</strong></p>
 <p>==效果：==</p>
-<p><img alt="image-20220318123722575" src="Qt/Qt.assets/image-20220318123722575.png" /></p>
+<p><img alt="image-20220318123722575" src="../_images/image-20220318123722575.png" /></p>
 <p>加了过滤条件的</p>
 <ul class="simple">
 <li><p><strong>写字符串的内容都会显示</strong></p></li>
 </ul>
-<p><img alt="image-20220622213610380" src="Qt/Qt.assets/image-20220622213610380.png" /></p>
+<p><img alt="image-20220622213610380" src="../_images/image-20220622213610380.png" /></p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="k">const</span> <span class="n">QString</span> <span class="n">PLAYER_FILTER</span> <span class="o">=</span> <span class="s">&quot;视频(*.mp4 *.avi *.wmv);;图片(*.jpg *.png *.bmp);;所有文件(*.*)&quot;</span><span class="p">;</span>
 <span class="n">QString</span> <span class="n">filename</span> <span class="o">=</span> <span class="n">QFileDialog</span><span class="o">::</span><span class="n">getOpenFileName</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s">&quot;打看文件&quot;</span><span class="p">,</span> <span class="s">&quot;C:</span><span class="se">\\</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">PLAYER_FILTER</span><span class="p">);</span>
 </pre></div>
 </div>
-<p><img alt="image-20220804112940040" src="Qt/Qt.assets/image-20220804112940040.png" /></p>
+<p><img alt="image-20220804112940040" src="../_images/image-20220804112940040.png" /></p>
 <p>+++</p>
 <p>+++</p>
 </section>
@@ -1565,11 +1559,11 @@ connect(ui-&gt;selectFile,&amp;QPushButton::clicked,this,[=]()
 <p>messaqe  n.消息</p>
 <section id="id43">
 <h5>不带图片:<a class="headerlink" href="#id43" title="永久链接至标题">¶</a></h5>
-<p><img alt="image-20220622225509124" src="Qt/Qt.assets/image-20220622225509124.png" /></p>
+<p><img alt="image-20220622225509124" src="../_images/image-20220622225509124.png" /></p>
 </section>
 <section id="id44">
 <h5>带图片<a class="headerlink" href="#id44" title="永久链接至标题">¶</a></h5>
-<p><img alt="img" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164757893056236.png" /></p>
+<p><img alt="img" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164757893056236.png" /></p>
 <p><strong>事实证明pixmap用来显示图片</strong></p>
 </section>
 </section>
@@ -1594,8 +1588,8 @@ connect(ui-&gt;selectFile,&amp;QPushButton::clicked,this,[=]()
      <span class="n">qDebug</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Great&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p><img alt="image-20220622223941559" src="Qt/Qt.assets/image-20220622223941559.png" /></p>
-<p><img alt="image-20220622223315310" src="Qt/Qt.assets/image-20220622223315310.png" /></p>
+<p><img alt="image-20220622223941559" src="../_images/image-20220622223941559.png" /></p>
+<p><img alt="image-20220622223315310" src="../_images/image-20220622223315310.png" /></p>
 </section>
 <hr class="docutils" />
 <section id="id46">
@@ -1603,13 +1597,13 @@ connect(ui-&gt;selectFile,&amp;QPushButton::clicked,this,[=]()
 </section>
 <section id="id47">
 <h4>提示对话框<a class="headerlink" href="#id47" title="永久链接至标题">¶</a></h4>
-<p><img alt="image-20220816092410224" src="Qt/Qt.assets/image-20220816092410224.png" /></p>
+<p><img alt="image-20220816092410224" src="../_images/image-20220816092410224.png" /></p>
 </section>
 <hr class="docutils" />
 <section id="id48">
 <h4>错误对话框<a class="headerlink" href="#id48" title="永久链接至标题">¶</a></h4>
 <p>==critical:错误提示== ”亏提口“</p>
-<p><img alt="img" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164757895003838.png" /></p>
+<p><img alt="img" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164757895003838.png" /></p>
 </section>
 <hr class="docutils" />
 <section id="id49">
@@ -1622,7 +1616,7 @@ connect(ui-&gt;selectFile,&amp;QPushButton::clicked,this,[=]()
 <span class="cp">#include</span> <span class="cpf">&lt;QMessageBox&gt;</span><span class="cp"></span>
 </pre></div>
 </div>
-<p><img alt="image-20220622225536908" src="Qt/Qt.assets/image-20220622225536908.png" /></p>
+<p><img alt="image-20220622225536908" src="../_images/image-20220622225536908.png" /></p>
 <hr class="docutils" />
 <p><strong>没有静态方法,只能创建类对象的方式</strong></p>
 </section>
@@ -1645,7 +1639,7 @@ connect(ui-&gt;selectFile,&amp;QPushButton::clicked,this,[=]()
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">QColorDialog</span> <span class="n">color</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QColorDialog</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
 </pre></div>
 </div>
-<p><img alt="image-20220622214050413" src="Qt/Qt.assets/image-20220622214050413.png" /></p>
+<p><img alt="image-20220622214050413" src="../_images/image-20220622214050413.png" /></p>
 </section>
 <section id="id51">
 <h3>字体对话框 和 输入对话框<a class="headerlink" href="#id51" title="永久链接至标题">¶</a></h3>
@@ -1655,14 +1649,14 @@ connect(ui-&gt;selectFile,&amp;QPushButton::clicked,this,[=]()
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;QFontDialog&gt;  //字体对话框   ”放特“</span><span class="cp"></span>
 </pre></div>
 </div>
-<p><img alt="Qt/Qt.assets/image-20220622213944796.png" src="Qt/Qt.assets/image-20220622213944796.png" /></p>
-<p><img alt="image-20220622215546218" src="Qt/Qt.assets/image-20220622215546218.png" /></p>
+<p><img alt="../_images/image-20220622213944796.png" src="../_images/image-20220622213944796.png" /></p>
+<p><img alt="image-20220622215546218" src="../_images/image-20220622215546218.png" /></p>
 <p>++++</p>
 </section>
 <section id="id53">
 <h4>输入对话框<a class="headerlink" href="#id53" title="永久链接至标题">¶</a></h4>
 <p>头文件 #include<QInputDialog></p>
-<p><img alt="image-20220622222210753" src="Qt/Qt.assets/image-20220622222210753.png" /></p>
+<p><img alt="image-20220622222210753" src="../_images/image-20220622222210753.png" /></p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span>    <span class="kt">bool</span> <span class="n">ok</span><span class="p">;</span>
     <span class="n">QString</span> <span class="n">string</span>  <span class="o">=</span> <span class="n">QInputDialog</span><span class="o">::</span><span class="n">getText</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="s">&quot;输入字符串对话框&quot;</span><span class="p">,</span> <span class="s">&quot;请输入用户名&quot;</span><span class="p">,</span> <span class="n">QLineEdit</span><span class="o">::</span><span class="n">Normal</span><span class="p">,</span> <span class="s">&quot;hello&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ok</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">ok</span><span class="p">)</span>
@@ -1675,7 +1669,7 @@ connect(ui-&gt;selectFile,&amp;QPushButton::clicked,this,[=]()
 </pre></div>
 </div>
 <p>效果:</p>
-<p><img alt="image-20220816092430351" src="Qt/Qt.assets/image-20220816092430351.png" /></p>
+<p><img alt="image-20220816092430351" src="../_images/image-20220816092430351.png" /></p>
 </section>
 </section>
 <hr class="docutils" />
@@ -1705,7 +1699,7 @@ connect(ui-&gt;selectFile,&amp;QPushButton::clicked,this,[=]()
      <span class="n">qDebug</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;拷贝完成&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p><img alt="image-20220816092456500" src="Qt/Qt.assets/image-20220816092456500.png" /></p>
+<p><img alt="image-20220816092456500" src="../_images/image-20220816092456500.png" /></p>
 </section>
 <hr class="docutils" />
 <section id="id55">
@@ -1720,9 +1714,9 @@ connect(ui-&gt;selectFile,&amp;QPushButton::clicked,this,[=]()
  <span class="n">wizard</span><span class="p">.</span><span class="n">addPage</span><span class="p">(</span><span class="n">createPage2</span><span class="p">);</span>
 </pre></div>
 </div>
-<p><img alt="image-20220816092510758" src="Qt/Qt.assets/image-20220816092510758.png" /></p>
-<p><img alt="image-20220816092521779" src="Qt/Qt.assets/image-20220816092521779.png" /></p>
-<p><img alt="image-20220816092533753" src="Qt/Qt.assets/image-20220816092533753.png" /></p>
+<p><img alt="image-20220816092510758" src="../_images/image-20220816092510758.png" /></p>
+<p><img alt="image-20220816092521779" src="../_images/image-20220816092521779.png" /></p>
+<p><img alt="image-20220816092533753" src="../_images/image-20220816092533753.png" /></p>
 </section>
 <hr class="docutils" />
 <section id="id56">
@@ -1736,8 +1730,8 @@ connect(ui-&gt;selectFile,&amp;QPushButton::clicked,this,[=]()
 <section id="qstring">
 <h2>知识点十二: QString（格式化输出）<a class="headerlink" href="#qstring" title="永久链接至标题">¶</a></h2>
 <p><strong>qt字符串的拼接</strong>：</p>
-<p><img alt="img" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164759041731159.png" /></p>
-<p><img alt="img" src="Qt/Qt.assets/7a8592337d9947ce96df73c72bf25a66.png" /></p>
+<p><img alt="img" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164759041731159.png" /></p>
+<p><img alt="img" src="../_images/7a8592337d9947ce96df73c72bf25a66.png" /></p>
 <p><strong>常用方法:</strong></p>
 <p><strong>QString::number(数字)      // 可以将数字转成字符串</strong></p>
 <p>toLatin1();</p>
@@ -2010,9 +2004,9 @@ connect(ui-&gt;selectFile,&amp;QPushButton::clicked,this,[=]()
 <h2>事件<a class="headerlink" href="#id58" title="永久链接至标题">¶</a></h2>
 <section id="id59">
 <h3>1.鼠标事件<a class="headerlink" href="#id59" title="永久链接至标题">¶</a></h3>
-<p><img alt="请添加图片描述" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164759337304062.png" /></p>
-<p><img alt="image-20220318165030251" src="Qt/Qt.assets/image-20220318165030251.png" /></p>
-<p><img alt="image-20220318201159010" src="Qt/Qt.assets/image-20220318201159010.png" /></p>
+<p><img alt="请添加图片描述" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164759337304062.png" /></p>
+<p><img alt="image-20220318165030251" src="../_images/image-20220318165030251.png" /></p>
+<p><img alt="image-20220318201159010" src="../_images/image-20220318201159010.png" /></p>
 <p>#include <QMouseEvent></p>
 <p>子窗口==.h文件：==</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef MYLABEL_H</span>
@@ -2270,9 +2264,9 @@ connect(ui-&gt;selectFile,&amp;QPushButton::clicked,this,[=]()
 <h3>2.定时器<a class="headerlink" href="#id60" title="永久链接至标题">¶</a></h3>
 <ul class="simple">
 <li><p><strong>定时器—&gt;第一种写法</strong>:</p></li>
-<li><p><img alt="在这里插入图片描述" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164759532236266.png" /></p></li>
+<li><p><img alt="在这里插入图片描述" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164759532236266.png" /></p></li>
 </ul>
-<p><img alt="在这里插入图片描述" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164759539284268.png" /></p>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164759539284268.png" /></p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span>.h文件：
 // 定时器
 void timerEvent(QTimerEvent *);
@@ -2309,8 +2303,8 @@ void MyLabel::timerEvent(QTimerEvent *e)
 <ul class="simple">
 <li><p><strong>定时器—&gt;第二种写法</strong>:</p></li>
 </ul>
-<p><img alt="img" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16.png" /></p>
-<p><img alt="img" src="Qt/Qt.assets/ea38d77decb642328ee77daa1c09fa08.png" /></p>
+<p><img alt="img" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16.png" /></p>
+<p><img alt="img" src="../_images/ea38d77decb642328ee77daa1c09fa08.png" /></p>
 </section>
 <section id="id61">
 <h3>第二种定时器用法：（推荐)<a class="headerlink" href="#id61" title="永久链接至标题">¶</a></h3>
@@ -2342,7 +2336,7 @@ void MyLabel::timerEvent(QTimerEvent *e)
 <h3>绘图基本操作—&gt;QPainter<a class="headerlink" href="#qpainter" title="永久链接至标题">¶</a></h3>
 <p><strong>绘图事件不需要主动调用</strong></p>
 <p>”屏特儿”</p>
-<p><img alt="请添加图片描述" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16.png" /></p>
+<p><img alt="请添加图片描述" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16.png" /></p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef WIDGET_H</span>
 <span class="cp">#define WIDGET_H</span>
 
@@ -2430,7 +2424,7 @@ void MyLabel::timerEvent(QTimerEvent *e)
 <span class="p">}</span>
 </pre></div>
 </div>
-<p><img alt="image-20220712163605376" src="Qt/Qt.assets/image-20220712163605376.png" /></p>
+<p><img alt="image-20220712163605376" src="../_images/image-20220712163605376.png" /></p>
 <p>+++</p>
 </section>
 <section id="id65">
@@ -2449,8 +2443,8 @@ void MyLabel::timerEvent(QTimerEvent *e)
 <span class="p">}</span>
 </pre></div>
 </div>
-<p><img alt="Qt/Qt.assets/image-20220712154046295.png" src="Qt/Qt.assets/image-20220712154046295.png" /></p>
-<p><img alt="image-20220712154057116" src="Qt/Qt.assets/image-20220712154057116.png" /></p>
+<p><img alt="../_images/image-20220712154046295.png" src="../_images/image-20220712154046295.png" /></p>
+<p><img alt="image-20220712154057116" src="../_images/image-20220712154057116.png" /></p>
 <hr class="docutils" />
 <section id="id66">
 <h4>个一个图片创建矩形<a class="headerlink" href="#id66" title="永久链接至标题">¶</a></h4>
@@ -2482,11 +2476,11 @@ m_Rect.moveTo(m_x, m_y);   //
 </pre></div>
 </div>
 <p>大致效果：</p>
-<p><img alt="image-20220712163507250" src="Qt/Qt.assets/image-20220712163507250.png" /></p>
+<p><img alt="image-20220712163507250" src="../_images/image-20220712163507250.png" /></p>
 <p>补充：</p>
-<p><img alt="请添加图片描述" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-16476058928074.png" /></p>
-<p><img alt="请添加图片描述" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-16476062372606.png" /></p>
-<p><img alt="img" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-16476070062098.png" /></p>
+<p><img alt="请添加图片描述" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-16476058928074.png" /></p>
+<p><img alt="请添加图片描述" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-16476062372606.png" /></p>
+<p><img alt="img" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-16476070062098.png" /></p>
 <p><strong>重点：//#include <QFont></strong></p>
 <p>+++</p>
 </section>
@@ -2498,9 +2492,9 @@ m_Rect.moveTo(m_x, m_y);   //
 <span class="n">painter</span><span class="p">.</span><span class="n">drawRect</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">80</span><span class="p">);</span>
 </pre></div>
 </div>
-<p><img alt="image-20220318203609853" src="Qt/Qt.assets/image-20220318203609853.png" /></p>
+<p><img alt="image-20220318203609853" src="../_images/image-20220318203609853.png" /></p>
 <p>==效果：==</p>
-<p><img alt="image-20220318203721834" src="Qt/Qt.assets/image-20220318203721834.png" /></p>
+<p><img alt="image-20220318203721834" src="../_images/image-20220318203721834.png" /></p>
 <p>+++</p>
 </section>
 <section id="id69">
@@ -2520,8 +2514,8 @@ painter.drawText(100, 400, &quot;我是中国人, 我爱我的祖国!!!&quot;);
 </section>
 <section id="id70">
 <h3>写字<a class="headerlink" href="#id70" title="永久链接至标题">¶</a></h3>
-<p><img alt="img" src="Qt/Qt.assets/e9860a5cf6124408add2b62a3d92a84c.png" /></p>
-<p><img alt="image-20220712154251023" src="Qt/Qt.assets/image-20220712154251023.png" /></p>
+<p><img alt="img" src="../_images/e9860a5cf6124408add2b62a3d92a84c.png" /></p>
+<p><img alt="image-20220712154251023" src="../_images/image-20220712154251023.png" /></p>
 </section>
 <hr class="docutils" />
 <section id="id71">
@@ -2542,7 +2536,7 @@ painter.drawText(100, 400, &quot;我是中国人, 我爱我的祖国!!!&quot;);
 </pre></div>
 </div>
 <p>大致效果：</p>
-<p><img alt="image-20220712163415916" src="Qt/Qt.assets/image-20220712163415916.png" /></p>
+<p><img alt="image-20220712163415916" src="../_images/image-20220712163415916.png" /></p>
 </section>
 <hr class="docutils" />
 <section id="id72">
@@ -2565,7 +2559,7 @@ for(int num = 1; num &lt;= d_angle; num++)
 </pre></div>
 </div>
 <p>效果:</p>
-<p><img alt="image-20220801164450038" src="Qt/Qt.assets/image-20220801164450038.png" /></p>
+<p><img alt="image-20220801164450038" src="../_images/image-20220801164450038.png" /></p>
 <hr class="docutils" />
 <p>补充</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;widget.h&quot;</span><span class="cp"></span>
@@ -2645,7 +2639,7 @@ for(int num = 1; num &lt;= d_angle; num++)
 <span class="p">}</span>
 </pre></div>
 </div>
-<p><img alt="image-20220318205352955" src="Qt/Qt.assets/image-20220318205352955.png" /></p>
+<p><img alt="image-20220318205352955" src="../_images/image-20220318205352955.png" /></p>
 </section>
 </section>
 <section id="id73">
@@ -2667,7 +2661,7 @@ for(int num = 1; num &lt;= d_angle; num++)
 </pre></div>
 </div>
 <p>效果：</p>
-<p><img alt="Qt/Qt.assets/image-20220712201315125.png" src="Qt/Qt.assets/image-20220712201315125.png" /></p>
+<p><img alt="../_images/image-20220712201315125.png" src="../_images/image-20220712201315125.png" /></p>
 </section>
 </section>
 <hr class="docutils" />
@@ -2697,7 +2691,7 @@ for(int num = 1; num &lt;= d_angle; num++)
 </pre></div>
 </div>
 <p>效果：</p>
-<p><img alt="image-20220712171939914" src="Qt/Qt.assets/image-20220712171939914.png" /></p>
+<p><img alt="image-20220712171939914" src="../_images/image-20220712171939914.png" /></p>
 </section>
 <section id="id77">
 <h3>3.坐标轴缩放<a class="headerlink" href="#id77" title="永久链接至标题">¶</a></h3>
@@ -2712,7 +2706,7 @@ for(int num = 1; num &lt;= d_angle; num++)
 <span class="n">painter</span><span class="p">.</span><span class="n">drawRect</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">);</span>
 </pre></div>
 </div>
-<p><img alt="image-20220712172618842" src="Qt/Qt.assets/image-20220712172618842.png" /></p>
+<p><img alt="image-20220712172618842" src="../_images/image-20220712172618842.png" /></p>
 </section>
 <hr class="docutils" />
 <section id="id78">
@@ -2728,7 +2722,7 @@ for(int num = 1; num &lt;= d_angle; num++)
 <span class="n">painter</span><span class="p">.</span><span class="n">drawRect</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">);</span>
 </pre></div>
 </div>
-<p><img alt="image-20220712173604625" src="Qt/Qt.assets/image-20220712173604625.png" /></p>
+<p><img alt="image-20220712173604625" src="../_images/image-20220712173604625.png" /></p>
 </section>
 </section>
 <hr class="docutils" />
@@ -2774,16 +2768,16 @@ for(int num = 1; num &lt;= d_angle; num++)
 </pre></div>
 </div>
 <p><strong>效果：  指针会动</strong></p>
-<p><img alt="image-20220712194253538" src="Qt/Qt.assets/image-20220712194253538.png" /></p>
+<p><img alt="image-20220712194253538" src="../_images/image-20220712194253538.png" /></p>
 </section>
 <hr class="docutils" />
 <section id="id81">
 <h3>案例2<a class="headerlink" href="#id81" title="永久链接至标题">¶</a></h3>
-<p><img alt="img" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164760862218313.png" /></p>
+<p><img alt="img" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164760862218313.png" /></p>
 <p><strong>效果：  点击移动按钮船会动</strong></p>
-<p><img alt="image-20220712194457445" src="Qt/Qt.assets/image-20220712194457445.png" /></p>
+<p><img alt="image-20220712194457445" src="../_images/image-20220712194457445.png" /></p>
 <hr class="docutils" />
-<p><img alt="image-20220318224356633" src="Qt/Qt.assets/image-20220318224356633.png" /></p>
+<p><img alt="image-20220318224356633" src="../_images/image-20220318224356633.png" /></p>
 <p>==要的：==</p>
 <p>​        <strong>手动刷新的是刷新 画家函数里的东西</strong></p>
 <p>++++</p>
@@ -2793,7 +2787,7 @@ for(int num = 1; num &lt;= d_angle; num++)
 <h2>绘图设备（给画家的纸）<a class="headerlink" href="#id82" title="永久链接至标题">¶</a></h2>
 <section id="id83">
 <h3><strong>总述</strong><a class="headerlink" href="#id83" title="永久链接至标题">¶</a></h3>
-<p><img alt="image-20220715085135073" src="Qt/Qt.assets/image-20220715085135073.png" /></p>
+<p><img alt="image-20220715085135073" src="../_images/image-20220715085135073.png" /></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>// QWidget    窗体
 
 // QPixmap QImage QPicture QBitmap(黑白图片)
@@ -2809,7 +2803,7 @@ for(int num = 1; num &lt;= d_angle; num++)
 </div>
 <hr class="docutils" />
 <p><img alt="img" src="https://img-blog.csdnimg.cn/ffffffe96f9740c38d8cbef73e51c14a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16" /></p>
-<p><img alt="image-20220318214534172" src="Qt/Qt.assets/image-20220318214534172.png" /></p>
+<p><img alt="image-20220318214534172" src="../_images/image-20220318214534172.png" /></p>
 </section>
 <hr class="docutils" />
 <section id="widget">
@@ -2834,7 +2828,7 @@ for(int num = 1; num &lt;= d_angle; num++)
 </pre></div>
 </div>
 <p>==<strong>在窗口中画出来</strong>==（相当于画背景图）</p>
-<p><img alt="在这里插入图片描述" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164761108902017.png" /></p>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164761108902017.png" /></p>
 </section>
 <hr class="docutils" />
 <section id="qpixmap">
@@ -2882,8 +2876,8 @@ for(int num = 1; num &lt;= d_angle; num++)
 </pre></div>
 </div>
 <p><strong>修改像素</strong></p>
-<p><img alt="image-20220715092226636" src="Qt/Qt.assets/image-20220715092226636.png" /></p>
-<p><img alt="image-20220715092307219" src="Qt/Qt.assets/image-20220715092307219.png" /></p>
+<p><img alt="image-20220715092226636" src="../_images/image-20220715092226636.png" /></p>
+<p><img alt="image-20220715092307219" src="../_images/image-20220715092307219.png" /></p>
 <hr class="docutils" />
 </section>
 <hr class="docutils" />
@@ -2926,13 +2920,13 @@ for(int num = 1; num &lt;= d_angle; num++)
 <hr class="docutils" />
 <section id="qbitmap">
 <h3>5.在QBitmap中画图(黑白图)<a class="headerlink" href="#qbitmap" title="永久链接至标题">¶</a></h3>
-<p><img alt="image-20220715163455761" src="Qt/Qt.assets/image-20220715163455761.png" /></p>
+<p><img alt="image-20220715163455761" src="../_images/image-20220715163455761.png" /></p>
 <p><strong>效果:   红色画笔画的但是显示黑白的</strong></p>
-<p><img alt="image-20220715162855092" src="Qt/Qt.assets/image-20220715162855092.png" /></p>
+<p><img alt="image-20220715162855092" src="../_images/image-20220715162855092.png" /></p>
 <hr class="docutils" />
 <p>==<strong>在窗口中画出来</strong>==</p>
 <p><strong>代码:</strong></p>
-<p><img alt="image-20220715163208105" src="Qt/Qt.assets/image-20220715163436790.png" /></p>
+<p><img alt="image-20220715163208105" src="../_images/image-20220715163436790.png" /></p>
 <p><strong>效果:</strong></p>
 <img src="Qt.assets/image-20220816092727406.png" alt="image-20220816092727406" style="zoom:50%;" /></section>
 <hr class="docutils" />
@@ -3152,13 +3146,13 @@ for(int num = 1; num &lt;= d_angle; num++)
 </pre></div>
 </div>
 <p>==效果：可以随机移动；并且可以扇翅膀（因为有两张翅膀）。==</p>
-<p><img alt="image-20220318225910748" src="Qt/Qt.assets/image-20220318225910748.png" /></p>
+<p><img alt="image-20220318225910748" src="../_images/image-20220318225910748.png" /></p>
 <p>+++</p>
 </section>
 <section id="id86">
 <h2><strong>绘制弧线</strong><a class="headerlink" href="#id86" title="永久链接至标题">¶</a></h2>
-<p><img alt="image-20220801150033968" src="Qt/Qt.assets/image-20220801150033968.png" /></p>
-<p><img alt="image-20220801150538680" src="Qt/Qt.assets/image-20220801150538680.png" /></p>
+<p><img alt="image-20220801150033968" src="../_images/image-20220801150033968.png" /></p>
+<p><img alt="image-20220801150538680" src="../_images/image-20220801150538680.png" /></p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;widget.h&quot;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&quot;ui_widget.h&quot;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;QPainter&gt;</span><span class="cp"></span>
@@ -3198,8 +3192,8 @@ for(int num = 1; num &lt;= d_angle; num++)
 <h2>项目超声波雷达项目界面设计<a class="headerlink" href="#id87" title="永久链接至标题">¶</a></h2>
 <section id="id88">
 <h3>基础界面设置<a class="headerlink" href="#id88" title="永久链接至标题">¶</a></h3>
-<p><img alt="image-20220801160141503" src="Qt/Qt.assets/image-20220801160141503.png" /></p>
-<p><img alt="image-20220801152530415" src="Qt/Qt.assets/image-20220801152530415.png" /></p>
+<p><img alt="image-20220801160141503" src="../_images/image-20220801160141503.png" /></p>
+<p><img alt="image-20220801152530415" src="../_images/image-20220801152530415.png" /></p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;widget.h&quot;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&quot;ui_widget.h&quot;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;QPainter&gt;</span><span class="cp"></span>
@@ -3413,8 +3407,8 @@ for(int num = 1; num &lt;= d_angle; num++)
 </section>
 </section>
 <hr class="docutils" />
-<section id="id90">
-<h2>知识点十八: Qt中的随机数<a class="headerlink" href="#id90" title="永久链接至标题">¶</a></h2>
+<section id="qt">
+<h2>知识点十八: Qt中的随机数<a class="headerlink" href="#qt" title="永久链接至标题">¶</a></h2>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span>生成随机数：
     
 qsrand(time(NULL));
@@ -3424,7 +3418,7 @@ Int n1= qrand()%8;  //产生0-7d
 <hr class="docutils" />
 <section id="event-eventfilter">
 <h3>知识点十九: 重写事件event/eventFilter–&gt;过滤事件<a class="headerlink" href="#event-eventfilter" title="永久链接至标题">¶</a></h3>
-<p><img alt="请添加图片描述" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164761586556123.png" /></p>
+<p><img alt="请添加图片描述" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164761586556123.png" /></p>
 <p>事件分发器的规则是 :
 <code class="docutils literal notranslate"><span class="pre">如果返回值true--代表事件被处理过了,不再向下分发,停止了.</span></code>
 <code class="docutils literal notranslate"><span class="pre">false</span> <span class="pre">--事件没有被处理,会继续分发.</span></code>
@@ -3453,25 +3447,25 @@ event过滤事件是在event中进行拦截处理</p>
 </section>
 <section id="eventfilter">
 <h3>知识点二十: 事件过滤器eventFilter<a class="headerlink" href="#eventfilter" title="永久链接至标题">¶</a></h3>
-<p><img alt="请添加图片描述" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16.png" /></p>
+<p><img alt="请添加图片描述" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16.png" /></p>
 <p>.
 步骤一: 给窗口安装事件过滤器,例如前面是给实例化的对象dsq
 <code class="docutils literal notranslate"><span class="pre">dsp</span> <span class="pre">-&gt;</span> <span class="pre">insatllEventFilter(this)</span> <span class="pre">;</span></code>
 .
 步骤二: 需要在事件过滤器中处理</p>
-<p><img alt="在这里插入图片描述" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-16476686438092.png" /></p>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-16476686438092.png" /></p>
 <p>==   注意return的是主窗口的类 ==</p>
 </section>
 </section>
+<section id="id90">
+<h2>知识点二十一:<a class="headerlink" href="#id90" title="永久链接至标题">¶</a></h2>
 <section id="id91">
-<h2>知识点二十一:<a class="headerlink" href="#id91" title="永久链接至标题">¶</a></h2>
-<section id="id92">
-<h3>QT文件读取<a class="headerlink" href="#id92" title="永久链接至标题">¶</a></h3>
+<h3>QT文件读取<a class="headerlink" href="#id91" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><p>需求:点击选择文件按钮,就打开本地选择文件 ,右边的line Edit里面显示文件的路径,下面Text Edit显示文本内容</p>
 </div></blockquote>
 <p>==效果：==</p>
-<p><img alt="image-20220319135913121" src="Qt/Qt.assets/image-20220319135913121.png" /></p>
+<p><img alt="image-20220319135913121" src="../_images/image-20220319135913121.png" /></p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;widget.h&quot;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&quot;ui_widget.h&quot;</span><span class="cp"></span>
 
@@ -3550,22 +3544,22 @@ event过滤事件是在event中进行拦截处理</p>
 </pre></div>
 </div>
 </section>
+<section id="id92">
+<h3>QT文件写入<a class="headerlink" href="#id92" title="永久链接至标题">¶</a></h3>
+<p><img alt="img" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-16476704694936.png" /></p>
+</section>
+</section>
 <section id="id93">
-<h3>QT文件写入<a class="headerlink" href="#id93" title="永久链接至标题">¶</a></h3>
-<p><img alt="img" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-16476704694936.png" /></p>
-</section>
-</section>
-<section id="id94">
-<h2>知识点二十二: QT中的文本流和数据流<a class="headerlink" href="#id94" title="永久链接至标题">¶</a></h2>
+<h2>知识点二十二: QT中的文本流和数据流<a class="headerlink" href="#id93" title="永久链接至标题">¶</a></h2>
 <section id="qtextstream">
 <h3>文本流QTextStream的读写方式<a class="headerlink" href="#qtextstream" title="永久链接至标题">¶</a></h3>
 <blockquote>
 <div><p>#include <QTextStream>   //操作基础数据类型:  int , float , string</p>
 </div></blockquote>
 <p><strong>文本流的读取方式</strong></p>
-<p><img alt="请添加图片描述" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164767128522310.png" /></p>
+<p><img alt="请添加图片描述" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164767128522310.png" /></p>
 <p><strong>文本流的写入方式</strong>：</p>
-<p><img alt="在这里插入图片描述" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-16476709210298.png" /></p>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-16476709210298.png" /></p>
 <p>+++</p>
 </section>
 <section id="qdatastream">
@@ -3573,14 +3567,14 @@ event过滤事件是在event中进行拦截处理</p>
 <blockquote>
 <div><p>#include <QDataStream>   //可以操作二进制类型: QImage  Qpoint  QRect ,不依赖于平台</p>
 </div></blockquote>
-<p><img alt="请添加图片描述" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164767151414512.png" /></p>
+<p><img alt="请添加图片描述" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164767151414512.png" /></p>
 <p>不建议使用：</p>
-<p><img alt="请添加图片描述" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164767152652714.png" /></p>
+<p><img alt="请添加图片描述" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164767152652714.png" /></p>
 <p><strong>对内存进行操作,读写内存</strong>QByteArray（读写)</p>
 <blockquote>
 <div><p>网络通信</p>
 </div></blockquote>
-<p><img alt="在这里插入图片描述" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164767155200116.png" /></p>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164767155200116.png" /></p>
 </section>
 </section>
 <section id="qfileinfo">
@@ -3588,8 +3582,8 @@ event过滤事件是在event中进行拦截处理</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;QFileInfo&gt;</span><span class="cp"></span>
 </pre></div>
 </div>
-<p><img alt="在这里插入图片描述" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164767227747718.png" /></p>
-<p><img alt="在这里插入图片描述" src="Qt/Qt.assets/28277bbaeb104f35ad86497119865007-164767230675721.png" /></p>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164767227747718.png" /></p>
+<p><img alt="在这里插入图片描述" src="../_images/28277bbaeb104f35ad86497119865007-164767230675721.png" /></p>
 <blockquote>
 <div><p>要的：间接放个文件   或者直接放一个路径</p>
 </div></blockquote>
@@ -3597,8 +3591,8 @@ event过滤事件是在event中进行拦截处理</p>
 <h3>QDateTime 获取系统时间<a class="headerlink" href="#qdatetime" title="永久链接至标题">¶</a></h3>
 <p>#include <QTimer>
 #include <QDateTime></p>
-<p><img alt="在这里插入图片描述" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164767294318923.png" /></p>
-<p><img alt="img" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_18,color_FFFFFF,t_70,g_se,x_16.png" /></p>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164767294318923.png" /></p>
+<p><img alt="img" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_18,color_FFFFFF,t_70,g_se,x_16.png" /></p>
 </section>
 </section>
 <section id="qttcp">
@@ -3607,10 +3601,10 @@ event过滤事件是在event中进行拦截处理</p>
 <span class="c1">#include&lt;QtcpSocket&gt;  // 通讯的套接字 “说剋特”</span>
 </pre></div>
 </div>
-<p><img alt="img" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164767323707627.png" /></p>
-<p><img alt="img" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164767355410129.png" /></p>
-<section id="id95">
-<h3>服务器端：<a class="headerlink" href="#id95" title="永久链接至标题">¶</a></h3>
+<p><img alt="img" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164767323707627.png" /></p>
+<p><img alt="img" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164767355410129.png" /></p>
+<section id="id94">
+<h3>服务器端：<a class="headerlink" href="#id94" title="永久链接至标题">¶</a></h3>
 <p><strong>.pro文件；</strong></p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">QT</span>       <span class="o">+=</span> <span class="n">core</span> <span class="n">gui</span> <span class="n">network</span>
 </pre></div>
@@ -3712,8 +3706,8 @@ event过滤事件是在event中进行拦截处理</p>
 </ul>
 <p>+++</p>
 </section>
-<section id="id96">
-<h3>客户端：<a class="headerlink" href="#id96" title="永久链接至标题">¶</a></h3>
+<section id="id95">
+<h3>客户端：<a class="headerlink" href="#id95" title="永久链接至标题">¶</a></h3>
 <p>客户端 .h 文件：</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef CLIENT_H</span>
 <span class="cp">#define CLIENT_H</span>
@@ -3819,7 +3813,7 @@ client-&gt;<strong>connectToHost</strong>(QHostAddress(ui-&gt;sIp-&gt;text()),ui
 </section>
 <section id="qtudp">
 <h2>知识点二十五: QT中的UDP通信<a class="headerlink" href="#qtudp" title="永久链接至标题">¶</a></h2>
-<p><img alt="img" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164767641423131.png" /></p>
+<p><img alt="img" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164767641423131.png" /></p>
 <p><strong>.pro文件；</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+=</span> <span class="n">core</span> <span class="n">gui</span> <span class="n">network</span>
 </pre></div>
@@ -3853,8 +3847,8 @@ client-&gt;<strong>connectToHost</strong>(QHostAddress(ui-&gt;sIp-&gt;text()),ui
 <span class="cp">#endif </span><span class="c1">// WIDGET_H</span>
 </pre></div>
 </div>
-<section id="id97">
-<h3>服务器端<a class="headerlink" href="#id97" title="永久链接至标题">¶</a></h3>
+<section id="id96">
+<h3>服务器端<a class="headerlink" href="#id96" title="永久链接至标题">¶</a></h3>
 <p><strong>.cpp文件：</strong></p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;widget.h&quot;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&quot;ui_widget.h&quot;</span><span class="cp"></span>
@@ -3906,8 +3900,8 @@ client-&gt;<strong>connectToHost</strong>(QHostAddress(ui-&gt;sIp-&gt;text()),ui
 </div>
 <p>客户端 .h 文件：没有添加的</p>
 </section>
-<section id="id98">
-<h3><strong>客户端</strong><a class="headerlink" href="#id98" title="永久链接至标题">¶</a></h3>
+<section id="id97">
+<h3><strong>客户端</strong><a class="headerlink" href="#id97" title="永久链接至标题">¶</a></h3>
 <p><strong>.cpp文件：</strong></p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;client.h&quot;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&quot;ui_client.h&quot;</span><span class="cp"></span>
@@ -3956,7 +3950,7 @@ client-&gt;<strong>connectToHost</strong>(QHostAddress(ui-&gt;sIp-&gt;text()),ui
 <span class="p">}</span>
 </pre></div>
 </div>
-<p><img alt="在这里插入图片描述" src="Qt/Qt.assets/bd69de69a88e4bfab5cb649ddec9b6eb.gif" /></p>
+<p><img alt="在这里插入图片描述" src="../_images/bd69de69a88e4bfab5cb649ddec9b6eb.gif" /></p>
 <p>==要点：==</p>
 <ul class="simple">
 <li><p><strong>bind(ui-&gt;sPort-&gt;text().toInt())    直接建立连接，不用监听</strong></p></li>
@@ -3975,8 +3969,8 @@ client-&gt;<strong>connectToHost</strong>(QHostAddress(ui-&gt;sIp-&gt;text()),ui
 </ul>
 </section>
 </section>
-<section id="id99">
-<h2>知识点二 十六: QT广播/组播<a class="headerlink" href="#id99" title="永久链接至标题">¶</a></h2>
+<section id="id98">
+<h2>知识点二 十六: QT广播/组播<a class="headerlink" href="#id98" title="永久链接至标题">¶</a></h2>
 <section id="udp">
 <h3><strong>广播</strong>：UDP<a class="headerlink" href="#udp" title="永久链接至标题">¶</a></h3>
 <blockquote>
@@ -3984,22 +3978,22 @@ client-&gt;<strong>connectToHost</strong>(QHostAddress(ui-&gt;sIp-&gt;text()),ui
 .
 <strong>于是IP换一下就成为广播了</strong></p>
 </div></blockquote>
-<p><img alt="img" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164767917981534.png" /></p>
+<p><img alt="img" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164767917981534.png" /></p>
 <p><strong>组播</strong></p>
 <blockquote>
 <div><p>例如服务器要进行组播,组播的话要进行设置组播段号,同时还需要要自身绑定更改</p>
 </div></blockquote>
-<p><img alt="image-20220319164310017" src="Qt/Qt.assets/image-20220319164310017.png" /></p>
+<p><img alt="image-20220319164310017" src="../_images/image-20220319164310017.png" /></p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="tcp">
 <h2>知识点二十七: TCP文件传输<a class="headerlink" href="#tcp" title="永久链接至标题">¶</a></h2>
-<p><img alt="image-20220816092827088" src="Qt/Qt.assets/image-20220816092827088.png" /></p>
-<p><img alt="image-20220319164657448" src="Qt/Qt.assets/image-20220319164657448.png" /></p>
+<p><img alt="image-20220816092827088" src="../_images/image-20220816092827088.png" /></p>
+<p><img alt="image-20220319164657448" src="../_images/image-20220319164657448.png" /></p>
 <p><img alt="img" src="https://img-blog.csdnimg.cn/3beba34d0ca6451faa953dbc22e3f5d8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16" /></p>
-<section id="id100">
-<h3><strong>服务端</strong>：<a class="headerlink" href="#id100" title="永久链接至标题">¶</a></h3>
+<section id="id99">
+<h3><strong>服务端</strong>：<a class="headerlink" href="#id99" title="永久链接至标题">¶</a></h3>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef SERVER_H</span>
 <span class="cp">#define SERVER_H</span>
 
@@ -4031,7 +4025,7 @@ client-&gt;<strong>connectToHost</strong>(QHostAddress(ui-&gt;sIp-&gt;text()),ui
 <span class="cp">#endif </span><span class="c1">// SERVER_H</span>
 </pre></div>
 </div>
-<p><img alt="img" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-16476828244772.png" /></p>
+<p><img alt="img" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-16476828244772.png" /></p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span>#include &quot;server.h&quot;
 #include &quot;ui_server.h&quot;
 #include &lt;QFile&gt;
@@ -4175,8 +4169,8 @@ Server::~Server(){ delete ui;}
 </div>
 <p>+++</p>
 </section>
-<section id="id101">
-<h3><strong>客户端</strong>：<a class="headerlink" href="#id101" title="永久链接至标题">¶</a></h3>
+<section id="id100">
+<h3><strong>客户端</strong>：<a class="headerlink" href="#id100" title="永久链接至标题">¶</a></h3>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef CLIENT_H</span>
 <span class="cp">#define CLIENT_H</span>
 
@@ -4286,12 +4280,12 @@ client::~client(){delete ui;}
 </pre></div>
 </div>
 <p>效果：</p>
-<p><img alt="image-20220319195502998" src="Qt/Qt.assets/image-20220319195502998.png" /></p>
+<p><img alt="image-20220319195502998" src="../_images/image-20220319195502998.png" /></p>
 <p>+++</p>
 </section>
 </section>
-<section id="id102">
-<h2>知识点二十八：视频播放 —&gt;基础  视频功能实现<a class="headerlink" href="#id102" title="永久链接至标题">¶</a></h2>
+<section id="id101">
+<h2>知识点二十八：视频播放 —&gt;基础  视频功能实现<a class="headerlink" href="#id101" title="永久链接至标题">¶</a></h2>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="c1">//QMediaPlayer 类是   高级媒体播放类。可用于回放歌曲、电影及互联网广播内容。 ”Media“</span>
 <span class="cp">#include</span> <span class="cpf">&lt;QMediaPlayer&gt;</span><span class="cp"></span>
 
@@ -4309,26 +4303,26 @@ client::~client(){delete ui;}
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">QT</span>       <span class="o">+=</span> <span class="n">core</span> <span class="n">gui</span> <span class="n">multimedia</span> <span class="n">multimediawidgets</span> 
 </pre></div>
 </div>
-<p><img alt="img" src="Qt/Qt.assets/d438b0e100ec4776b0467cca2f8bc739-16477618983796.png" /></p>
+<p><img alt="img" src="../_images/d438b0e100ec4776b0467cca2f8bc739-16477618983796.png" /></p>
 <blockquote>
 <div><p>对应的.h文件中</p>
 </div></blockquote>
-<p><img alt="在这里插入图片描述" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-16477619362408.png" /></p>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-16477619362408.png" /></p>
 <blockquote>
 <div><p>对应.cp文件中</p>
 </div></blockquote>
-<p><img alt="在这里插入图片描述" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164776232175310.png" /></p>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164776232175310.png" /></p>
 <blockquote>
 <div><p>上面的代码是最基本的 播放，可以看到我们定义了一个播放窗口，实现效果如下： 并没有按我们预想的那样，展示在橙色区域，那是因为我们没有给他做一个联动。</p>
 </div></blockquote>
-<p><img alt="在这里插入图片描述" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164776239980712.png" /></p>
+<p><img alt="在这里插入图片描述" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164776239980712.png" /></p>
 <p>==ui界面：==</p>
-<p><img alt="请添加图片描述" src="Qt/Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164776288821514.png" /></p>
+<p><img alt="请添加图片描述" src="../_images/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164776288821514.png" /></p>
 <p>代码：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<p><img alt="image-20220320171047328" src="Qt/Qt.assets/image-20220320171047328.png" /></p>
+<p><img alt="image-20220320171047328" src="../_images/image-20220320171047328.png" /></p>
 <hr class="docutils" />
 </section>
 </section>
