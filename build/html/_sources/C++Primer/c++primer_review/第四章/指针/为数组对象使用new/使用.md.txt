@@ -1,6 +1,0 @@
-+ 格式（包括char型）：
-  int* ps = new int[size];
-  ps[索引] = 值；  //通过这种方式赋值，不能通过初始化的方法
-  delete [] ps;  
-+ 区别普通数组：
-  int ps[size];    //声明数组

@@ -6,7 +6,7 @@
 
 +  **用  release** 下创建
 
-![img](Qt.assets/SP$XGJY5C28V}AAJ9@C5F.png)
+![image-20220816091529859](Qt.assets/image-20220816091529859.png)
 
 + 得到 exe文件
 
@@ -34,7 +34,7 @@
 
 
 
-![img](Qt.assets/IRMZJRU3G}JTGCA`ZT6N{II.png)
+![image-20220816091658045](Qt.assets/image-20220816091658045.png)
 
 
 
@@ -397,7 +397,7 @@ Widget::Widget(QWidget *parent) : QWidget(parent)
 + **资源文件：**
 
   + 设置图片（==setWindowIcon(QIcon("E:\\1.jpg图片路径")); //给窗口加图标== ）
-  + ![image-20220317222311789](C:\Users\16658\AppData\Roaming\Typora\typora-user-images\image-20220317222311789.png)
+  + ![image-20220816091845532](Qt.assets/image-20220816091845532.png)
 
 
 
@@ -421,12 +421,6 @@ Widget::Widget(QWidget *parent) : QWidget(parent)
   
 
   
-
-
-
-
-
-
 
 ## 知识点二: 信号槽机制(重要)(难点)
 
@@ -872,7 +866,7 @@ qDebug() << num << str.toUtf8().data();  //如果出现中文乱码的情况,可
 
 + **成组使用, 只能单选.**
 
-![img](Qt.assets/S2OZ5NTJWY[]@QT9V52PD.png)
+![image-20220816092007876](Qt.assets/image-20220816092007876.png)
 
 ![image-20220623213202592](Qt.assets/image-20220623213202592.png)
 
@@ -980,7 +974,7 @@ QTreeWidget *二级文件 = new QTreeWidget(QStringList << )
 
 
 
-![img](Qt.assets/[{`[ZS26}Y52CAWEZRD1SOG.png)
+![image-20220816092053228](Qt.assets/image-20220816092053228.png)
 
 
 
@@ -1021,13 +1015,13 @@ setHorizontalHeaderLables(list)     以水平的方式设置上述内容
 setItem（row, col, list）            以一行一行的设置内容
 ```
 
--->==
+
 
 -------------
 
 
 
-![img](Qt.assets/23SIK3_UC`_W8CUV[[9JT2.png)
+![image-20220816092120826](Qt.assets/image-20220816092120826.png)
 
 
 
@@ -1035,7 +1029,7 @@ setItem（row, col, list）            以一行一行的设置内容
 
 ![image-20220629204231719](Qt.assets/image-20220629204231719.png)
 
-![img](Qt.assets/@SSV1PZKAXD@G7}FZ}{KEBR.png)
+![image-20220816092133044](Qt.assets/image-20220816092133044.png)
 
 
 
@@ -1376,7 +1370,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 
-![](Qt.assets/QQ图片20220620211709.png)
+![image-20220816092225121](Qt.assets/image-20220816092225121.png)
 
 
 
@@ -1401,7 +1395,7 @@ stbar->addWidget(label);
 
 
 
-<img src="Qt.assets/image-20220620213321781.png" alt="image-20220620213321781" style="zoom:80%;" />
+<img src="Qt.assets/image-20220816092248666.png" alt="image-20220816092248666" style="zoom:67%;" />
 
 ----------------------
 
@@ -1447,7 +1441,7 @@ setCentralWidget(edit);  // 设置成中心组件
 
 **默认是不能输入中问的但是可以之后手动修改,找到text修改成中文即可**
 
-<img src="Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164757324127214.png" alt="请添加图片描述"  />
+![image-20220816092309563](Qt.assets/image-20220816092309563.png)
 
 ​                                                                                                                                                          **通过这个名字访问控件**
 
@@ -1457,7 +1451,7 @@ setCentralWidget(edit);  // 设置成中心组件
 
 拖拽的是菜单栏中的东西
 
-<img src="Qt.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAd2Vla3Nvb28=,size_20,color_FFFFFF,t_70,g_se,x_16-164757346059716.png" alt="请添加图片描述" style="zoom:200%;" />
+![image-20220816092321972](Qt.assets/image-20220816092321972.png)
 
 
 
@@ -1964,7 +1958,7 @@ if (ret1 == QMessageBox::Yes)
 
 #### 提示对话框
 
-![](Qt.assets/QQ图片20220622225221.png)
+![image-20220816092410224](Qt.assets/image-20220816092410224.png)
 
 
 
@@ -2094,7 +2088,7 @@ QColorDialog color = new QColorDialog(this);
 
 效果:
 
-![img](Qt.assets/F03Q38KP574U@S7{HNAI6H.png)
+![image-20220816092430351](Qt.assets/image-20220816092430351.png)
 
 
 
@@ -2137,7 +2131,7 @@ QColorDialog color = new QColorDialog(this);
 
 
 
-![](Qt.assets/QQ图片20220622232945.png)
+![image-20220816092456500](Qt.assets/image-20220816092456500.png)
 
 
 
@@ -2164,11 +2158,11 @@ QWizard wizard(this);
 
 
 
-![](Qt.assets/QQ图片20220623205024.png)
+![image-20220816092510758](Qt.assets/image-20220816092510758.png)
 
-![](Qt.assets/QQ图片20220623205108.png)
+![image-20220816092521779](Qt.assets/image-20220816092521779.png)
 
-![](Qt.assets/QQ图片20220623205045.png)
+![image-20220816092533753](Qt.assets/image-20220816092533753.png)
 
 
 
@@ -3117,7 +3111,7 @@ painter.drawText(100, 400, "我是中国人, 我爱我的祖国!!!");
 
 大致效果：
 
-<img src="Qt.assets/image-20220712161210627.png" alt="image-20220712161210627" style="zoom:50%;" />
+<img src="Qt.assets/image-20220816092636161.png" alt="image-20220816092636161" style="zoom:67%;" />
 
 
 
@@ -3661,7 +3655,7 @@ void Widget::paintEvent(QPaintEvent *)
 
 **效果:**
 
-<img src="Qt.assets/image-20220715163222950.png" alt="image-20220715163222950" style="zoom:50%;" />
+<img src="Qt.assets/image-20220816092727406.png" alt="image-20220816092727406" style="zoom:50%;" />
 
 
 
@@ -4843,7 +4837,7 @@ Client::~Client()
 
 ## 知识点二十七: TCP文件传输
 
-![img](Qt.assets/V244FV%%4NV71PS%G_BW`R.png)
+![image-20220816092827088](Qt.assets/image-20220816092827088.png)
 
 
 
